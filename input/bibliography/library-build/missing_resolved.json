@@ -1,0 +1,170 @@
+[
+ {
+  "bibkey": "avellaneda-2008-high-frequency-trading",
+  "grade": "A",
+  "query": "High-frequency trading in a limit order book",
+  "title": "High-frequency trading in a limit order book",
+  "year": 2008,
+  "doi": "10.1080/14697680701381228",
+  "venue": "Quantitative Finance",
+  "authors": [
+   "Marco Avellaneda",
+   "SASHA F. STOIKOV"
+  ],
+  "is_oa": false,
+  "best_oa_pdf": null,
+  "pdf_urls": []
+ },
+ {
+  "bibkey": "bacry-2016-estimation-slowly-decreasing",
+  "grade": "A",
+  "query": "Estimation of slowly decreasing Hawkes kernels: application to high-frequency order book dynamics",
+  "title": "Estimation of slowly decreasing Hawkes kernels: application to high-frequency order book dynamics",
+  "year": 2016,
+  "doi": "10.1080/14697688.2015.1123287",
+  "venue": "Quantitative Finance",
+  "authors": [
+   "Emmanuel Bacry",
+   "Thibault Jaisson",
+   "Jean–François Muzy"
+  ],
+  "is_oa": false,
+  "best_oa_pdf": null,
+  "pdf_urls": []
+ },
+ {
+  "bibkey": "bacry-2015-hawkes-processes-finance",
+  "grade": "A",
+  "query": "Hawkes processes in finance",
+  "title": "Hawkes Processes in Finance",
+  "year": 2015,
+  "doi": "10.1142/s2382626615500057",
+  "venue": "Market Microstructure and Liquidity",
+  "authors": [
+   "Emmanuel Bacry",
+   "Iacopo Mastromatteo",
+   "Jean–François Muzy"
+  ],
+  "is_oa": false,
+  "best_oa_pdf": null,
+  "pdf_urls": []
+ },
+ {
+  "bibkey": "cartea-2015-algorithmic-high-frequency",
+  "grade": "A",
+  "query": "Algorithmic and High-Frequency Trading",
+  "title": "Algorithmic and High-Frequency Trading",
+  "year": 2015,
+  "doi": null,
+  "venue": null,
+  "authors": [
+   "Álvaro Cartea",
+   "Sebastian Jaimungal A",
+   "José Penalva"
+  ],
+  "is_oa": false,
+  "best_oa_pdf": null,
+  "pdf_urls": []
+ },
+ {
+  "bibkey": "cheridito-2025-deep-learning-continuous",
+  "grade": "A",
+  "query": "Deep learning for continuous-time stochastic control with jumps",
+  "title": "Deep learning for continuous-time stochastic control with jumps",
+  "year": 2025,
+  "doi": "10.52202/085713-4482",
+  "venue": "neural information processing systems",
+  "authors": [
+   "Patrick Cheridito",
+   "Jean-Loup Dupret",
+   "Donatien Hainaut"
+  ],
+  "is_oa": true,
+  "best_oa_pdf": "https://arxiv.org/pdf/2505.15602",
+  "pdf_urls": [
+   [
+    "http://arxiv.org/pdf/2505.15602",
+    "RePEc: Research Papers in Economics",
+    "submittedVersion"
+   ],
+   [
+    "https://arxiv.org/pdf/2505.15602",
+    "arXiv (Cornell University)",
+    "submittedVersion"
+   ]
+  ]
+ },
+ {
+  "bibkey": "hawkes-1971-spectra-self-exciting",
+  "grade": "A",
+  "query": "Spectra of some self-exciting and mutually exciting point processes",
+  "title": "Spectra of Some Self-Exciting and Mutually Exciting Point Processes",
+  "year": 1971,
+  "doi": "10.1093/biomet/58.1.83",
+  "venue": "Biometrika",
+  "authors": [
+   "Alan G. Hawkes"
+  ],
+  "is_oa": false,
+  "best_oa_pdf": null,
+  "pdf_urls": []
+ },
+ {
+  "bibkey": "ho-1981-optimal-dealer-pricing",
+  "grade": "A",
+  "query": "Optimal dealer pricing under transactions and return uncertainty",
+  "title": "Optimal dealer pricing under transactions and return uncertainty",
+  "year": 1981,
+  "doi": "10.1016/0304-405x(81)90020-9",
+  "venue": "Journal of Financial Economics",
+  "authors": [
+   "Thomas Ho",
+   "Hans R. Stoll"
+  ],
+  "is_oa": false,
+  "best_oa_pdf": null,
+  "pdf_urls": []
+ },
+ {
+  "bibkey": "lai-2023-data-driven-deep",
+  "grade": "A",
+  "query": "A data-driven deep learning approach for options market making",
+  "title": "A data-driven deep learning approach for options market making",
+  "year": 2023,
+  "doi": "10.1080/14697688.2023.2186257",
+  "venue": "Quantitative Finance",
+  "authors": [
+   "Qianhui Lai",
+   "Xuefeng Gao",
+   "Lingfei Li"
+  ],
+  "is_oa": true,
+  "best_oa_pdf": null,
+  "pdf_urls": []
+ },
+ {
+  "bibkey": "ogata-1981-lewis-simulation-method",
+  "grade": "B",
+  "query": "On Lewis' simulation method for point processes",
+  "title": "On Lewis' simulation method for point processes",
+  "year": 1981,
+  "doi": "10.1109/tit.1981.1056305",
+  "venue": "IEEE Transactions on Information Theory",
+  "authors": [
+   "Y. Ogata"
+  ],
+  "is_oa": true,
+  "best_oa_pdf": null,
+  "pdf_urls": []
+ },
+ {
+  "bibkey": "schulman-2017-proximal-policy-optimization",
+  "grade": "B",
+  "query": "Proximal Policy Optimization Algorithms"
+ },
+ {
+  "bibkey": "tarditi-2026-hawkes-process-models",
+  "grade": "A",
+  "query": "Hawkes process models of limit order books for optimal market making"
+ }
+]

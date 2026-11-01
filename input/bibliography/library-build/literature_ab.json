@@ -1,0 +1,754 @@
+[
+ {
+  "grade": "A",
+  "doi": "10.2139/ssrn.2584430",
+  "arxiv": "1503.07007",
+  "title": "Optimal Position Management for a Market Maker with Stochastic Price Impacts",
+  "authors": [
+   [
+    "Fujii",
+    "Masaaki"
+   ]
+  ],
+  "year": 2015,
+  "venue": "SSRN Electronic Journal",
+  "type": "journal-article",
+  "volume": null,
+  "issue": null,
+  "pages": null,
+  "publisher": "Elsevier BV",
+  "bibkey": "fujii-2015-optimal-position-management"
+ },
+ {
+  "grade": "A",
+  "doi": "10.1137/20M1320560",
+  "arxiv": "2110.09417",
+  "title": "Mean-Variance Portfolio Selection in Contagious Markets",
+  "authors": [
+   [
+    "Shen",
+    "Yang"
+   ],
+   [
+    "Zou",
+    "Bin"
+   ]
+  ],
+  "year": 2022,
+  "venue": "SIAM Journal on Financial Mathematics",
+  "type": "journal-article",
+  "volume": "13",
+  "issue": "2",
+  "pages": "391-425",
+  "publisher": "Society for Industrial & Applied Mathematics (SIAM)",
+  "bibkey": "shen-2022-mean-variance-portfolio"
+ },
+ {
+  "grade": "A",
+  "doi": "10.1287/opre.2024.1172",
+  "arxiv": null,
+  "title": "Dynamic Pricing Under Self-Exciting Arrival Processes",
+  "authors": [
+   [
+    "Yuan",
+    "Quan"
+   ],
+   [
+    "Du",
+    "Longyuan"
+   ],
+   [
+    "Hu",
+    "Ming"
+   ]
+  ],
+  "year": 2026,
+  "venue": "Operations Research",
+  "type": "journal-article",
+  "volume": "74",
+  "issue": "3",
+  "pages": "1408-1424",
+  "publisher": "Institute for Operations Research and the Management Sciences (INFORMS)",
+  "bibkey": "yuan-2026-dynamic-pricing-self"
+ },
+ {
+  "grade": "A",
+  "doi": "10.1093/jjfinec/nbv024",
+  "arxiv": "1210.1598",
+  "title": "Portfolio Choice in Markets with Contagion",
+  "authors": [
+   [
+    "Aït-Sahalia",
+    "Yacine"
+   ],
+   [
+    "Hurd",
+    "Thomas Robert"
+   ]
+  ],
+  "year": 2016,
+  "venue": "Journal of Financial Econometrics",
+  "type": "journal-article",
+  "volume": "14",
+  "issue": "1",
+  "pages": "1-28",
+  "publisher": "Oxford University Press (OUP)",
+  "bibkey": "aitsahalia-2016-portfolio-choice-markets"
+ },
+ {
+  "grade": "A",
+  "doi": null,
+  "arxiv": "1802.07244",
+  "title": "Steering Social Activity: A Stochastic Optimal Control Point Of View",
+  "authors": [
+   [
+    "Zarezade",
+    "Ali"
+   ],
+   [
+    "De",
+    "Abir"
+   ],
+   [
+    "Upadhyay",
+    "Utkarsh"
+   ],
+   [
+    "Rabiee",
+    "Hamid R."
+   ],
+   [
+    "Gomez-Rodriguez",
+    "Manuel"
+   ]
+  ],
+  "year": 2018,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "bibkey": "zarezade-2018-steering-social-activity"
+ },
+ {
+  "grade": "A",
+  "doi": "10.2139/ssrn.7625720",
+  "arxiv": null,
+  "title": "Dynamic Market Making under Stochastic Liquidity and Inventory Risk",
+  "authors": [
+   [
+    "Bathini",
+    "Venkatanath"
+   ],
+   [
+    "Kathane",
+    "Raghav"
+   ],
+   [
+    "Pandey",
+    "Pranita"
+   ],
+   [
+    "Yadav",
+    "Priyanshu"
+   ],
+   [
+    "Mehta",
+    "Mehul"
+   ]
+  ],
+  "year": 2026,
+  "venue": "",
+  "type": "posted-content",
+  "volume": null,
+  "issue": null,
+  "pages": null,
+  "publisher": "Elsevier BV",
+  "bibkey": "bathini-2026-dynamic-market-making"
+ },
+ {
+  "grade": "A",
+  "doi": "10.1137/18M1176968",
+  "arxiv": null,
+  "title": "Algorithmic Trading, Stochastic Control, and Mutually Exciting Processes",
+  "authors": [
+   [
+    "Cartea",
+    "Álvaro"
+   ],
+   [
+    "Jaimungal",
+    "Sebastian"
+   ],
+   [
+    "Ricci",
+    "Jason"
+   ]
+  ],
+  "year": 2018,
+  "venue": "SIAM Review",
+  "type": "journal-article",
+  "volume": "60",
+  "issue": "3",
+  "pages": "673-703",
+  "publisher": "Society for Industrial & Applied Mathematics (SIAM)",
+  "bibkey": "cartea-2018-algorithmic-trading-stochastic"
+ },
+ {
+  "grade": "B",
+  "doi": "10.1007/s00780-015-0282-y",
+  "arxiv": "1404.0648",
+  "title": "Dynamic optimal execution in a mixed-market-impact Hawkes price model",
+  "authors": [
+   [
+    "Alfonsi",
+    "Aurélien"
+   ],
+   [
+    "Blanc",
+    "Pierre"
+   ]
+  ],
+  "year": 2016,
+  "venue": "Finance and Stochastics",
+  "type": "journal-article",
+  "volume": "20",
+  "issue": "1",
+  "pages": "183-218",
+  "publisher": "Springer Science and Business Media LLC",
+  "bibkey": "alfonsi-2016-dynamic-optimal-execution"
+ },
+ {
+  "grade": "B",
+  "doi": "10.1142/S2382626616500052",
+  "arxiv": "1506.08740",
+  "title": "Extension and Calibration of a Hawkes-Based Optimal Execution Model",
+  "authors": [
+   [
+    "Alfonsi",
+    "Aurélien"
+   ],
+   [
+    "Blanc",
+    "Pierre"
+   ]
+  ],
+  "year": 2016,
+  "venue": "Market Microstructure and Liquidity",
+  "type": "journal-article",
+  "volume": "02",
+  "issue": "02",
+  "pages": "1650005",
+  "publisher": "World Scientific Pub Co Pte Ltd",
+  "bibkey": "alfonsi-2016-extension-calibration-hawkes"
+ },
+ {
+  "grade": "B",
+  "doi": "10.1287/opre.2023.0151",
+  "arxiv": null,
+  "title": "Optimal Trade Execution Under Endogenous Order Flow",
+  "authors": [
+   [
+    "Chen",
+    "Ying"
+   ],
+   [
+    "Horst",
+    "Ulrich"
+   ],
+   [
+    "Tran",
+    "Hoang Hai"
+   ]
+  ],
+  "year": 2026,
+  "venue": "Operations Research",
+  "type": "journal-article",
+  "volume": "74",
+  "issue": "1",
+  "pages": "72-92",
+  "publisher": "Institute for Operations Research and the Management Sciences (INFORMS)",
+  "bibkey": "chen-2026-optimal-trade-execution"
+ },
+ {
+  "grade": "B",
+  "doi": "10.1111/mafi.12359",
+  "arxiv": "2011.05589",
+  "title": "Portfolio liquidation games with self‐exciting order flow",
+  "authors": [
+   [
+    "Fu",
+    "Guanxing"
+   ],
+   [
+    "Horst",
+    "Ulrich"
+   ],
+   [
+    "Xia",
+    "Xiaonyu"
+   ]
+  ],
+  "year": 2022,
+  "venue": "Mathematical Finance",
+  "type": "journal-article",
+  "volume": "32",
+  "issue": "4",
+  "pages": "1020-1065",
+  "publisher": "Wiley",
+  "bibkey": "fu-2022-portfolio-liquidation-games"
+ },
+ {
+  "grade": "B",
+  "doi": "10.1137/090771272",
+  "arxiv": null,
+  "title": "Affine Point Processes and Portfolio Credit Risk",
+  "authors": [
+   [
+    "Errais",
+    "Eymen"
+   ],
+   [
+    "Giesecke",
+    "Kay"
+   ],
+   [
+    "Goldberg",
+    "Lisa R."
+   ]
+  ],
+  "year": 2010,
+  "venue": "SIAM Journal on Financial Mathematics",
+  "type": "journal-article",
+  "volume": "1",
+  "issue": "1",
+  "pages": "642-665",
+  "publisher": "Society for Industrial & Applied Mathematics (SIAM)",
+  "bibkey": "errais-2010-affine-point-processes"
+ },
+ {
+  "grade": "B",
+  "doi": "10.1111/1468-0262.00164",
+  "arxiv": null,
+  "title": "Transform Analysis and Asset Pricing for Affine Jump-diffusions",
+  "authors": [
+   [
+    "Duffie",
+    "Darrell"
+   ],
+   [
+    "Pan",
+    "Jun"
+   ],
+   [
+    "Singleton",
+    "Kenneth"
+   ]
+  ],
+  "year": 2000,
+  "venue": "Econometrica",
+  "type": "journal-article",
+  "volume": "68",
+  "issue": "6",
+  "pages": "1343-1376",
+  "publisher": "The Econometric Society",
+  "bibkey": "duffie-2000-transform-analysis-asset"
+ },
+ {
+  "grade": "B",
+  "doi": "10.1080/14697688.2025.2488450",
+  "arxiv": "2404.11482",
+  "title": "Optimal reinsurance in a dynamic contagion model: comparing self-exciting and externally-exciting risks",
+  "authors": [
+   [
+    "Ceci",
+    "C."
+   ],
+   [
+    "Cretarola",
+    "A."
+   ]
+  ],
+  "year": 2025,
+  "venue": "Quantitative Finance",
+  "type": "journal-article",
+  "volume": "26",
+  "issue": "8",
+  "pages": "1199-1219",
+  "publisher": "Informa UK Limited",
+  "bibkey": "ceci-2025-optimal-reinsurance-dynamic"
+ },
+ {
+  "grade": "B",
+  "doi": "10.1111/mafi.12177",
+  "arxiv": null,
+  "title": "Credit portfolio selection with decaying contagion intensities",
+  "authors": [
+   [
+    "Bo",
+    "Lijun"
+   ],
+   [
+    "Capponi",
+    "Agostino"
+   ],
+   [
+    "Chen",
+    "Peng‐Chu"
+   ]
+  ],
+  "year": 2019,
+  "venue": "Mathematical Finance",
+  "type": "journal-article",
+  "volume": "29",
+  "issue": "1",
+  "pages": "137-173",
+  "publisher": "Wiley",
+  "bibkey": "bo-2019-credit-portfolio-selection"
+ },
+ {
+  "grade": "B",
+  "doi": "10.1111/mafi.12074",
+  "arxiv": null,
+  "title": "OPTIMAL INVESTMENT IN CREDIT DERIVATIVES PORTFOLIO UNDER CONTAGION RISK",
+  "authors": [
+   [
+    "Bo",
+    "Lijun"
+   ],
+   [
+    "Capponi",
+    "Agostino"
+   ]
+  ],
+  "year": 2016,
+  "venue": "Mathematical Finance",
+  "type": "journal-article",
+  "volume": "26",
+  "issue": "4",
+  "pages": "785-834",
+  "publisher": "Wiley",
+  "bibkey": "bo-2016-optimal-investment-credit"
+ },
+ {
+  "grade": "B",
+  "doi": "10.1214/20-AAP1645",
+  "arxiv": "1911.01900",
+  "title": "Linear-quadratic control for a class of stochastic Volterra equations: Solvability and approximation",
+  "authors": [
+   [
+    "Abi Jaber",
+    "Eduardo"
+   ],
+   [
+    "Miller",
+    "Enzo"
+   ],
+   [
+    "Pham",
+    "Huyên"
+   ]
+  ],
+  "year": 2021,
+  "venue": "The Annals of Applied Probability",
+  "type": "journal-article",
+  "volume": "31",
+  "issue": "5",
+  "pages": "2244-2274",
+  "publisher": "Institute of Mathematical Statistics",
+  "bibkey": "abijaber-2021-linear-quadratic-control"
+ },
+ {
+  "grade": "B",
+  "doi": "10.1137/19M1298287",
+  "arxiv": "1911.01903",
+  "title": "Integral Operator Riccati Equations Arising in Stochastic Volterra Control Problems",
+  "authors": [
+   [
+    "Abi Jaber",
+    "Eduardo"
+   ],
+   [
+    "Miller",
+    "Enzo"
+   ],
+   [
+    "Pham",
+    "Huyen"
+   ]
+  ],
+  "year": 2021,
+  "venue": "SIAM Journal on Control and Optimization",
+  "type": "journal-article",
+  "volume": "59",
+  "issue": "2",
+  "pages": "1581-1603",
+  "publisher": "Society for Industrial & Applied Mathematics (SIAM)",
+  "bibkey": "abijaber-2021-integral-operator-riccati"
+ },
+ {
+  "grade": "B",
+  "doi": "10.1111/mafi.12465",
+  "arxiv": "2211.00447",
+  "title": "Optimal Liquidation With Signals: The General Propagator Case",
+  "authors": [
+   [
+    "Abi Jaber",
+    "Eduardo"
+   ],
+   [
+    "Neuman",
+    "Eyal"
+   ]
+  ],
+  "year": 2025,
+  "venue": "Mathematical Finance",
+  "type": "journal-article",
+  "volume": "35",
+  "issue": "4",
+  "pages": "841-866",
+  "publisher": "Wiley",
+  "bibkey": "abijaber-2025-optimal-liquidation-signals"
+ },
+ {
+  "grade": "B",
+  "doi": "10.1287/mnsc.2018.3070",
+  "arxiv": null,
+  "title": "Dynamic Credit-Collections Optimization",
+  "authors": [
+   [
+    "Chehrazi",
+    "Naveed"
+   ],
+   [
+    "Glynn",
+    "Peter W."
+   ],
+   [
+    "Weber",
+    "Thomas A."
+   ]
+  ],
+  "year": 2019,
+  "venue": "Management Science",
+  "type": "journal-article",
+  "volume": "65",
+  "issue": "6",
+  "pages": "2737-2769",
+  "publisher": "Institute for Operations Research and the Management Sciences (INFORMS)",
+  "bibkey": "chehrazi-2019-dynamic-credit-collections"
+ },
+ {
+  "grade": "B",
+  "doi": "10.3934/mcrf.2024038",
+  "arxiv": null,
+  "title": "Stochastic control for diffusions with self-exciting jumps: An overview",
+  "authors": [
+   [
+    "Bensoussan",
+    "Alain"
+   ],
+   [
+    "Chevalier-Roignant",
+    "Benoît"
+   ]
+  ],
+  "year": 2024,
+  "venue": "Mathematical Control and Related Fields",
+  "type": "journal-article",
+  "volume": "14",
+  "issue": "4",
+  "pages": "1452-1476",
+  "publisher": "American Institute of Mathematical Sciences (AIMS)",
+  "bibkey": "bensoussan-2024-stochastic-control-diffusions"
+ },
+ {
+  "grade": "B",
+  "doi": "10.1137/18M1209684",
+  "arxiv": "1808.08336",
+  "title": "Backward Stochastic Riccati Equation with Jumps Associated with Stochastic Linear Quadratic Optimal Control with Jumps and Random Coefficients",
+  "authors": [
+   [
+    "Zhang",
+    "Fu"
+   ],
+   [
+    "Dong",
+    "Yuchao"
+   ],
+   [
+    "Meng",
+    "Qingxin"
+   ]
+  ],
+  "year": 2020,
+  "venue": "SIAM Journal on Control and Optimization",
+  "type": "journal-article",
+  "volume": "58",
+  "issue": "1",
+  "pages": "393-424",
+  "publisher": "Society for Industrial & Applied Mathematics (SIAM)",
+  "bibkey": "zhang-2020-backward-stochastic-riccati"
+ },
+ {
+  "grade": "B",
+  "doi": "10.1016/j.jedc.2013.10.005",
+  "arxiv": null,
+  "title": "Partial information about contagion risk, self-exciting processes and portfolio optimization",
+  "authors": [
+   [
+    "Branger",
+    "Nicole"
+   ],
+   [
+    "Kraft",
+    "Holger"
+   ],
+   [
+    "Meinerding",
+    "Christoph"
+   ]
+  ],
+  "year": 2014,
+  "venue": "Journal of Economic Dynamics and Control",
+  "type": "journal-article",
+  "volume": "39",
+  "issue": null,
+  "pages": "18-36",
+  "publisher": "Elsevier BV",
+  "bibkey": "branger-2014-partial-information-contagion"
+ },
+ {
+  "grade": "B",
+  "doi": "10.4310/CIS.2002.v2.n3.a4",
+  "arxiv": null,
+  "title": "Indefinite stochastic LQ controls with Markovian jumps in a finite time horizon",
+  "authors": [
+   [
+    "Li",
+    "Xun"
+   ],
+   [
+    "Zhou",
+    "Xun Yu"
+   ]
+  ],
+  "year": 2002,
+  "venue": "Communications in Information and Systems",
+  "type": "journal-article",
+  "volume": "2",
+  "issue": "3",
+  "pages": "265-282",
+  "publisher": "International Press of Boston",
+  "bibkey": "li-2002-indefinite-stochastic-lq"
+ },
+ {
+  "grade": "B",
+  "doi": "10.2139/ssrn.6777719",
+  "arxiv": null,
+  "title": "Structural Hawkes Ambiguity in Near-Critical Market Making",
+  "authors": [
+   [
+    "Sharma",
+    "Mayank"
+   ],
+   [
+    "Mourya",
+    "Rohit Kumar"
+   ]
+  ],
+  "year": 2026,
+  "venue": "",
+  "type": "posted-content",
+  "volume": null,
+  "issue": null,
+  "pages": null,
+  "publisher": "Elsevier BV",
+  "bibkey": "sharma-2026-structural-hawkes-ambiguity"
+ },
+ {
+  "grade": "B",
+  "doi": "10.2139/ssrn.6847019",
+  "arxiv": null,
+  "title": "Liquidation-Aware Market Making in Perpetual Futures: Optimal Quoting under a Self-Exciting Forced-Liquidation Process, and an Empirical Test of Its Premise",
+  "authors": [
+   [
+    "Lim",
+    "Boon Chuan"
+   ]
+  ],
+  "year": 2026,
+  "venue": "",
+  "type": "posted-content",
+  "volume": null,
+  "issue": null,
+  "pages": null,
+  "publisher": "Elsevier BV",
+  "bibkey": "lim-2026-liquidation-aware-market"
+ },
+ {
+  "grade": "B",
+  "doi": null,
+  "arxiv": "2606.19772",
+  "title": "Signature Methods for Optimal Market Making",
+  "authors": [
+   [
+    "Gennaro",
+    "Alberto"
+   ],
+   [
+    "Mastrolia",
+    "Thibaut"
+   ],
+   [
+    "Primavera",
+    "Francesca"
+   ]
+  ],
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "bibkey": "gennaro-2026-signature-methods-optimal"
+ },
+ {
+  "grade": "B",
+  "doi": null,
+  "arxiv": "2509.12456",
+  "title": "Reinforcement Learning-Based Market Making as a Stochastic Control on Non-Stationary Limit Order Book Dynamics",
+  "authors": [
+   [
+    "Zimmer",
+    "Rafael"
+   ],
+   [
+    "Costa",
+    "Oswaldo Luiz do Valle"
+   ]
+  ],
+  "year": 2025,
+  "venue": "arXiv preprint",
+  "type": "preprint",
+  "bibkey": "zimmer-2025-reinforcement-learning-based"
+ },
+ {
+  "grade": "B",
+  "doi": "10.2139/ssrn.4729290",
+  "arxiv": null,
+  "title": "Optimal Option Market Making and Volatility Arbitrage",
+  "authors": [
+   [
+    "Lucic",
+    "Vladimir"
+   ],
+   [
+    "Tse",
+    "Alex S. L."
+   ]
+  ],
+  "year": 2024,
+  "venue": "",
+  "type": "posted-content",
+  "volume": null,
+  "issue": null,
+  "pages": null,
+  "publisher": "Elsevier BV",
+  "bibkey": "lucic-2024-optimal-option-market"
+ }
+]

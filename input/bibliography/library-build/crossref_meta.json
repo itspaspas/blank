@@ -1,0 +1,472 @@
+{
+ "1806.05849": {
+  "score": 1.0,
+  "doi": "10.1080/14697688.2020.1741670",
+  "type": "journal-article",
+  "container": "Quantitative Finance",
+  "year": 2020,
+  "authors": [
+   "Gao",
+   "Wang"
+  ]
+ },
+ "2003.05958": {
+  "score": 1.0,
+  "doi": "10.1137/20m1376054",
+  "type": "journal-article",
+  "container": "SIAM Journal on Financial Mathematics",
+  "year": 2021,
+  "authors": [
+   "Jusselin"
+  ]
+ },
+ "2109.15110": {
+  "score": 1.0,
+  "doi": "10.1007/s42786-024-00049-8",
+  "type": "journal-article",
+  "container": "Journal of Banking and Financial Technology",
+  "year": 2024,
+  "authors": [
+   "Kumar"
+  ]
+ },
+ "1907.01225": {
+  "score": 1.0,
+  "doi": "10.1111/mafi.12286",
+  "type": "journal-article",
+  "container": "Mathematical Finance",
+  "year": 2020,
+  "authors": [
+   "Bergault",
+   "Guéant"
+  ]
+ },
+ "1303.7177": null,
+ "1511.07773": {
+  "score": 1.0,
+  "doi": "10.1142/s2382626617500046",
+  "type": "journal-article",
+  "container": "Market Microstructure and Liquidity",
+  "year": 2016,
+  "authors": [
+   "Fermanian",
+   "Guéant",
+   "Pu"
+  ]
+ },
+ "2101.03086": null,
+ "1810.04383": {
+  "score": 1.0,
+  "doi": "10.1080/1350486x.2021.1949359",
+  "type": "journal-article",
+  "container": "Applied Mathematical Finance",
+  "year": 2021,
+  "authors": [
+   "Bergault",
+   "Evangelista",
+   "Guéant",
+   "Vieira"
+  ]
+ },
+ "1105.3115": {
+  "score": 1.0,
+  "doi": "10.1007/s11579-012-0087-0",
+  "type": "journal-article",
+  "container": "Mathematics and Financial Economics",
+  "year": 2012,
+  "authors": [
+   "Guéant",
+   "Lehalle",
+   "Fernandez-Tapia"
+  ]
+ },
+ "1610.00261": {
+  "score": 1.0,
+  "doi": "10.1142/s2382626617500095",
+  "type": "journal-article",
+  "container": "Market Microstructure and Liquidity",
+  "year": 2017,
+  "authors": [
+   "Lehalle",
+   "Mounjid"
+  ]
+ },
+ "1903.07222": {
+  "score": 1.0,
+  "doi": "10.1002/hf2.10050",
+  "type": "journal-article",
+  "container": "High Frequency",
+  "year": 2019,
+  "authors": [
+   "Law",
+   "Viens"
+  ]
+ },
+ "1605.01862": {
+  "score": 1.0,
+  "doi": "10.1080/1350486x.2017.1342552",
+  "type": "journal-article",
+  "container": "Applied Mathematical Finance",
+  "year": 2017,
+  "authors": [
+   "Guéant"
+  ]
+ },
+ "1106.5040": {
+  "score": 1.0,
+  "doi": "10.2139/ssrn.1871969",
+  "type": "posted-content",
+  "container": "",
+  "year": 2011,
+  "authors": [
+   "Guilbaud",
+   "Pham"
+  ]
+ },
+ "2202.07478": {
+  "score": 1.0,
+  "doi": "10.2139/ssrn.4308008",
+  "type": "journal-article",
+  "container": "SSRN Electronic Journal",
+  "year": 2022,
+  "authors": [
+   "Drissi"
+  ]
+ },
+ "1902.01157": {
+  "score": 1.0,
+  "doi": "10.2139/ssrn.3530446",
+  "type": "posted-content",
+  "container": "",
+  "year": 2020,
+  "authors": [
+   "Campi",
+   "Zabaljauregui"
+  ]
+ },
+ "1910.13205": {
+  "score": 1.0,
+  "doi": "10.1080/1350486x.2020.1714455",
+  "type": "journal-article",
+  "container": "Applied Mathematical Finance",
+  "year": 2019,
+  "authors": [
+   "Guéant",
+   "Manziuk"
+  ]
+ },
+ "1810.05884": {
+  "score": 1.0,
+  "doi": "10.1142/s2382626619500059",
+  "type": "journal-article",
+  "container": "Market Microstructure and Liquidity",
+  "year": 2018,
+  "authors": [
+   "Guéant",
+   "Pu"
+  ]
+ },
+ "1310.1756": {
+  "score": 1.0,
+  "doi": "10.1137/140976005",
+  "type": "journal-article",
+  "container": "SIAM Journal on Financial Mathematics",
+  "year": 2015,
+  "authors": [
+   "Fodra",
+   "Pham"
+  ]
+ },
+ "2112.02269": null,
+ "2106.06974": {
+  "score": 1.0,
+  "doi": "10.1111/mafi.12367",
+  "type": "journal-article",
+  "container": "Mathematical Finance",
+  "year": 2022,
+  "authors": [
+   "Barzykin",
+   "Bergault",
+   "Guéant"
+  ]
+ },
+ "2504.06717": null,
+ "2307.14129": null,
+ "2504.00846": null,
+ "2203.13053": {
+  "score": 1.0,
+  "doi": "10.1137/22m1486492",
+  "type": "journal-article",
+  "container": "SIAM Journal on Financial Mathematics",
+  "year": 2023,
+  "authors": [
+   "Baldacci",
+   "Bergault",
+   "Possamaï"
+  ]
+ },
+ "2212.10164": null,
+ "2505.12465": null,
+ "2507.05749": null,
+ "2409.02025": {
+  "score": 1.0,
+  "doi": "10.1137/24m1690497",
+  "type": "journal-article",
+  "container": "SIAM Journal on Financial Mathematics",
+  "year": 2026,
+  "authors": [
+   "Cao",
+   "Šiška",
+   "Szpruch",
+   "Treetanthiploet"
+  ]
+ },
+ "2405.11444": {
+  "score": 0.993,
+  "doi": "10.1137/23m1571058",
+  "type": "journal-article",
+  "container": "SIAM Journal on Financial Mathematics",
+  "year": 2024,
+  "authors": [
+   "Chávez-Casillas",
+   "Figueroa-López",
+   "Yu",
+   "Zhang"
+  ]
+ },
+ "2508.04344": null,
+ "2309.04216": null,
+ "2207.04100": null,
+ "2507.11294": null,
+ "2502.18625": null,
+ "2207.09951": null,
+ "2307.15599": {
+  "score": 1.0,
+  "doi": "10.1007/s00780-026-00585-9",
+  "type": "journal-article",
+  "container": "Finance and Stochastics",
+  "year": 2026,
+  "authors": [
+   "Pulido",
+   "Rosenbaum",
+   "Sfendourakis"
+  ]
+ },
+ "2407.17393": {
+  "score": 1.0,
+  "doi": "10.2139/ssrn.4904510",
+  "type": "posted-content",
+  "container": "",
+  "year": 2024,
+  "authors": [
+   "Boyce",
+   "Herdegen",
+   "Sánchez-Betancourt"
+  ]
+ },
+ "2405.03496": null,
+ "2506.18147": {
+  "score": 1.0,
+  "doi": "10.1371/journal.pone.0341369",
+  "type": "journal-article",
+  "container": "PLOS One",
+  "year": 2026,
+  "authors": [
+   "Marín Martínez",
+   "Ardanza-Trevijano",
+   "Sabio"
+  ]
+ },
+ "2501.03658": {
+  "score": 1.0,
+  "doi": "10.2139/ssrn.5085589",
+  "type": "posted-content",
+  "container": "",
+  "year": 2025,
+  "authors": [
+   "Barucci",
+   "Mathieu",
+   "Sánchez-Betancourt"
+  ]
+ },
+ "2510.26438": {
+  "score": 1.0,
+  "doi": "10.2139/ssrn.5353913",
+  "type": "posted-content",
+  "container": "",
+  "year": 2025,
+  "authors": [
+   "Jain",
+   "Firoozye",
+   "Kochems",
+   "Treleaven"
+  ]
+ },
+ "2601.23172": {
+  "score": 0.922,
+  "doi": "10.2139/ssrn.6155066",
+  "type": "posted-content",
+  "container": "",
+  "year": 2026,
+  "authors": [
+   "Muhle-Karbe",
+   "Ouazzani Chahdi",
+   "Rosenbaum",
+   "Szymanski"
+  ]
+ },
+ "2607.11328": {
+  "score": 0.912,
+  "doi": "10.2139/ssrn.7110039",
+  "type": "posted-content",
+  "container": "",
+  "year": 2026,
+  "authors": [
+   "Barzykin"
+  ]
+ },
+ "2508.20225": null,
+ "2508.16589": {
+  "score": 1.0,
+  "doi": "10.1145/3677052.3698695",
+  "type": "proceedings-article",
+  "container": "Proceedings of the 5th ACM International Conference on AI in Finance",
+  "year": 2024,
+  "authors": [
+   "Wang",
+   "Ventre",
+   "Polukarov"
+  ]
+ },
+ "2605.21707": null,
+ "2601.13421": {
+  "score": 1.0,
+  "doi": "10.2139/ssrn.6086686",
+  "type": "posted-content",
+  "container": "",
+  "year": 2026,
+  "authors": [
+   "Barzykin"
+  ]
+ },
+ "2605.30643": null,
+ "2608.29473": null,
+ "2604.20406": {
+  "score": 1.0,
+  "doi": "10.2139/ssrn.6627758",
+  "type": "posted-content",
+  "container": "",
+  "year": 2026,
+  "authors": [
+   "Barzykin",
+   "Ciceri"
+  ]
+ },
+ "2607.17991": null,
+ "2510.27334": null,
+ "2603.10569": {
+  "score": 0.948,
+  "doi": "10.2139/ssrn.6392138",
+  "type": "posted-content",
+  "container": "",
+  "year": 2026,
+  "authors": [
+   "Barzykin"
+  ]
+ },
+ "2603.07752": {
+  "score": 1.0,
+  "doi": "10.2139/ssrn.6372499",
+  "type": "posted-content",
+  "container": "",
+  "year": 2026,
+  "authors": [
+   "Barzykin"
+  ]
+ },
+ "2512.04603": {
+  "score": 1.0,
+  "doi": "10.2139/ssrn.5859484",
+  "type": "posted-content",
+  "container": "",
+  "year": 2025,
+  "authors": [
+   "Barzykin",
+   "Boyce",
+   "Neuman"
+  ]
+ },
+ "2606.05882": null,
+ "2609.11614": {
+  "score": 1.0,
+  "doi": "10.2139/ssrn.7468938",
+  "type": "posted-content",
+  "container": "",
+  "year": 2026,
+  "authors": [
+   "Moret",
+   "Lillo"
+  ]
+ },
+ "2608.02002": {
+  "score": 1.0,
+  "doi": "10.2139/ssrn.7224080",
+  "type": "posted-content",
+  "container": "",
+  "year": 2026,
+  "authors": [
+   "Barzykin"
+  ]
+ },
+ "2608.07690": {
+  "score": 1.0,
+  "doi": "10.2139/ssrn.7248284",
+  "type": "posted-content",
+  "container": "",
+  "year": 2026,
+  "authors": [
+   "Cotton"
+  ]
+ },
+ "2608.19151": null,
+ "2609.36631": null,
+ "2609.22785": null,
+ "2610.18158": null,
+ "2610.16524": null,
+ "cjr": {
+  "score": 1.0,
+  "doi": "10.2139/ssrn.1964781",
+  "type": "journal-article",
+  "container": "SSRN Electronic Journal",
+  "year": 2011,
+  "authors": [
+   "Cartea",
+   "Jaimungal",
+   "Ricci"
+  ]
+ },
+ "choi": {
+  "score": 1.0,
+  "doi": "10.1016/j.jedc.2021.104098",
+  "type": "journal-article",
+  "container": "Journal of Economic Dynamics and Control",
+  "year": 2021,
+  "authors": [
+   "Choi",
+   "Jang",
+   "Lee",
+   "Zheng"
+  ]
+ },
+ "martin": {
+  "score": 1.0,
+  "doi": "10.2139/ssrn.6451058",
+  "type": "posted-content",
+  "container": "",
+  "year": 2026,
+  "authors": [
+   "Martin",
+   "Tse"
+  ]
+ }
+}

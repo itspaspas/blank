@@ -1,0 +1,130 @@
+{
+ "skill": "acquire-sources",
+ "date": "2026-10-25",
+ "literaturguide": null,
+ "worklist_source": "proposal \u00a78 references missing from library (input/bibliography/library-inventory.md)",
+ "grade_scope": [
+  "A",
+  "B"
+ ],
+ "totals": {
+  "worklist": 11,
+  "downloaded": 1,
+  "already_present": 0,
+  "manual": 10,
+  "skipped": 0,
+  "preprint_candidates_staged": 3
+ },
+ "items": [
+  {
+   "bibkey": "avellaneda-2008-high-frequency-trading",
+   "grade": "A",
+   "doi": "10.1080/14697680701381228",
+   "resolved_url": null,
+   "url_source": "none",
+   "outcome": "manual",
+   "reason": "no_oa_url",
+   "saved_as": null
+  },
+  {
+   "bibkey": "bacry-2016-estimation-slowly-decreasing",
+   "grade": "A",
+   "doi": "10.1080/14697688.2015.1123287",
+   "resolved_url": "https://arxiv.org/pdf/1412.7096v1",
+   "url_source": "arxiv",
+   "outcome": "manual",
+   "reason": "preprint_only_pending_decision",
+   "saved_as": "preprint-candidates/bacry-2016-estimation-slowly-decreasing.pdf"
+  },
+  {
+   "bibkey": "bacry-2015-hawkes-processes-finance",
+   "grade": "A",
+   "doi": "10.1142/S2382626615500057",
+   "resolved_url": "https://arxiv.org/pdf/1502.04592v2",
+   "url_source": "arxiv",
+   "outcome": "manual",
+   "reason": "preprint_only_pending_decision",
+   "saved_as": "preprint-candidates/bacry-2015-hawkes-processes-finance.pdf"
+  },
+  {
+   "bibkey": "cartea-2015-algorithmic-high-frequency",
+   "grade": "A",
+   "doi": null,
+   "resolved_url": null,
+   "url_source": "none",
+   "outcome": "manual",
+   "reason": "no_oa_url",
+   "saved_as": null
+  },
+  {
+   "bibkey": "cheridito-2025-deep-learning-continuous",
+   "grade": "A",
+   "doi": "10.52202/085713-4482",
+   "resolved_url": "https://arxiv.org/pdf/2505.15602v3",
+   "url_source": "arxiv",
+   "outcome": "manual",
+   "reason": "preprint_only_pending_decision",
+   "saved_as": "preprint-candidates/cheridito-2025-deep-learning-continuous.pdf"
+  },
+  {
+   "bibkey": "hawkes-1971-spectra-self-exciting",
+   "grade": "A",
+   "doi": "10.1093/biomet/58.1.83",
+   "resolved_url": null,
+   "url_source": "none",
+   "outcome": "manual",
+   "reason": "no_oa_url",
+   "saved_as": null
+  },
+  {
+   "bibkey": "ho-1981-optimal-dealer-pricing",
+   "grade": "A",
+   "doi": "10.1016/0304-405X(81)90020-9",
+   "resolved_url": null,
+   "url_source": "none",
+   "outcome": "manual",
+   "reason": "no_oa_url",
+   "saved_as": null
+  },
+  {
+   "bibkey": "lai-2023-data-driven-deep",
+   "grade": "A",
+   "doi": "10.1080/14697688.2023.2186257",
+   "resolved_url": null,
+   "url_source": "none",
+   "outcome": "manual",
+   "reason": "no_oa_url",
+   "saved_as": null
+  },
+  {
+   "bibkey": "ogata-1981-lewis-simulation-method",
+   "grade": "B",
+   "doi": "10.1109/TIT.1981.1056305",
+   "resolved_url": null,
+   "url_source": "none",
+   "outcome": "manual",
+   "reason": "no_oa_url",
+   "saved_as": null
+  },
+  {
+   "bibkey": "schulman-2017-proximal-policy-optimization",
+   "grade": "B",
+   "doi": null,
+   "resolved_url": "https://arxiv.org/pdf/1707.06347v2",
+   "url_source": "arxiv",
+   "outcome": "downloaded",
+   "reason": null,
+   "saved_as": "schulman-2017-proximal-policy-optimization.pdf"
+  },
+  {
+   "bibkey": "tarditi-2026-hawkes-process-models",
+   "grade": "A",
+   "doi": null,
+   "resolved_url": "https://hdl.handle.net/10589/253302",
+   "url_source": "handle",
+   "outcome": "manual",
+   "reason": "http_4xx",
+   "saved_as": null
+  }
+ ]
+}

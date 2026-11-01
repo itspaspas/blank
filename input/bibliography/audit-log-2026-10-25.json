@@ -1,0 +1,88 @@
+{
+ "skill": "literature-review",
+ "date": "2026-10-25",
+ "plan_task": 6,
+ "question": "design Q6 + derivations D1, D2 of problem-anatomy",
+ "library_first": {
+  "tool": "scripts/bib-search.py",
+  "queries": [
+   "\"multi-asset\" AND hawkes | \"multivariate Hawkes\" AND \"market making\" | \"cross-excitation\" AND inventory | \"mutually exciting\" AND \"several assets\"",
+   "Riccati AND Hawkes | Riccati AND \"stochastic intensity\" | \"quadratic approximation\" AND Hawkes",
+   "\"optimal execution\" AND Hawkes | liquidation AND \"self-exciting\"",
+   "\"change of variables\" AND Hawkes | \"linear system\" AND \"self-exciting\""
+  ],
+  "result": "only owned core/B2-B3 works; no new owned source on the gap; bacry-2015 as backward-citation seed"
+ },
+ "scouts": [
+  {
+   "name": "A (direct gap)",
+   "databases": [
+    "OpenAlex",
+    "arXiv",
+    "Crossref",
+    "HAL API",
+    "web search"
+   ],
+   "forward_citations": {
+    "BEGV W2896192509": 20,
+    "BEGV arXiv W3124571631": 2,
+    "Jusselin W3011772245": 9,
+    "CJR2014 W3121712217": 197,
+    "GLFT W2120949767": 203,
+    "CJR2018 W2885740464": 34,
+    "Gasperov2022": 16,
+    "Kumar2024": 8,
+    "Barzykin/Martin-Tse/Jain/Acero": 0
+   },
+   "new_candidates": {
+    "A": 1,
+    "B": 9,
+    "C": 12
+   }
+  },
+  {
+   "name": "B (D1/D2 + adjacent fields)",
+   "databases": [
+    "OpenAlex (~35 queries)",
+    "arXiv (~15)",
+    "Crossref"
+   ],
+   "new_candidates": {
+    "A": 5,
+    "B": 17,
+    "C": 8
+   }
+  }
+ ],
+ "merged_after_dedup": {
+  "A": 7,
+  "B": 22,
+  "C": 17
+ },
+ "not_accessible": [
+  "Semantic Scholar (HTTP 429)",
+  "SSRN (bot-blocked)",
+  "HAL tel-02926102 (Jusselin thesis)",
+  "econstor/Frankfurt repository (HTML only)",
+  "TechRxiv (403)",
+  "SIAM Review CJR 2018 (paywall)"
+ ],
+ "verification_by_main_session": [
+  "Shen 2022 arXiv full text: 'non-local dependence on g' and 'remains an open question' found",
+  "Zarezade 2018 arXiv full text: 'matrix Riccati differential equation' (Lemma 10) found",
+  "Fujii 2015 arXiv abstract: multi-security BSRDE with generic order-flow processes confirmed",
+  "Acero 2026 p.5: cs=0.7 is the cross share; per-channel branching 0.12 self / 0.28 cross (scout's 0.7 = share parameter)",
+  "29 A+B metadata records verified via Crossref/arXiv (library-build/literature_ab.json)"
+ ],
+ "verdicts": {
+  "gap1_multi_asset_closed_form": "not refuted; sharpen wording (Fujii 2015, Shen 2022)",
+  "gap2_three_way_comparison": "not refuted",
+  "D1_fill_driven_linearisation": "not found; decisive lead Yuan 2026 (paywalled)",
+  "D2_lambda_dependent_riccati": "known in structure outside market making (Shen 2022)"
+ },
+ "outputs": [
+  "input/bibliography/literaturguide.md",
+  "library/references.bib (+29)",
+  "output/bibtex/references.bib (+29)"
+ ]
+}

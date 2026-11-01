@@ -1,0 +1,805 @@
+{
+ "records": {
+  "1806.05849": {
+   "arxiv": "1806.05849v3",
+   "title": "Optimal Market Making in the Presence of Latency",
+   "authors": [
+    "Xuefeng Gao",
+    "Yunhan Wang"
+   ],
+   "published": "2018-06-15",
+   "updated": "2020-03-17",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2003.05958": {
+   "arxiv": "2003.05958v2",
+   "title": "Optimal market making with persistent order flow",
+   "authors": [
+    "Paul Jusselin"
+   ],
+   "published": "2020-03-12",
+   "updated": "2020-10-26",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2109.15110": {
+   "arxiv": "2109.15110v1",
+   "title": "Deep Hawkes Process for High-Frequency Market Making",
+   "authors": [
+    "Pankaj Kumar"
+   ],
+   "published": "2021-09-30",
+   "updated": "2021-09-30",
+   "journal_ref": null,
+   "doi": null
+  },
+  "1907.01225": {
+   "arxiv": "1907.01225v5",
+   "title": "Size matters for OTC market makers: general results and dimensionality reduction techniques",
+   "authors": [
+    "Philippe Bergault",
+    "Olivier Guéant"
+   ],
+   "published": "2019-07-02",
+   "updated": "2022-09-21",
+   "journal_ref": null,
+   "doi": null
+  },
+  "1303.7177": {
+   "arxiv": "1303.7177v2",
+   "title": "High-frequency market-making for multi-dimensional Markov processes",
+   "authors": [
+    "Pietro Fodra",
+    "Mauricio Labadie"
+   ],
+   "published": "2013-03-28",
+   "updated": "2013-04-02",
+   "journal_ref": null,
+   "doi": null
+  },
+  "1511.07773": {
+   "arxiv": "1511.07773v4",
+   "title": "The behavior of dealers and clients on the European corporate bond market: the case of Multi-Dealer-to-Client platforms",
+   "authors": [
+    "Jean-David Fermanian",
+    "Olivier Guéant",
+    "Jiang Pu"
+   ],
+   "published": "2015-11-24",
+   "updated": "2017-03-22",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2101.03086": {
+   "arxiv": "2101.03086v1",
+   "title": "Market Making with Stochastic Liquidity Demand: Simultaneous Order Arrival and Price Change Forecasts",
+   "authors": [
+    "Agostino Capponi",
+    "José E. Figueroa-López",
+    "Chuyi Yu"
+   ],
+   "published": "2021-01-08",
+   "updated": "2021-01-08",
+   "journal_ref": null,
+   "doi": null
+  },
+  "1810.04383": {
+   "arxiv": "1810.04383v5",
+   "title": "Closed-form approximations in multi-asset market making",
+   "authors": [
+    "Philippe Bergault",
+    "David Evangelista",
+    "Olivier Guéant",
+    "Douglas Vieira"
+   ],
+   "published": "2018-10-10",
+   "updated": "2022-09-26",
+   "journal_ref": null,
+   "doi": null
+  },
+  "1105.3115": {
+   "arxiv": "1105.3115v5",
+   "title": "Dealing with the Inventory Risk. A solution to the market making problem",
+   "authors": [
+    "Olivier Guéant",
+    "Charles-Albert Lehalle",
+    "Joaquin Fernandez Tapia"
+   ],
+   "published": "2011-05-16",
+   "updated": "2012-08-03",
+   "journal_ref": null,
+   "doi": "10.1007/s11579-012-0087-0"
+  },
+  "1610.00261": {
+   "arxiv": "1610.00261v4",
+   "title": "Limit Order Strategic Placement with Adverse Selection Risk and the Role of Latency",
+   "authors": [
+    "Charles-Albert Lehalle",
+    "Othmane Mounjid"
+   ],
+   "published": "2016-10-02",
+   "updated": "2018-03-15",
+   "journal_ref": null,
+   "doi": null
+  },
+  "1903.07222": {
+   "arxiv": "1903.07222v4",
+   "title": "Market Making under a Weakly Consistent Limit Order Book Model",
+   "authors": [
+    "Baron Law",
+    "Frederi Viens"
+   ],
+   "published": "2019-03-18",
+   "updated": "2020-01-30",
+   "journal_ref": null,
+   "doi": null
+  },
+  "1605.01862": {
+   "arxiv": "1605.01862v5",
+   "title": "Optimal market making",
+   "authors": [
+    "Olivier Guéant"
+   ],
+   "published": "2016-05-06",
+   "updated": "2017-05-06",
+   "journal_ref": null,
+   "doi": null
+  },
+  "1106.5040": {
+   "arxiv": "1106.5040v1",
+   "title": "Optimal High Frequency Trading with limit and market orders",
+   "authors": [
+    "Fabien Guilbaud",
+    "Huyen Pham"
+   ],
+   "published": "2011-06-24",
+   "updated": "2011-06-24",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2202.07478": {
+   "arxiv": "2202.07478v3",
+   "title": "Solvability of Differential Riccati Equations and Applications to Algorithmic Trading with Signals",
+   "authors": [
+    "Fayçal Drissi"
+   ],
+   "published": "2022-02-15",
+   "updated": "2023-08-28",
+   "journal_ref": "Applied Mathematical Finance, 29:6, 457-493, DOI: 10.1080/1350486X.2023.2241130",
+   "doi": "10.1080/1350486X.2023.2241130"
+  },
+  "1902.01157": {
+   "arxiv": "1902.01157v3",
+   "title": "Optimal market making under partial information with general intensities",
+   "authors": [
+    "Diego Zabaljauregui",
+    "Luciano Campi"
+   ],
+   "published": "2019-02-04",
+   "updated": "2020-04-16",
+   "journal_ref": "Applied Mathematical Finance (2020)",
+   "doi": "10.1080/1350486X.2020.1758587"
+  },
+  "1910.13205": {
+   "arxiv": "1910.13205v1",
+   "title": "Deep reinforcement learning for market making in corporate bonds: beating the curse of dimensionality",
+   "authors": [
+    "Olivier Guéant",
+    "Iuliia Manziuk"
+   ],
+   "published": "2019-10-29",
+   "updated": "2019-10-29",
+   "journal_ref": null,
+   "doi": null
+  },
+  "1810.05884": {
+   "arxiv": "1810.05884v2",
+   "title": "Mid-price estimation for European corporate bonds: a particle filtering approach",
+   "authors": [
+    "Olivier Guéant",
+    "Jiang Pu"
+   ],
+   "published": "2018-10-13",
+   "updated": "2019-03-22",
+   "journal_ref": null,
+   "doi": null
+  },
+  "1310.1756": {
+   "arxiv": "1310.1756v2",
+   "title": "High frequency trading and asymptotics for small risk aversion in a Markov renewal model",
+   "authors": [
+    "Pietro Fodra",
+    "Huyên Pham"
+   ],
+   "published": "2013-10-07",
+   "updated": "2015-01-04",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2112.02269": {
+   "arxiv": "2112.02269v3",
+   "title": "Market making by an FX dealer: tiers, pricing ladders and hedging rates for optimal risk control",
+   "authors": [
+    "Alexander Barzykin",
+    "Philippe Bergault",
+    "Olivier Guéant"
+   ],
+   "published": "2021-12-04",
+   "updated": "2023-06-15",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2106.06974": {
+   "arxiv": "2106.06974v6",
+   "title": "Algorithmic market making in dealer markets with hedging and market impact",
+   "authors": [
+    "Alexander Barzykin",
+    "Philippe Bergault",
+    "Olivier Guéant"
+   ],
+   "published": "2021-06-13",
+   "updated": "2022-12-11",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2504.06717": {
+   "arxiv": "2504.06717v2",
+   "title": "Optimal Execution and Macroscopic Market Making",
+   "authors": [
+    "Ivan Guo",
+    "Shijia Jin"
+   ],
+   "published": "2025-04-09",
+   "updated": "2026-06-10",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2307.14129": {
+   "arxiv": "2307.14129v3",
+   "title": "Macroscopic Market Making",
+   "authors": [
+    "Ivan Guo",
+    "Shijia Jin",
+    "Kihun Nam"
+   ],
+   "published": "2023-07-26",
+   "updated": "2025-04-06",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2504.00846": {
+   "arxiv": "2504.00846v2",
+   "title": "The effect of latency on optimal order execution policy",
+   "authors": [
+    "Chutian Ma",
+    "Giacinto Paolo Saggese",
+    "Paul Smith"
+   ],
+   "published": "2025-04-01",
+   "updated": "2025-04-15",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2203.13053": {
+   "arxiv": "2203.13053v1",
+   "title": "A mean-field game of market-making against strategic traders",
+   "authors": [
+    "Bastien Baldacci",
+    "Philippe Bergault",
+    "Dylan Possamaï"
+   ],
+   "published": "2022-03-24",
+   "updated": "2022-03-24",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2212.10164": {
+   "arxiv": "2212.10164v1",
+   "title": "Multi-asset market making under the quadratic rough Heston",
+   "authors": [
+    "Mathieu Rosenbaum",
+    "Jianfei Zhang"
+   ],
+   "published": "2022-12-20",
+   "updated": "2022-12-20",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2505.12465": {
+   "arxiv": "2505.12465v1",
+   "title": "Resolving Latency and Inventory Risk in Market Making with Reinforcement Learning",
+   "authors": [
+    "Junzhe Jiang",
+    "Chang Yang",
+    "Xinrun Wang",
+    "Zhiming Li",
+    "Xiao Huang",
+    "Bo Li"
+   ],
+   "published": "2025-05-18",
+   "updated": "2025-05-18",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2507.05749": {
+   "arxiv": "2507.05749v2",
+   "title": "Event-Time Anchor Selection for Multi-Contract Quoting",
+   "authors": [
+    "Aditya Nittur Anantha",
+    "Shashi Jain",
+    "Shivam Goyal",
+    "Dhruv Misra"
+   ],
+   "published": "2025-07-08",
+   "updated": "2025-12-02",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2409.02025": {
+   "arxiv": "2409.02025v2",
+   "title": "Logarithmic regret in the ergodic Avellaneda-Stoikov market making model",
+   "authors": [
+    "Jialun Cao",
+    "David Šiška",
+    "Lukasz Szpruch",
+    "Tanut Treetanthiploet"
+   ],
+   "published": "2024-09-03",
+   "updated": "2025-07-14",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2405.11444": {
+   "arxiv": "2405.11444v1",
+   "title": "Adaptive Optimal Market Making Strategies with Inventory Liquidation Cos",
+   "authors": [
+    "Jonathan Chávez-Casillas",
+    "José E. Figueroa-López",
+    "Chuyi Yu",
+    "Yi Zhang"
+   ],
+   "published": "2024-05-19",
+   "updated": "2024-05-19",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2508.04344": {
+   "arxiv": "2508.04344v2",
+   "title": "Performative Market Making",
+   "authors": [
+    "Charalampos Kleitsikas",
+    "Stefanos Leonardos",
+    "Carmine Ventre"
+   ],
+   "published": "2025-08-06",
+   "updated": "2026-02-18",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2309.04216": {
+   "arxiv": "2309.04216v3",
+   "title": "Liquidity Dynamics in RFQ Markets and Impact on Pricing",
+   "authors": [
+    "Philippe Bergault",
+    "Olivier Guéant"
+   ],
+   "published": "2023-09-08",
+   "updated": "2024-06-19",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2207.04100": {
+   "arxiv": "2207.04100v4",
+   "title": "Dealing with multi-currency inventory risk in FX cash markets",
+   "authors": [
+    "Alexander Barzykin",
+    "Philippe Bergault",
+    "Olivier Guéant"
+   ],
+   "published": "2022-07-08",
+   "updated": "2023-10-30",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2507.11294": {
+   "arxiv": "2507.11294v1",
+   "title": "Markov approximation for controlled Hawkes Jump-Diffusions with general kernels",
+   "authors": [
+    "Mahmoud Khabou",
+    "Mehdi Talbi"
+   ],
+   "published": "2025-07-15",
+   "updated": "2025-07-15",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2502.18625": {
+   "arxiv": "2502.18625v2",
+   "title": "The Market Maker's Dilemma: Navigating the Fill Probability vs. Post-Fill Returns Trade-Off",
+   "authors": [
+    "Jakob Albers",
+    "Mihai Cucuringu",
+    "Sam Howison",
+    "Alexander Y. Shestopaloff"
+   ],
+   "published": "2025-02-25",
+   "updated": "2025-11-23",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2207.09951": {
+   "arxiv": "2207.09951v1",
+   "title": "Deep Reinforcement Learning for Market Making Under a Hawkes Process-Based Limit Order Book Model",
+   "authors": [
+    "Bruno Gašperov",
+    "Zvonko Kostanjčar"
+   ],
+   "published": "2022-07-20",
+   "updated": "2022-07-20",
+   "journal_ref": "IEEE Control Systems Letters 6 (2022): 2485-2490",
+   "doi": "10.1109/LCSYS.2022.3166446"
+  },
+  "2307.15599": {
+   "arxiv": "2307.15599v2",
+   "title": "Understanding the worst-kept secret of high-frequency trading",
+   "authors": [
+    "Sergio Pulido",
+    "Mathieu Rosenbaum",
+    "Emmanouil Sfendourakis"
+   ],
+   "published": "2023-07-28",
+   "updated": "2024-07-23",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2407.17393": {
+   "arxiv": "2407.17393v1",
+   "title": "Market Making with Exogenous Competition",
+   "authors": [
+    "Robert Boyce",
+    "Martin Herdegen",
+    "Leandro Sánchez-Betancourt"
+   ],
+   "published": "2024-07-24",
+   "updated": "2024-07-24",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2405.03496": {
+   "arxiv": "2405.03496v3",
+   "title": "Price-Aware Automated Market Makers: Models Beyond Brownian Prices and Static Liquidity",
+   "authors": [
+    "Philippe Bergault",
+    "Louis Bertucci",
+    "David Bouba",
+    "Olivier Guéant",
+    "Julien Guilbert"
+   ],
+   "published": "2024-05-06",
+   "updated": "2024-05-18",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2506.18147": {
+   "arxiv": "2506.18147v2",
+   "title": "Causal Interventions in Bond Multi-Dealer-to-Client Platforms",
+   "authors": [
+    "Paloma Marín",
+    "Sergio Ardanza-Trevijano",
+    "Javier Sabio"
+   ],
+   "published": "2025-06-22",
+   "updated": "2025-10-17",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2501.03658": {
+   "arxiv": "2501.03658v3",
+   "title": "Market Making with Fads, Informed, and Uninformed Traders",
+   "authors": [
+    "Emilio Barucci",
+    "Adrien Mathieu",
+    "Leandro Sánchez-Betancourt"
+   ],
+   "published": "2025-01-07",
+   "updated": "2026-06-24",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2510.26438": {
+   "arxiv": "2510.26438v2",
+   "title": "An Impulse Control Approach to Market Making in a Hawkes LOB Market",
+   "authors": [
+    "Konark Jain",
+    "Nick Firoozye",
+    "Jonathan Kochems",
+    "Philip Treleaven"
+   ],
+   "published": "2025-10-30",
+   "updated": "2025-10-31",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2601.23172": {
+   "arxiv": "2601.23172v2",
+   "title": "A unified theory of order flow, market impact, and volatility",
+   "authors": [
+    "Johannes Muhle-Karbe",
+    "Youssef Ouazzani Chahdi",
+    "Mathieu Rosenbaum",
+    "Grégoire Szymanski"
+   ],
+   "published": "2026-01-30",
+   "updated": "2026-02-02",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2607.11328": {
+   "arxiv": "2607.11328v2",
+   "title": "Strategic OTC market making with reputation feedback",
+   "authors": [
+    "Alexander Barzykin"
+   ],
+   "published": "2026-07-13",
+   "updated": "2026-07-15",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2508.20225": {
+   "arxiv": "2508.20225v6",
+   "title": "Optimal Quoting under Adverse Selection and Price Reading",
+   "authors": [
+    "Alexander Barzykin",
+    "Philippe Bergault",
+    "Olivier Guéant",
+    "Malo Lemmel"
+   ],
+   "published": "2025-08-27",
+   "updated": "2026-08-07",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2508.16589": {
+   "arxiv": "2508.16589v1",
+   "title": "ARL-Based Multi-Action Market Making with Hawkes Processes and Variable Volatility",
+   "authors": [
+    "Ziyi Wang",
+    "Carmine Ventre",
+    "Maria Polukarov"
+   ],
+   "published": "2025-08-07",
+   "updated": "2025-08-07",
+   "journal_ref": "ICAIF '24: Proceedings of the 5th ACM International Conference on AI in Finance, November 14--17, 2024, Brooklyn, NY, USA",
+   "doi": "10.1145/3677052.3698695"
+  },
+  "2605.21707": {
+   "arxiv": "2605.21707v1",
+   "title": "Zero-shot adaptation to order book dynamics",
+   "authors": [
+    "Arip Asadulaev"
+   ],
+   "published": "2026-05-20",
+   "updated": "2026-05-20",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2601.13421": {
+   "arxiv": "2601.13421v2",
+   "title": "Market Making and Transient Impact in Spot FX",
+   "authors": [
+    "Alexander Barzykin"
+   ],
+   "published": "2026-01-19",
+   "updated": "2026-06-05",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2605.30643": {
+   "arxiv": "2605.30643v1",
+   "title": "Quality-Adjusted Hit-Ratio Targeting in Corporate Bond Market Making",
+   "authors": [
+    "Bouna Niang"
+   ],
+   "published": "2026-05-28",
+   "updated": "2026-05-28",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2608.29473": {
+   "arxiv": "2608.29473v1",
+   "title": "Stochastic Optimal Control of Hawkes Jump-Diffusion Systems",
+   "authors": [
+    "Daria Sakhanda",
+    "Joshué Helí Ricalde-Guerrero"
+   ],
+   "published": "2026-08-30",
+   "updated": "2026-08-30",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2604.20406": {
+   "arxiv": "2604.20406v2",
+   "title": "Bond Market Making with a Hit-Ratio Target",
+   "authors": [
+    "Alexander Barzykin",
+    "Axel Ciceri"
+   ],
+   "published": "2026-04-22",
+   "updated": "2026-07-27",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2607.17991": {
+   "arxiv": "2607.17991v1",
+   "title": "Optimal Market Making in Prediction Markets",
+   "authors": [
+    "Dominik Feil",
+    "Max Nendel"
+   ],
+   "published": "2026-07-20",
+   "updated": "2026-07-20",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2510.27334": {
+   "arxiv": "2510.27334v1",
+   "title": "When AI Trading Agents Compete: Adverse Selection of Meta-Orders by Reinforcement Learning-Based Market Making",
+   "authors": [
+    "Ali Raza Jafree",
+    "Konark Jain",
+    "Nick Firoozye"
+   ],
+   "published": "2025-10-31",
+   "updated": "2025-10-31",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2603.10569": {
+   "arxiv": "2603.10569v1",
+   "title": "Win-score promotion gates in aggregator-routed RFQ markets: A two-tier stochastic control model",
+   "authors": [
+    "Alexander Barzykin"
+   ],
+   "published": "2026-03-11",
+   "updated": "2026-03-11",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2603.07752": {
+   "arxiv": "2603.07752v1",
+   "title": "Dynamic slippage control and rejection feedback in spot FX market making",
+   "authors": [
+    "Alexander Barzykin"
+   ],
+   "published": "2026-03-08",
+   "updated": "2026-03-08",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2512.04603": {
+   "arxiv": "2512.04603v1",
+   "title": "FX Market Making with Internal Liquidity",
+   "authors": [
+    "Alexander Barzykin",
+    "Robert Boyce",
+    "Eyal Neuman"
+   ],
+   "published": "2025-12-04",
+   "updated": "2025-12-04",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2606.05882": {
+   "arxiv": "2606.05882v2",
+   "title": "Market Informedness and Market-Maker Profitability: The Trade-Off Between Adverse Selection and Price Discovery",
+   "authors": [
+    "Konrad Ochędzan",
+    "Nino Antulov-Fantulin"
+   ],
+   "published": "2026-06-04",
+   "updated": "2026-06-17",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2609.11614": {
+   "arxiv": "2609.11614v1",
+   "title": "Deep Learning of Robust Market Making under Regime-Switching Order Flow",
+   "authors": [
+    "Felipe Moret",
+    "Fabrizio Lillo"
+   ],
+   "published": "2026-09-10",
+   "updated": "2026-09-10",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2608.02002": {
+   "arxiv": "2608.02002v2",
+   "title": "Hawkes-Driven OTC Market Making: Volterra-Riccati Approximation",
+   "authors": [
+    "Alexander Barzykin"
+   ],
+   "published": "2026-08-03",
+   "updated": "2026-08-25",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2608.07690": {
+   "arxiv": "2608.07690v1",
+   "title": "On a Simple Relationship Between Order Imbalance, Skew and Width in Over-The-Counter Trading",
+   "authors": [
+    "Peter Cotton"
+   ],
+   "published": "2026-08-07",
+   "updated": "2026-08-07",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2608.19151": {
+   "arxiv": "2608.19151v1",
+   "title": "Continuous-Time Reinforcement Learning for Controlled Hawkes Jump-Diffusions",
+   "authors": [
+    "Tomasz R. Bielecki",
+    "Thibaut Mastrolia",
+    "Haoze Yan"
+   ],
+   "published": "2026-08-19",
+   "updated": "2026-08-19",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2609.36631": {
+   "arxiv": "2609.36631v1",
+   "title": "A Spread-Gated Hawkes-Flocking Model for Best Bid and Ask Dynamics, with an Application to Limit Order Placement",
+   "authors": [
+    "Hyoeun Lee",
+    "Kiseop Lee"
+   ],
+   "published": "2026-09-29",
+   "updated": "2026-09-29",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2609.22785": {
+   "arxiv": "2609.22785v1",
+   "title": "Robust Market Making with Hawkes Order Flow and Price Impact via Adversarial Reinforcement Learning",
+   "authors": [
+    "Hao Yang",
+    "Zhenguo Xu"
+   ],
+   "published": "2026-09-19",
+   "updated": "2026-09-19",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2610.18158": {
+   "arxiv": "2610.18158v1",
+   "title": "When and How Order-Flow Interventions Work After Dealers Adapt",
+   "authors": [
+    "Guanghao Wu",
+    "Zhuo Cai",
+    "Zhidong Li",
+    "Shoujin Wang"
+   ],
+   "published": "2026-10-13",
+   "updated": "2026-10-13",
+   "journal_ref": null,
+   "doi": null
+  },
+  "2610.16524": {
+   "arxiv": "2610.16524v1",
+   "title": "Reinforcement Learning with Hawkes-Structured Networks for Market Making",
+   "authors": [
+    "Fernando Acero",
+    "Philipp Plank",
+    "Yufei Zhang"
+   ],
+   "published": "2026-10-12",
+   "updated": "2026-10-12",
+   "journal_ref": null,
+   "doi": null
+  }
+ },
+ "missing": []
+}

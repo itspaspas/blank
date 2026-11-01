@@ -1,0 +1,54 @@
+{
+ "skill": "acquire-sources",
+ "date": "2026-10-25",
+ "run": 2,
+ "worklist_source": "literaturguide.md A+B + user-added files",
+ "user_added_reconciled": [
+  "avellaneda-2008-high-frequency-trading",
+  "cartea-2018-algorithmic-trading-stochastic",
+  "hawkes-1971-spectra-self-exciting",
+  "ho-1981-optimal-dealer-pricing",
+  "lai-2023-data-driven-deep",
+  "tarditi-2026-hawkes-process-models",
+  "bathini-2026-dynamic-market-making",
+  "yuan-2026-dynamic-pricing-self"
+ ],
+ "user_added_rejected": [
+  {
+   "file": "Cartea-Jaimungal-Penalva-book.pdf",
+   "reason": "damaged PDF: invalid XRef / /Pages object; no page renders; moved to library/damaged/"
+  }
+ ],
+ "downloaded": [
+  "fujii-2015-optimal-position-management",
+  "shen-2022-mean-variance-portfolio",
+  "aitsahalia-2016-portfolio-choice-markets",
+  "zarezade-2018-steering-social-activity",
+  "alfonsi-2016-dynamic-optimal-execution",
+  "alfonsi-2016-extension-calibration-hawkes",
+  "fu-2022-portfolio-liquidation-games",
+  "ceci-2025-optimal-reinsurance-dynamic",
+  "abijaber-2021-linear-quadratic-control",
+  "abijaber-2021-integral-operator-riccati",
+  "abijaber-2025-optimal-liquidation-signals",
+  "zhang-2020-backward-stochastic-riccati",
+  "gennaro-2026-signature-methods-optimal",
+  "zimmer-2025-reinforcement-learning-based",
+  "chen-2026-optimal-trade-execution"
+ ],
+ "manual": [
+  "cartea-2015-algorithmic-high-frequency",
+  "ogata-1981-lewis-simulation-method",
+  "errais-2010-affine-point-processes",
+  "duffie-2000-transform-analysis-asset",
+  "bo-2019-credit-portfolio-selection",
+  "bo-2016-optimal-investment-credit",
+  "chehrazi-2019-dynamic-credit-collections",
+  "bensoussan-2024-stochastic-control-diffusions",
+  "branger-2014-partial-information-contagion",
+  "li-2002-indefinite-stochastic-lq",
+  "sharma-2026-structural-hawkes-ambiguity",
+  "lim-2026-liquidation-aware-market",
+  "lucic-2024-optimal-option-market"
+ ]
+}
