@@ -67,11 +67,11 @@ No market data in the pre-registered core (synthetic flow; Lai Table 2 used only
 **Files:** `<library>/pdf/*.pdf`, `input/bibliography/acquisition-todo.md`, `input/bibliography/memory-search-log.md`, `knowledge/sources/{barzykin-2026-hawkes-driven-otc,acero-2026-hawkes-structured-networks,jusselin-2021-persistent-order-flow,martin-2026-market-making-hawkes,khabou-2025-markov-approximation-hawkes,jain-2025-impulse-control-hawkes}.md`, `knowledge/synthesis/memory-regret-gap-verification.md`
 `pre-registered: false`
 
-- [ ] Run `acquire-sources` for the nine keys listed under Data Sources; reconcile manual downloads
-- [ ] Re-ingest Barzykin and Acero with focus "p-sweep / error theory": record Acero Thm 1 (p. 3, sqrt-L² bound, subcritical condition), Fig. 2 (kernel error, not reward, vs p), Barzykin Table 3 and §6 (8-exponential "power law", no exact anchor), p. 22 ("error theory open")
-- [ ] Re-read Jusselin, Martin–Tse, Khabou, Jain for any table of value or regret versus number of factors on a power-law/fractional kernel; add one line per source to the gap-verification page
-- [ ] Execute the fixed search protocol (blocks A–D, cut-off 2026-10-29; design §Cross-examination log); log query, database, date, hit count in `input/bibliography/memory-search-log.md`
-- [ ] **Stop rule:** if any source already reports regret/reward vs p on a power-law kernel with an exact or near-exact reference **and** a second-order law, mark the gap CLOSED, log it, and return to the user before Task 3
+- [x] Run `acquire-sources` for the nine keys listed under Data Sources; reconcile manual downloads — 2026-11-01: metadata resolved for all 9 (`lai-2021-data-driven-approach-option` → `lai-2021-data-driven-approach`); 0 downloaded because the container's network policy blocks arXiv/OpenAlex/Crossref; all 9 + 2 novelty follow-ups on the manual worklist (user decision: continue). Audit: `input/bibliography/acquisition-log-2026-11-01.json`
+- [x] Re-ingest Barzykin and Acero with focus "p-sweep / error theory": record Acero Thm 1 (p. 3, sqrt-L² bound, subcritical condition), Fig. 2 (kernel error, not reward, vs p), Barzykin Table 3 and §6 (8-exponential "power law", no exact anchor), p. 22 ("error theory open")
+- [x] Re-read Jusselin, Martin–Tse, Khabou, Jain for any table of value or regret versus number of factors on a power-law/fractional kernel; add one line per source to the gap-verification page — only Jusselin Fig. 4 (value of the lifted model vs n, not policy regret) comes close
+- [x] Execute the fixed search protocol (blocks A–D, cut-off 2026-10-29; design §Cross-examination log); log query, database, date, hit count in `input/bibliography/memory-search-log.md` — run 2026-11-01 via domain-restricted WebSearch (database APIs blocked; deviation logged); verdict provisional until re-run against the APIs
+- [x] **Stop rule:** — not triggered (2026-11-01; see [[memory-regret-gap-verification]]). if any source already reports regret/reward vs p on a power-law kernel with an exact or near-exact reference **and** a second-order law, mark the gap CLOSED, log it, and return to the user before Task 3
 
 ### Task 3: Tier 0 — analytic screen (no control problem)
 **Files:** `output/data-analysis/memory-regret/screen.py`, `output/data-analysis/memory-regret/results/screen.json`, `output/data-analysis/memory-regret/tests/test_screen.py`

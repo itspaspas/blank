@@ -2,12 +2,12 @@
 title: "Acero, Plank & Zhang 2026 — Reinforcement Learning with Hawkes-Structured Networks for Market Making"
 type: source
 created: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-01
 status: review
 author: llm
 bibkey: acero-2026-hawkes-structured-networks
 depth: deep
-tags: [market-making, hawkes, reinforcement-learning, markov-lift, regret-bound, power-law-kernel, multi-asset, model-free-rl, b1]
+tags: [market-making, hawkes, reinforcement-learning, markov-lift, regret-bound, power-law-kernel, multi-asset, model-free-rl, b1, p-sweep, kernel-truncation, error-theory]
 relations:
   - target: hawkes-process
     type: builds-on
@@ -28,7 +28,7 @@ relations:
   - target: intensity-forecast
     type: mentions
     confidence: inferred
-    because: "HSN features reconstruct the CURRENT intensity (lambda_hat = lambda_0 + sum_j h_j, pp. 5-6); no forward intensity forecast m_t(u) is formed. Connection drawn by this wiki."
+    because: "HSN features reconstruct the CURRENT intensity (lambda_hat = lambda_0 + sum_j h_j, pp. 5-6); no forward intensity forecast m_t(u) is formed. Connection drawn by this wiki. Merged 2026-11-01: the lifted state (h_1..h_p) of eq. (4) determines the p-factor forecast m_hat(u) - lambda_0 = sum_j h_j exp(-beta_j u) (past events only) — wiki inference, not stated (p. 3)."
   - target: avellaneda-stoikov-model
     type: builds-on
     confidence: extracted
@@ -45,6 +45,14 @@ relations:
     type: cites
     confidence: extracted
     because: "Same citation list on p. 1 («see, e.g., [3, 6, 7, 9, 14, 15, 22]»); [9] = BEGV 2021 closed-form multi-asset approximations. Not used further; no closed form is compared against."
+  - target: martin-2026-market-making-hawkes
+    type: cites
+    confidence: extracted
+    because: "Lemma 1 coupling: «we construct Hawkes processes as in [32, Appendix A] using Poisson random measures»; mismatch-count bound «Similarly to [32, Proposition A.1]» (p. 7); [32] = Martin–Tse 2026. Also the model-based counterpart criticised on p. 1."
+  - target: lai-2023-data-driven-deep
+    type: cites
+    confidence: extracted
+    because: "«[30] first estimates a power-law kernel and then solves the market-making problem by deep learning using the estimated intensity» (p. 1); [30] = Lai–Gao–Li 2023, criticised as sensitive to kernel misspecification (p. 1)."
 ---
 
 # Reinforcement Learning with Hawkes-Structured Networks for Market Making
@@ -91,22 +99,22 @@ $\gamma$ (inventory penalty vs. PPO discount $\gamma=0.99$, p. 4).
 |---|---|---|
 | ✓ F1 | Abstract; Keywords | 1 |
 | ✓ F1 | 1 Introduction (motivation, "Our work", three contributions) | 1–2 |
-| ✓ F1 | 2 Related Work — RL for market making; Markovian approximation of path-dependent problems in finance | 2 |
+| ✓ F1 F2 | 2 Related Work — RL for market making; Markovian approximation of path-dependent problems in finance | 2 |
 | ✓ F1 | 3 Main Theoretical Results (single-asset focus statement) | 2 |
-| ✓ F1 | 3.1 Hawkes-driven market-making problems (model, eq. (1)–(2), Example 1) | 2 |
-| ✓ F1 | 3.2 Regret with exponentially filtered policies | 2–3 |
-| ✓ F1 | 3.2.1 Kernel truncation (eq. (3), Proposition 1 + proof) | 3 |
-| ✓ F1 | 3.2.2 Regret of greedy strategies based on truncated kernels (Theorem 1) | 3 |
-| ✓ F1 | 3.2.3 Insights from Theorem 1 for policy design (eq. (4)) | 3 |
+| ✓ F1 F2 | 3.1 Hawkes-driven market-making problems (model, eq. (1)–(2), Example 1) | 2 |
+| ✓ F1 F2 | 3.2 Regret with exponentially filtered policies | 2–3 |
+| ✓ F1 F2 | 3.2.1 Kernel truncation (eq. (3), Proposition 1 + proof) | 3 |
+| ✓ F1 F2 | 3.2.2 Regret of greedy strategies based on truncated kernels (Theorem 1) | 3 |
+| ✓ F1 F2 | 3.2.3 Insights from Theorem 1 for policy design (eq. (4)) | 3 |
 | ✓ F1 | 4 End-to-End Learning via Hawkes-Structured Networks | 3 |
 | ✓ F1 | 4.1 Design of network architectures (eq. (5), Gaussian policy) | 3–4 |
-| ✓ F1 | 4.2 Advantages of HSN (E2E training, efficiency, interpretability) | 4 |
+| ✓ F1 F2 | 4.2 Advantages of HSN (E2E training, efficiency, interpretability) | 4 |
 | ✓ F1 | 5 Experiments (overview) | 4 |
-| ✓ F1 | 5.1 Methodology — environment, training, evaluation; architectures; environment configurations (1)–(4) | 4–5 |
-| ✓ F1 | 5.2 Results; 5.2.1 Trading performance (Table 1, Fig. 1) | 5–6 |
+| ✓ F1 F2 | 5.1 Methodology — environment, training, evaluation; architectures; environment configurations (1)–(4) | 4–5 |
+| ✓ F1 F2 | 5.2 Results; 5.2.1 Trading performance (Table 1, Fig. 1) | 5–6 |
 | ✓ F1 | 5.2.2 Intensity representation; linear-probe protocol (Table 2) | 5–6 |
-| ✓ F1 | 5.2.3 Implicit kernel learning (Fig. 2) | 6–7 |
-| ✓ F1 | 6 Proof of the Regret Bound (Lemma 1, eq. (6)–(7), proof of Theorem 1) | 7 |
+| ✓ F1 F2 | 5.2.3 Implicit kernel learning (Fig. 2) | 6–7 |
+| ✓ F1 F2 | 6 Proof of the Regret Bound (Lemma 1, eq. (6)–(7), proof of Theorem 1) | 7 |
 | ✓ F1 | 7 Conclusion (incl. future work on cross-channel filters) | 8 |
 | — | Acknowledgments; References [1]–[42] | 8 |
 
@@ -411,10 +419,16 @@ other non-Markovian control problems is named as further work (p. 8).
 - **No CARA utility**; only the risk-adjusted objective (2).
 - **No real data**: all experiments are simulated; no estimation on market data.
 - **No code release.**
+- *(Added 2026-11-01.)* **No reward, value or regret as a function of $p$**, and no numerically
+  evaluated regret at all ($C$ in Theorem 1 is never computed). No node rule beyond equal-width
+  cells in linear $\beta$, and no Gauss-type or log-spaced quadrature. No stated tail asymptotics for
+  the power law. No forecast-curve error. For these, see [[barzykin-2026-hawkes-driven-otc]] (a
+  forecast-curve policy) and Alfonsi–Kebaier / Bayer–Breneis (truncation rates; not on disk).
 
 > Note (2026-10-25, main session): the multi-asset run is labelled by a cross-excitation **share**
 > $c_s=0.7$ (p. 5); the per-channel branching values derived from it are self 0.12 and same-side
-> cross-asset 0.28, giving $ho=0.40$. Both numbers appear in the literature search; they measure
+> cross-asset 0.28, giving $
+ho=0.40$. Both numbers appear in the literature search; they measure
 > different things.
 
 ## Model card
@@ -497,12 +511,352 @@ truncation error. Its value for this focus is (i) a quantitative truncation-to-r
 template for the project's own approximation-error statements, and (ii) one multi-asset, same-side
 cross-excitation benchmark with neural baselines only.
 
+## Focus: p-sweep / error theory: how many exponential memory factors p a market maker needs under power-law or long-memory Hawkes flow — what the source reports about value, reward or regret as a function of p or of the kernel/forecast approximation error; which error or convergence theory it offers (rates, exponents, constants, conditions such as subcriticality); which functional of the flow history the optimal quote depends on; and which parameters and equations a reproduction needs. — 2026-11-01
+
+**Carries Kernthesen 8, 9, 10, 11, 12, 13, 14, 15, 19, 20, 22, 24, 25, 27.** Read for plan
+`input/ideas/lai2023-gaps-and-memory-plan.md`, Task 2 (record only). Theorem 1, Proposition 1, eq. (3) and
+Fig. 2 were checked on the page images (pp. 2, 3, 5, 6, 7), not only on the text layer.
+
+> **Erratum to Kernthesis 22 and the Model card (2026-11-01, checked on the p. 5 image):** the
+> true decay rates of setting (1) are $(\beta_1,\beta_2)=(5.0,\,0.3)$, not $(5.0,\,0.4)$. The value
+> 0.4 is the *initial* HSN decay $\beta_2$ of the exponential configuration, $(6.0,0.4)$ (p. 4). Left
+> unedited above, for the reviewer.
+
+### What this focus needs beyond the Kernthesen
+
+#### (1) The lift as code: Bernstein measure and the quadrature of eq. (3)
+
+**Bernstein representation**, eq. (1) (p. 2):
+$$g^c(t)=\int_0^\infty e^{-\beta t}\,\vartheta^c(d\beta),\qquad t>0,$$
+$\vartheta^c$ a measure on $[0,\infty)$, $g^c\in L^2([0,T])$, $\|g^c\|_{L^1([0,T])}<1$. Example 1 (p. 2)
+gives, for the shifted power law $g(t)=\gamma(t+\tau_0)^{-(1+\alpha)}$, the density
+$\vartheta(d\beta)=\gamma\beta^\alpha e^{-\beta\tau_0}\,d\beta/\Gamma(1+\alpha)$ (source symbols; $\gamma\equiv c$,
+$\alpha\equiv\varepsilon$ of § 5).
+
+**Truncation, eq. (3)** (p. 3), verbatim in content: for $0\le K_1<K_2<\infty$, $p\in\mathbb N$,
+$$\hat g^{K_1,K_2,p}(t):=\sum_{j=1}^{p}\vartheta\big(I_j^{K_1,K_2,p}\big)\,e^{-\beta_j^{K_1,K_2,p}t},\qquad
+I_j^{K_1,K_2,p}=\Big[K_1+\tfrac{(j-1)(K_2-K_1)}{p},\;K_1+\tfrac{j(K_2-K_1)}{p}\Big),\qquad \beta_j^{K_1,K_2,p}\in I_j^{K_1,K_2,p}.$$
+
+What exactly is chosen:
+
+- **Variable:** the decay rate $\beta$ itself, on a **linear** scale. **Not log-spaced.**
+- **Cells:** $p$ **equal-width** cells of width $h=(K_2-K_1)/p$ on $[K_1,K_2)$.
+- **Weights:** $w_j=\vartheta(I_j)$, the **exact Bernstein mass of the cell**. They are not
+  density × quadrature weight.
+- **Nodes:** any $\beta_j\in I_j$. The source leaves the choice open (left end, midpoint, …). The
+  bound holds for every choice, because $|e^{-\beta t}-e^{-\beta_jt}|\le t\,h$ on the cell.
+- **Type:** a composite rectangle ("histogram") rule following Alfonsi–Kebaier [2, Cor. 3.1].
+  It is **not Gauss–Legendre and not Gauss–Jacobi**. No Gauss-type rule appears anywhere in the
+  paper.
+- **Dropped mass:** everything below $K_1$ and above $K_2$ is dropped, through the tail kernels
+  $g_l^{K_1}(t):=\int_0^{K_1}e^{-\beta t}\vartheta(d\beta)$ and $g_u^{K_2}(t):=\int_{K_2}^\infty e^{-\beta t}\vartheta(d\beta)$
+  (p. 3). Their norms are $\varepsilon_l(K_1):=\|g_l^{K_1}\|_{L^2([0,T])}$ and
+  $\varepsilon_u(K_2):=\|g_u^{K_2}\|_{L^2([0,T])}$ (p. 3).
+- **No values given.** The paper gives no numerical $K_1$, $K_2$, node rule or $p$ for eq. (3), and
+  never computes the quadrature lift. Its experiments *learn* $\beta$ instead (HSN). The only
+  log-spacing in the paper is the Fig. 2 **initialisation** of the learned rates: "log-spaced over
+  $[0.1,10]$ ($\beta=1$ at $p=1$) with $\alpha_j=(n/p)\beta_j$" (p. 6).
+- **The $K_1=0$ trap:** $K_1=0$ is admitted ($0\le K_1$). The practical "last $L$ events"
+  truncation, however, needs $\beta_j\ge K_1>0$ (p. 3).
+
+*Closed forms for coding the shifted power law, $\vartheta(d\beta)=c\,\beta^{\varepsilon}e^{-\beta\tau_0}d\beta/\Gamma(1+\varepsilon)$.
+These are this wiki's derivation, not printed in the source; checked against numerical
+quadrature of eq. (1) on 2026-11-01:*
+$$\vartheta([a,b))=c\,\tau_0^{-(1+\varepsilon)}\big[P(1+\varepsilon,\tau_0 b)-P(1+\varepsilon,\tau_0 a)\big],\qquad \vartheta([0,\infty))=g(0)=c\,\tau_0^{-(1+\varepsilon)},$$
+$$g_l^{K_1}(t)=c\,(t+\tau_0)^{-(1+\varepsilon)}P\big(1+\varepsilon,K_1(t+\tau_0)\big),\qquad g_u^{K_2}(t)=c\,(t+\tau_0)^{-(1+\varepsilon)}Q\big(1+\varepsilon,K_2(t+\tau_0)\big),$$
+with $P$/$Q$ the regularised lower/upper incomplete gamma functions (`scipy.special.gammainc`/`gammaincc`).
+
+```python
+edges = K1 + (K2 - K1) * np.arange(p + 1) / p                    # eq. (3) cells
+w     = c * tau0**(-(1 + eps)) * (gammainc(1 + eps, tau0 * edges[1:])
+                                  - gammainc(1 + eps, tau0 * edges[:-1]))   # theta(I_j)
+beta  = 0.5 * (edges[:-1] + edges[1:])   # node: midpoint (source leaves the choice open)
+```
+
+*How tight is it at the source's own parameters? This wiki's computation (2026-11-01), not the
+source's:*
+
+- **Table 1 power-law kernels** ($\tau_0=1$, $T=0.5$, $n=0.7$; $\|g\|_{L^2[0,T]}=0.059$ for
+  ε = 0.15 and 0.185 for ε = 0.50).
+  - Prop. 1 bound, minimised over $(K_1,K_2)$: 0.024 / 0.088 at $p=2$; 0.0099 / 0.037 at $p=8$.
+  - Actual eq. (3) error at those cut-offs: 0.012 / 0.046 ($p=2$); 0.0025 / 0.010 ($p=8$).
+  - The bound falls roughly like $\log p/p$, because $K_2$ must grow like $\log p/\tau_0$ to kill
+    $\varepsilon_u$.
+- **Fig. 2 kernel frac015** ($\tau_0=0.1$, $T=10$, $n=0.85$; $\|g\|_{L^2[0,10]}=0.353$).
+  - The minimised Prop. 1 bound is 0.45 at $p=2$, 0.36 at $p=8$ and still 0.20 at $p=1024$. It is
+    at or above $\|g\|$ (the error of $\hat g\equiv0$) for every $p$ of the sweep, so it is
+    **vacuous** there.
+  - The best equal-width eq. (3) lift ($K_1=0$, midpoint nodes, $K_2$ optimised) has error 0.107
+    ($p=2$), 0.052 ($p=8$), 0.0099 ($p=64$) and 0.0014 ($p=256$).
+  - By contrast, NNLS amplitudes on log-spaced $\beta\in[0.1,100]$ give 0.021 ($p=4$), 0.0025
+    ($p=6$) and $2\cdot10^{-4}$ ($p=8$).
+  - **Consequence for Tier 0:** lift (i) as written here is the weakest lift by orders of magnitude
+    once $t_0\ll T$. A geometric/Gauss-type node set must come from elsewhere: Alfonsi–Kebaier [2]
+    and Bayer–Breneis [8] (both on the acquisition list, neither on disk).
+
+#### (2) Proposition 1 (p. 3, verbatim; checked on the page image)
+
+> "PROPOSITION 1. For all $g\in\{g^+,g^-\}$,
+> $\|g-\hat g^{K_1,K_2,p}\|_{L^2([0,T])}\le\varepsilon_l(K_1)+\varepsilon_u(K_2)+\dfrac{T^{3/2}(K_2-K_1)\vartheta([K_1,K_2))}{\sqrt3\,p}$,
+> where $\varepsilon_l(K_1):=\|g_l^{K_1}\|_{L^2([0,T])}$ and $\varepsilon_u(K_2):=\|g_u^{K_2}\|_{L^2([0,T])}$." (p. 3)
+
+- **Order in $p$:** the quadrature term is **$O(1/p)$** at fixed $(K_1,K_2)$, not $O(p^{-1/2})$.
+- **Conditions:** none beyond eq. (1). In particular, **no subcriticality** is needed for the
+  kernel bound.
+- **Proof:** the pointwise estimate is
+  $|\hat g^{K_1,K_2,p}(t)-g^{K_1,K_2}(t)|\le p^{-1}t(K_2-K_1)\vartheta([K_1,K_2))$ ("A similar argument
+  as that for [2, Corollary 3.1]"). Then $\|t\|_{L^2[0,T]}=T^{3/2}/\sqrt3$ (p. 3).
+- **Rates are not given.** The overall rate after choosing $K_1,K_2$ as functions of $p$ is never
+  stated. For the power law, the source only says "direct computation … yields the asymptotics of
+  $\varepsilon_l(K_1)$ as $K_1\to0$ and $\varepsilon_u(K_2)$ as $K_2\to\infty$" (p. 3), and gives no
+  formula.
+- *This wiki's asymptotics, from the closed forms above:*
+  - $\varepsilon_l(K_1)\approx c\,K_1^{1+\varepsilon}\sqrt T/\Gamma(2+\varepsilon)$ for $K_1(T+\tau_0)\ll1$.
+  - $\varepsilon_u(K_2)\approx \dfrac{c\,K_2^{\varepsilon-1/2}e^{-K_2\tau_0}}{\sqrt2\,\tau_0\,\Gamma(1+\varepsilon)}$.
+  - Hence the kernel error is $O(\log p/p)$, and the regret bound is $O((\log p/p)^{1/2})$.
+
+#### (3) Theorem 1 (p. 3, verbatim; checked on the page image) and its constant
+
+> "Specifically, let $\hat g=\hat g^\pm$ be the approximation of the true kernels $g=g^\pm$ given in
+> (3), and let $\hat\pi\in\arg\max_{\pi\in\Pi}J^{\hat g}(\pi)$ be an optimal policy of the associated
+> market-making problem. […] referred to as the *regret*, which is defined by
+> $\mathrm{Reg}(\hat\pi):=\sup_{\pi\in\Pi}J^g(\pi)-J^g(\hat\pi)$, where the performance is evaluated
+> using the true kernel $g$ in (1)." (p. 3)
+
+> "THEOREM 1. Let $0\le K_1<K_2<\infty$ and $p\in\mathbb N$. Suppose that there exists
+> $\rho^*\in[0,1)$ such that $\|\hat g^{\pm,K_1,K_2,p}\|_{L^1([0,T])}\le\rho^*$. Then
+> $$\mathrm{Reg}(\hat\pi)\le C\sum_{c\in\{+,-\}}\left(\varepsilon_l^c(K_1)+\varepsilon_u^c(K_2)+\frac{T^{3/2}(K_2-K_1)\vartheta^c([K_1,K_2))}{\sqrt3\,p}\right)^{1/2},$$
+> where $C>0$ depends on model parameters and $\rho^*$, but is independent of $K_1,K_2$ and $p$." (p. 3)
+
+- **Exponent: ½** on the Prop. 1 bound, i.e. the square root of the $L^2$ kernel error. The rate
+  in $p$ at fixed cut-offs is $p^{-1/2}$.
+- **Subcriticality, two conditions:**
+  - on the *truncated* kernel, on the horizon: $\|\hat g^\pm\|_{L^1([0,T])}\le\rho^*<1$;
+  - standing, on the true kernel: $\|g^c\|_{L^1([0,T])}<1$ (eq. (1)).
+  - Both are $L^1$ **on $[0,T]$**, not on $[0,\infty)$. Further standing assumptions: bounded
+    baseline $\lambda_0^c\le\Lambda_c$ and bounded spreads $[\underline\delta,\bar\delta]$ (p. 2).
+  - The truncated-kernel condition holds "whenever $\vartheta^\pm(\{0\})=0$, $K_1$ is sufficiently
+    small, and $K_2,p$ are sufficiently large" (p. 3).
+- **$C$ is not specified.** It can be traced through § 6 (p. 7):
+  $\mathrm{Reg}\le2\sup_\pi|J^g-J^{\hat g}|\le2\hat C\big(\sum_c\hat H^c\|g^c-\hat g^c\|_{L^2}\big)^{1/2}$, with
+  $\hat C=2\sqrt2\,\|\hat R^*\|_{L^2}T^{1/4}$ and
+  $\hat H^c=\Lambda_cT/\big((1-\|g^c\|_{L^1[0,T]})(1-\|\hat g^c\|_{L^1[0,T]})\big)$.
+  - *Inferred (this wiki):* $C=4\sqrt2\,T^{1/4}\|\hat R^*\|_{L^2}\max_c(\hat H^c)^{1/2}$.
+  - $\|\hat R^*\|_{L^2}$ (eq. (6)) needs second moments of $|x_0|+(S^*+\bar\delta)C_{M,\hat M}+Q^*S^*+(\kappa+\gamma T)(Q^*)^2$.
+    That means fourth moments of the Hawkes counts, which are bounded only abstractly (Leblanc
+    [31], Doob) and **never evaluated**.
+- **Nature of the bound:**
+  - It is a worst-case **upper** bound. The same estimate bounds the value error
+    $\sup_\pi|J^g(\pi)-J^{\hat g}(\pi)|$, and the only use of $\hat\pi$'s optimality is
+    $\mathrm{Reg}\le2\sup_\pi|\Delta J|$ (p. 7).
+  - There is no lower bound and no second-order (quadratic-in-error) expansion of regret.
+  - The square root comes from Cauchy–Schwarz on the coupling-mismatch event, eq. (7) (p. 7).
+
+#### (4) The experimental power-law kernels → project notation
+
+- **Table 1, setting (3)** (p. 5): "Single-asset, shifted power-law kernel (ε ∈ {0.50, 0.15}): the
+  two-channel setup of (1) with kernel $g(t)=c(t+\tau_0)^{-(1+\varepsilon)}$, $\tau_0=1$,
+  $c=n\varepsilon\tau_0^\varepsilon$, so $\|g\|_{L^1([0,\infty))}=n$, $n=0.7$, and ε = 0.15 matching
+  the empirical Hardiman–Bercot–Bouchaud regime [25]."
+  - Shared settings: $T=0.5$, $\lambda_0^+=1.0$, $\lambda_0^-=0.7$, fill $e^{-10\delta}$, $\gamma=0.10$,
+    $\kappa=0.001$, $|Q|\le5$, $\sigma=0.1$, $\epsilon^\pm=0$, $L=32$, spreads in $[0.005,0.30]$
+    (pp. 4–5).
+- **Fig. 2, kernel frac015** (p. 6): "a shifted power-law with ε = 0.15, $\tau_0$ = 0.1 (frac015). The
+  horizon T = 10 lets the long-memory intensity build up, and $\tau_0$ = 0.1 makes the power-law
+  kernel less regular near t = 0", at $n=0.85$.
+  - $c$ is not restated. Presumably it is again $n\varepsilon\tau_0^\varepsilon$ (inferred).
+- **Mapping to project notation (exact):**
+  $c(t+\tau_0)^{-(1+\varepsilon)}$ with $c=n\varepsilon\tau_0^\varepsilon$ ≡ $\rho(b-1)t_0^{b-1}(t+t_0)^{-b}$,
+  where $b=1+\varepsilon$, $\rho=n$, $t_0=\tau_0$, and the tail index is $\alpha_A=b-1=\varepsilon$.
+  - The experiments therefore use $b\in\{1.15,1.5\}$, $\rho=0.7$, $t_0=1=2T$ (Table 1) and
+    $b=1.15$, $\rho=0.85$, $t_0=0.1=0.01\,T$ (Fig. 2).
+  - The Fig. 2 ratio $t_0/T=0.01$ equals the plan's fixed $t_0=0.01T$.
+  - The source never writes "1.15": its $\beta$ always denotes a decay rate.
+- *Horizon mass, inferred:* $\|g\|_{L^1[0,T]}=n\big(1-(\tau_0/(T+\tau_0))^{\varepsilon}\big)$.
+  - Table 1: 0.041 for ε = 0.15 and 0.128 for ε = 0.50, i.e. **5.9 % / 18.4 % of $\rho$ inside the
+    episode**. The long tail sits almost entirely beyond $T$, and Theorem 1's subcriticality
+    condition is trivially met.
+  - Fig. 2: 0.425, i.e. 50 % of $\rho$.
+
+#### (5) Fig. 2: what is swept over p, and what is not
+
+- **The sweep** (p. 6): "We train HSN with $p\in\{1,2,3,4,6,8\}$ modes at $n=0.85$ on three
+  single-asset kernels". The kernels are exp1 ($\beta=1.0$), sumexp3 ($\beta=(0.2,1.0,5.0)$) and
+  frac015. $T=10$, $L=32$, 20 seeds per cell (caption, p. 7).
+- **The two quantities:** after training, each network is frozen and two quantities are measured
+  on 2,000 held-out samples. They are "the kernel approximation error
+  $\|g-\sum_j\alpha_je^{-\beta_jt}\|_{L^2([0,T])}$ and the intensity MSE against $\lambda^c(t)$. Both
+  use amplitudes $\alpha_j$ obtained by non-negative least squares (NNLS) on the frozen $\beta_j$
+  from PPO" (p. 6).
+- **Reward or regret is never reported as a function of $p$.**
+  - Fig. 2 contains only kernel error (a) and intensity MSE (b).
+  - The only reward table (Table 1) is at $p=2$. Table 2 ($p=3$) reports intensity MSE.
+  - No seed spread is shown in Fig. 2.
+  - Nonetheless § 5.2 bills Fig. 2 as "the quantitative kernel-approximation rate underlying the
+    regret guarantee" (p. 5).
+- **Values read off the figure.** These come from this wiki's pixel reading of the 400-dpi image of
+  p. 7, on log axes, ±≈0.1 decade. "≈" marks a point partly hidden under another marker.
+
+| $p$ | 1 | 2 | 3 | 4 | 6 | 8 |
+|---|---|---|---|---|---|---|
+| (a) $L^2$ kernel error, exp1 | 2.5e-3 | 1.8e-3 | 2.1e-3 | 6.5e-4 | ≈2e-4 | 2e-5 |
+| (a) sumexp3 | ≈0.3 | ≈0.15–0.2 | ≈0.05 | 1.6e-2 | 2.0e-4 | 1.5e-4 |
+| (a) frac015 | 0.18 | 0.13 | 0.065 | 0.045 | 0.043 | 0.046 |
+| (b) intensity MSE, exp1 | 1.7e-4 | 9e-5 | 1.1e-4 | 1.0e-5 | ≈5e-6 | ≈5e-6 |
+| (b) sumexp3 | ≈1 | ≈0.3–0.4 | ≈0.05–0.08 | 1.3e-3 | 5e-6 | 5e-6 |
+| (b) frac015 | 0.23 | 0.10 | 0.024 | 0.014 | 0.011 | 0.012 |
+
+- **The frac015 plateau:** ≈ 0.045, i.e. ≈ 13 % of $\|g\|_{L^2[0,10]}=0.353$ (norm computed by this
+  wiki).
+- **The source's reading:** the plateau is "consistent with the impossibility of representing a
+  fractional kernel exactly by a finite sum of exponentials" (p. 7).
+- *Inferred (this wiki):*
+  - Non-exactness implies a non-zero error at each $p$, not a plateau in $p$. NNLS on fixed
+    log-spaced $\beta\in[0.1,100]$ reaches $2\cdot10^{-4}$ at $p=8$.
+  - The plateau is therefore a property of the reward-trained decay rates, not a representability
+    limit. Two candidate causes: the initialisation reaches only up to $\beta=10$, while 43 % of
+    $\vartheta$'s mass lies above $\beta=10$ at $\tau_0=0.1$; and PPO's objective is reward, not
+    kernel fit.
+
+#### (6) Table 1 and the "tie" regime (pp. 5–6)
+
+> "On the two single-asset exponential controls, HSN is statistically tied with the strongest
+> baseline, MLP+frame-stack (0.0171 vs 0.0184 at $n$ = 0.75 and 0.0208 vs 0.0211 at $n$ = 0.90, both
+> $p$ > 0.05), while outperforming every other architecture (including the no-memory Simple MLP) by
+> 45–90%. This is consistent with the near-intensity-independence of the optimal spread in that
+> regime: the intensity representation carries little policy-value signal, so HSN matches the best
+> general-purpose baseline rather than exceeding it." (p. 5)
+
+- **Prediction stated in advance:** setting (1) already announces the tie: "The leading-order
+  optimal spread of [3, 15] depends only weakly on the intensity in this regime, so the theory
+  predicts little intensity-representation advantage; we retain it as a control." (p. 5)
+- **What the paper does not do:**
+  - No formula for this "leading-order optimal spread" is written, and no closed-form quote is run.
+  - The explanation is a qualitative appeal to AS/CJR.
+  - In both tie columns, HSN's mean is *below* MLP+frame-stack's.
+- **Internal inconsistency** (Table 1, checked on the page image): at $n=0.90$, HSN beats MLP+EMA by
+  only +17.5 % (0.0208 vs 0.0177) and Simple MLP by +44 % (0.0208 vs 0.0144). Both fall outside
+  the stated "45–90%".
+- **Reward at $p=2$, fractional columns** (HSN / Simple MLP / MLP+EMA / MLP+frame-stack):
+  - ε = 0.50: .0217 / .0125 / .0163 / .0206 (HSN +5.3 %**);
+  - ε = 0.15: .0216 / .0093 / .0127 / .0163 (HSN +32.5 %***).
+  - Simple MLP has SEM ±.0000 in every single-asset column, i.e. a seed-independent
+    (near-constant) policy.
+- ⚠ *Reproduction flag (this wiki's Monte-Carlo, 8,000 paths per cell, 2026-11-01). The setting
+  read as printed: empty history at $t=0$, $\lambda_0=(1.0,0.7)$, $T=0.5$, $\gamma=0.1$,
+  $\kappa=0.001$, $k=10$.*
+  - An episode then carries ≈ 0.9 (power law) to ≈ 1.2 (exponential) market orders in total.
+  - A **constant** quote $\delta\approx0.12$–$0.15$ earns ≈ 0.025 (power law) and ≈ 0.032–0.034
+    (exponential) per episode. That is above every single-asset entry of Table 1 (maximum 0.0217).
+  - Either the environment differs from its printed description (warm-up history, time unit or
+    reward scaling are not stated), or all RL policies are far from optimal.
+  - In both cases the Table 1 gaps cannot be read as "value of memory". The paper reports no
+    constant-quote, Poisson-optimal or HJB reference.
+
+#### (7) Which p the experiments use; which functional of the history the quote depends on
+
+- **$p$ in the experiments:**
+  - Main experiments: "HSN uses $p$ = 2 modes per channel." (p. 4)
+  - Table 2 uses $p=3$; Fig. 2 uses $p\in\{1,\dots,8\}$.
+- **Initialisations:**
+  - Exponential configuration: $(\beta_1,\beta_2)=(6.0,0.4)$, $(\alpha_1,\alpha_2)=(1.5,0.1)$, "an
+    initial branching ratio of 0.5 with neither decay rate coinciding with a true kernel mode"
+    (p. 4).
+  - "The remaining configurations initialize at $(\beta_1,\beta_2)=(5.0,0.3)$ and
+    $(\alpha_1,\alpha_2)=(0.2,0.4)$" (pp. 4–5).
+  - *Inferred:* the second initialisation coincides with the true decays $(5.0,0.3)$ of the
+    multi-asset kernel (and, via "the setup of (1)", of the regime-switching kernel).
+  - *Inferred:* it gives $\sum_j\alpha_j/\beta_j=1.37>1$, against p. 4's advice to stay "well below
+    the subcriticality threshold".
+- **The functional of the history:**
+  - *True problem:* policies are arbitrary measurable maps of the whole event history,
+    $\delta_t=\Phi^c_j((\tau_k,c_k)_{k\le j},Q_{\tau_j})$ (p. 2).
+  - *Truncated problem:* it "is Markovian in the augmented state $(\hat h^c_j)_{j=1,\dots,p}$ with
+    $\hat\alpha^c_j=\vartheta^c(I_j^{K_1,K_2,p})$ and $\hat\beta^c_j=\beta_j^{c,K_1,K_2,p}$, so its optimal
+    policy takes the processes (4) as feedback variables" (p. 3).
+  - The feedback is therefore the **vector** of $p$ exponentially weighted counts per side, plus
+    $(t,Q)$ (and $S$ in HSN). It is not a scalar intensity.
+  - The paper never characterises the optimal feedback map. It never states that the quote depends
+    only on $\lambda_t$ or on a forecast curve.
+  - *Inferred (this wiki):* the vector $(\hat h_j)$ is in one-to-one linear correspondence with the
+    $p$-factor forecast from past events, $\hat m_t(u)-\lambda_0=\sum_j\hat h_j(t)e^{-\hat\beta_ju}$. The
+    "current intensity" $\hat\lambda=\lambda_0+\sum_jh_j$ (p. 6) is its value at $u=0$. "Depends on
+    $h$" is thus the project's "depends on the $p$-factor forecast curve".
+
+### Bearing on the memory-regret gap (plan Task 2 stop rule)
+
+**Does this source already report regret/reward vs $p$ on a power-law kernel with an exact or
+near-exact reference AND a second-order regret law? — No.**
+
+1. **No reward or regret vs $p$.** Reward exists only at $p=2$ (Table 1, p. 6). The $p$-sweep
+   (Fig. 2, pp. 6–7) measures kernel $L^2$ error and intensity MSE only.
+2. **No exact or near-exact reference.**
+   - No HJB is solved and no optimum, closed form or constant quote is computed.
+   - All six baselines are neural (p. 5).
+   - "Regret" exists only as the theoretical object of Theorem 1 (p. 3) and is never evaluated
+     numerically.
+3. **No second-order law.**
+   - Theorem 1 is a worst-case **upper** bound $\propto(\text{kernel }L^2\text{ error})^{1/2}$ with
+     unspecified $C$ (pp. 3, 7). It is first-order-type (it also bounds the value error), not a
+     quadratic law.
+   - At the Fig. 2 parameters it is vacuous for $p\le8$ (this wiki's computation, item 1).
+4. **A power-law truth is present, but weakly loaded.** The kernel is $b=1.15$ ↔ ε = 0.15. In
+   Table 1, however, only 5.9 % of the kernel mass falls inside the episode (inferred, item 4).
+   The reward ranking there is not a memory-regret measurement (reproduction flag, item 6).
+
+**Gap status from this source: OPEN.** This verdict feeds [[memory-regret-gap-verification]]. What
+the project takes from it:
+
+- eq. (3) as the baseline lift (i), which proves weak for $t_0\ll T$;
+- the $\sqrt{\cdot}$ bound as the worst-case benchmark that H1's second-order law must sharpen;
+- the "tie" regime as one documented instance of "memory irrelevant", explained only
+  qualitatively;
+- Fig. 2's frac015 setting ($b=1.15$, $t_0/T=0.01$) as the closest parameter match to the plan's
+  grid.
+
+### Direct quotes (for the draft)
+
+> "The bound in Proposition 1 specializes to explicit rates for concrete kernels. The mixture-of-exponentials approximation (3) is exact for the kernel of the same type in Example 1 once $K_1$ is sufficiently small and $K_2, p$ sufficiently large; for the shifted power-law kernel, direct computation using the corresponding measure $\vartheta$ yields the asymptotics of $\varepsilon_l(K_1)$ as $K_1\to0$ and $\varepsilon_u(K_2)$ as $K_2\to\infty$." (p. 3)
+
+> "where $C > 0$ depends on model parameters and $\rho^*$, but is independent of $K_1, K_2$ and $p$." (p. 3)
+
+> "Therefore, the policy learned by model-free RL can achieve performance at least comparable to these greedy policies, which, according to Theorem 1, become nearly optimal as $p$ increases for a large family of kernels." (p. 4)
+
+> "For sumexp3 the errors drop sharply and floor at $p \ge 6$, once HSN's modes cover the three true decay rates. For frac015 the errors decay initially and plateau over $p\in\{4, 6, 8\}$ at a larger residual than in the exponential cases, consistent with the impossibility of representing a fractional kernel exactly by a finite sum of exponentials." (p. 7)
+
+> "Note that $\sup_{\pi\in\Pi}J^g(\pi)-J^g(\hat\pi)\le 2\sup_{\pi\in\Pi}|J^g(\pi)-J^{\hat g}(\pi)|$. Combining the above with Proposition 1 and Lemma 1 yields the desired result." (p. 7)
+
+### Examples & illustrations (for later drafting)
+
+- **sumexp3:** a 3-mode truth needs $p\ge6$ learned modes before the kernel error floors near
+  $10^{-4}$. Reward-trained filters do not find the true rates with $p=3$ (Fig. 2, p. 7).
+- **frac015 plateau:** ≈ 0.045 $L^2$ error at $p=4$–$8$ (Fig. 2, p. 7), against this wiki's
+  $2\cdot10^{-4}$ for NNLS on log-spaced rates. This is the concrete case for "node placement
+  matters more than $p$".
+- **The exponential "tie"** (Table 1, p. 5), as the source's own instance of a regime where memory
+  has no policy value.
+
+### Boundary of this focus
+
+- **For the p-question:** this source supplies a kernel-level error theory (Prop. 1, $O(1/p)$ at
+  fixed cut-offs) and a worst-case $\sqrt{\cdot}$ transfer to regret (Thm 1).
+- **What it does not supply:**
+  - any measured regret;
+  - any reward-vs-$p$ curve;
+  - any statement about forecast-curve error $\Delta m$;
+  - any node rule better than equal-width cells.
+- **Where to look instead:** for the forecast-curve policy with an exact one-exponential anchor, see
+  [[barzykin-2026-hawkes-driven-otc]]. For the Markov-approximation HJB that Lemma 1 borrows from,
+  see [[martin-2026-market-making-hawkes]].
+
 ## Mentioned entities
 
 - Models: [[avellaneda-stoikov-model]], [[cartea-jaimungal-ricci-model]], [[glft-2013-model]], [[begv-2021-model]]
 - Concepts: [[hawkes-process]], [[markov-lift]], [[regret]], [[branching-matrix]], [[intensity-forecast]]
 - Not used by the source but contrasted on this page: [[matrix-riccati-equation]], [[volterra-riccati]], [[hamiltonian-quadratic-approximation]], [[shadow-price]]
 - Works cited (prose only): `lai-2023-data-driven-deep`, `jain-2025-impulse-control-hawkes`, `gasperov-2022-deep-reinforcement-learning`, `gueant-2019-deep-reinforcement-learning`, `cao-2026-logarithmic-regret-ergodic`, `barzykin-2025-fx-market-making`, `bacry-2015-hawkes-processes-finance`, `cartea-2015-algorithmic-high-frequency`, `schulman-2017-proximal-policy-optimization`
+- Works cited, now with wiki pages (added 2026-11-01): [[lai-2023-data-driven-deep]] (ref. [30]), [[martin-2026-market-making-hawkes]] (ref. [32])
+- Truncation literature cited (prose only, not on disk): Alfonsi–Kebaier 2024 (ref. [2]), Bayer–Breneis 2023 (ref. [8]), Leblanc 2024 (ref. [31])
 
 ## Connections
 
@@ -511,3 +865,5 @@ cross-excitation benchmark with neural baselines only.
 - Mentions: [[branching-matrix]] (spectral radius of the multi-asset experiment, p. 5); [[intensity-forecast]] (current-intensity reconstruction only; inferred link).
 - Draws heavily on [[martin-2026-market-making-hawkes]] (ref. [32]): Lemma 1 follows its Appendix A coupling and Proposition A.1 (p. 7), and it is the model-based counterpart criticised on p. 1. (No typed relation yet: page created in the same batch.)
 - Contrast (inferred, not cited by the source): [[barzykin-2026-hawkes-driven-otc]] and [[bergault-2024-price-aware-automated]] pursue model-based / closure-type solutions where this paper goes model-free.
+- (Added 2026-11-01.) Typed `cites` relations are now written for [[martin-2026-market-making-hawkes]] (Lemma 1 coupling, p. 7) and [[lai-2023-data-driven-deep]] (power-law estimate-then-control, p. 1).
+- Under the p-sweep focus, this page is the worst-case kernel-error → regret counterpart of the forecast-curve policy in [[barzykin-2026-hawkes-driven-otc]] (inferred, not cited by the source). For Barzykin's side of this, see the plan's design (§ Re-evaluation), which was not re-checked here.

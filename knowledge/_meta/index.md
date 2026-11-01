@@ -83,3 +83,4 @@ As of: 2026-10-25 · Phase 1: core done; Task 8 (wider library) in progress, wav
 ## Synthesis
 
 - [[problem-anatomy]]: Q1–Q3. Why the closed forms close, what Hawkes adds, and where the closure breaks depending on who excites the flow (draft, first pass)
+- [[memory-regret-gap-verification]]: plan `lai2023-gaps-and-memory` Task 2. Is the memory-regret gap open? Verdict: (1) and (3) open; (2) narrowed (execution, Abi Jaber et al. 2025; Jusselin Fig. 4), open for Hawkes market making; stop rule not triggered (draft)

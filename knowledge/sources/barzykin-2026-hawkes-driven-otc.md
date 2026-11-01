@@ -2,7 +2,7 @@
 title: "Barzykin 2026 — Hawkes-Driven OTC Market Making: Volterra–Riccati Approximation"
 type: source
 created: 2026-10-25
-updated: 2026-10-25
+updated: 2026-11-01
 status: review
 author: llm
 bibkey: barzykin-2026-hawkes-driven-otc
@@ -61,6 +61,14 @@ relations:
     type: mentions
     confidence: ambiguous
     because: "Source cites Cartea, Jaimungal & Ricci 2018 (SIAM Review, «mutually exciting market-order and book-shape models», p. 2), not the 2014 paper the entity page describes; same authors, related model family."
+  - target: jusselin-2021-persistent-order-flow
+    type: cites
+    confidence: extracted
+    because: "«The closest market-making reference is Jusselin (2021), who ... proves existence and uniqueness of a viscosity solution to the associated HJB equation, and develops a consistent numerical approximation» (p. 2); the source offers no error theory of its own (p. 22)."
+  - target: martin-2026-market-making-hawkes
+    type: cites
+    confidence: extracted
+    because: "«Martin and Tse (2026) use a Markovian approximation of Hawkes kernels via Mercer's expansion and solve the resulting high-dimensional HJB with a PINN» (p. 2)."
 ---
 
 # Hawkes-Driven OTC Market Making: Volterra–Riccati Approximation
@@ -109,16 +117,16 @@ follow v2. The paper has **no appendices**: pp. 23–24 are the references.
 | ✓ F1 | 1 Introduction (Poisson vs Hawkes, non-causal reading of Hawkes, Jusselin 2021, related work, LQ-Volterra precedent) | 1–3 |
 | ✓ F1 | 2 Empirical motivation: persistent RFQ activity (activity time, Table 1, Fig. 1) | 3–5 |
 | ✓ F1 | 3.1 Request flow and dealer objective (eqs. 6–14) | 5–7 |
-| ✓ F1 | 3.2 Path-dependent dynamic program and limits of exact lifting (eqs. 15–18) | 7–8 |
-| ✓ F1 | 4.1 Conditional Volterra forecast (eqs. 19–22) | 8–9 |
-| ✓ F1 | 4.2 Mean Volterra–Riccati approximation (eqs. 23–32) | 9–10 |
-| ✓ F1 | 4.3 Noise-aware second-order correction (eqs. 33–39) | 10–11 |
-| ✓ F1 | 4.4 State-feedback stochastic Volterra–Riccati approximation (eqs. 40–44, Fig. 2) | 11–13 |
-| ✓ F1 | 5 Exponential Hawkes validation benchmark (eqs. 45–49, Table 2) | 12–14 |
-| ✓ F1 | 5.1 Numerical results (eq. 50, Fig. 3, Table 3, Fig. 4) | 14–17 |
-| ✓ F1 | 6 Power-law RFQ memory and endogenous OTC impact; 6.1 Linearized RFQ-information impact (eqs. 51–54) | 17–18 |
-| ✓ F1 | Numerical experiment (unnumbered; power-law mixture, Figs. 5–7) | 18–21 |
-| ✓ F1 | Concluding remarks (unnumbered) | 21–22 |
+| ✓ F1 F2 | 3.2 Path-dependent dynamic program and limits of exact lifting (eqs. 15–18) | 7–8 |
+| ✓ F1 F2 | 4.1 Conditional Volterra forecast (eqs. 19–22) | 8–9 |
+| ✓ F1 F2 | 4.2 Mean Volterra–Riccati approximation (eqs. 23–32) | 9–10 |
+| ✓ F1 F2 | 4.3 Noise-aware second-order correction (eqs. 33–39) | 10–11 |
+| ✓ F1 F2 | 4.4 State-feedback stochastic Volterra–Riccati approximation (eqs. 40–44, Fig. 2) | 11–13 |
+| ✓ F1 F2 | 5 Exponential Hawkes validation benchmark (eqs. 45–49, Table 2) | 12–14 |
+| ✓ F1 F2 | 5.1 Numerical results (eq. 50, Fig. 3, Table 3, Fig. 4) | 14–17 |
+| ✓ F1 F2 | 6 Power-law RFQ memory and endogenous OTC impact; 6.1 Linearized RFQ-information impact (eqs. 51–54) | 17–18 |
+| ✓ F1 F2 | Numerical experiment (unnumbered; power-law mixture, Figs. 5–7) | 18–21 |
+| ✓ F1 F2 | Concluding remarks (unnumbered) | 21–22 |
 | — | Acknowledgment, References | 23–24 |
 
 ## Kernthesen
@@ -411,6 +419,22 @@ low-dimensional and interpretable quote rule» rather than approximating the ful
 solved by PINN; [[bergault-2024-price-aware-automated]] for the point that «when order-flow states
 jump together with inventory, exact dynamic programming becomes high-dimensional» (p. 2).
 
+### 31. ⭐ A finite exponential mixture with power-weighted, log-spaced decay rates imitates a power law only over an intermediate range; kernel, forecast grid and simulation step are three separate discretisations (pp. 18–20)
+
+*Added 2026-11-01 (second focus pass).* The long-memory kernel of §6.2 is built as
+$\Phi(u)=g_N(u)\mathcal B$, $g_N(u)=\sum_{n=1}^Nw_n\beta_ne^{-\beta_nu}$, $\sum_nw_n=1$, so that
+$\mathcal B$ is the kernel-mass matrix (p. 18), with $\beta_n$ log-spaced and
+$w_n=\beta_n^{-\nu_{\rm mix}}/\sum_{\ell}\beta_\ell^{-\nu_{\rm mix}}$ (p. 19). On a log grid the sum
+approximates $C\int\beta^{-\nu_{\rm mix}}e^{-\beta u}d\beta\propto u^{-(1-\nu_{\rm mix})}$: «This
+construction allocates more mass to slower factors and makes the finite mixture behave like a
+slowly decaying power law over the relevant intraday range» (p. 19). The author bounds the claim
+himself: «Since the mixture is finite, the power-law behaviour should be read as an
+intermediate-range approximation: the fastest exponential creates a short-time cut-off and the
+slowest exponential eventually dominates at very long lags» (p. 19). He keeps three numerical
+resolutions apart — the forecast grid $N_f=12$ «is distinct from both the Monte Carlo time step
+∆t and the N = 8 exponential factors used to represent the Hawkes kernel» (p. 20) — but reports
+no accuracy figure for any of them, and no result for another $N$.
+
 ## Figures and tables
 
 - Table 1 (p. 4): Hawkes estimates per FX pair ($\eta$, $w_1,w_{10},w_{60}$).
@@ -443,6 +467,26 @@ No figures extracted to `knowledge/assets/` in this pass (write scope limited to
 - **Theory of approximation error.** No bounds or convergence results (p. 22).
 - **Price dynamics coupled to flow.** Mid-price is Brownian and independent of RFQs (eq. 6).
 - **Signed empirical flow.** Data are two-way activity; no signed kernel is estimated (p. 5).
+- **The number of memory factors as a variable** *(added 2026-11-01)*. One exponential in §5, eight
+  fixed in §6.2; no kernel-, forecast- or value-error is reported against the number of factors
+  (pp. 13, 18–20). A regret bound in the number of factors via the kernel $L^2$ error is
+  [[acero-2026-hawkes-structured-networks]]'s subject (Thm. 1); value convergence under kernel
+  $L^1$ error, without a rate in the number of exponentials, is
+  [[khabou-2025-markov-approximation-hawkes]]'s.
+
+## Model card
+
+| Field | Theory (§§3–4) | §5 exponential benchmark | §6.2 power-law-like experiment |
+|---|---|---|---|
+| Assets | 1 (types = side × size bucket) | 1, unit size $z=1$ | 1, sizes $\{1,2,5\}$ |
+| Kernel | general matrix kernel $\Phi$, eq. (7): exponential, sum-of-exp, power-law-like, cross-exciting, side-asymmetric | one exponential, $\alpha e^{-\beta u}$ (eq. 45) | 8-exponential mixture $g_N(u)\mathcal B$, $\beta_n$ log-spaced on $[2,2500]$, $w_n\propto\beta_n^{-0.65}$ (pp. 18–19) |
+| Excitation | self, cross-side, cross-size all allowed | common-mode ($\alpha_b=\alpha_a=\alpha$, one shared memory) or directional (bid self-excitation only) | self 0.55 + cross-side 0.05 via $\mathcal B$, $r(\mathcal B)=0.60$ |
+| Who excites the flow | all requests (RFQs), not the dealer's fills (p. 6) | same; memory jumps «irrespective of whether the dealer wins the request» (p. 13) | same |
+| Objective | risk-adjusted, eq. (14); $\kappa=\tfrac12\gamma\sigma^2$, $\ell(q)=\kappa_Tq^2$ | $\kappa=\kappa_T=0.2$ | $\kappa=2.0$, $\kappa_T=0.01$ |
+| Fill model | win probability $f_k(\delta)$ with conditions (9); sigmoid in the numerics | $f(\delta)=\{1+\exp(\delta-1.2)\}^{-1}$ | $f(\delta)=\{1+\exp(3(\delta-1))\}^{-1}$ |
+| Solution method | Volterra–Riccati hierarchy: forecast (20)–(22) → BEGV-quadratic scalar Riccati (29)–(31) → exact optimizer (32); receding horizon; levels 2–3 add (38), (42)–(44) | exact lifted HJB (46) on a $(q,x)$ grid; Poisson 1-D HJB (50); VR levels 1–3 | state-feedback VR only; «we do not solve a lifted HJB in the exponential factors» (p. 19) |
+| Benchmark | n/a — no error theory (p. 22) | exact lifted HJB (46) | Poisson HJB calibrated to $\bar\lambda^b=\bar\lambda^a=388$/day only |
+| Reported regret / gap | n/a | Table 3 relative regret (benign / near-critical / directional): state-feedback VR 0.080 / 0.083 / 0.170 %; mean VR 0.182 / 0.884 / 2.498 %; Poisson 6.138 / 12.742 / 27.312 % | no regret; relative P&L-std reduction vs Poisson ≈ 3 % → 19 % as the burst grows 0 → 100 RFQs (Fig. 7, read off the plot) |
 
 <!-- ═══ FOKUS ═══ -->
 
@@ -515,6 +559,357 @@ is the project's inference from the type-indexed structure, not a claim of the s
 numbers exist only for the one-factor exponential benchmark with unit size; the power-law
 experiment reports risk reduction against Poisson, not regret against an optimum.
 
+## Focus: p-sweep / error theory: how many exponential memory factors p a market maker needs under power-law or long-memory Hawkes flow — what the source reports about value, reward or regret as a function of p or of the kernel/forecast approximation error; which error or convergence theory it offers (rates, exponents, constants, conditions such as subcriticality); which functional of the flow history the optimal quote depends on; and which parameters and equations a reproduction needs. — 2026-11-01
+
+**Carries Kernthesen 9, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 24, 25, 26, 28, 31.**
+
+Read for `input/ideas/lai2023-gaps-and-memory-plan.md`, Task 2 (novelty check, stop rule) and
+Task 4 (reproduction inputs); recorded only, the plan is not changed. **Pages:** the printed page
+number equals the physical PDF page throughout (checked pp. 1, 9–16, 18–23). All numbers in the
+parameter tables and Table 3 were read off the page images (pp. 9–11, 13–16, 18–22), not only
+from pdftotext. Equation numbers are the source's (arXiv v2). **Section numbering:** the PDF
+numbers the power-law experiment **§6.2** (p. 18) and the conclusion **§7** (p. 21); the section
+map above lists both as "unnumbered".
+
+### What this focus needs beyond the Kernthesen
+
+1. **p is never swept.** §5 has exactly one exponential (scalar memory $X_t$, eq. 45, p. 13); §6.2
+   fixes $N=8$ (pp. 18–19). The only quantity varied in §6.2 is the burst size (Fig. 7, p. 21);
+   across §5 the regimes change $\eta$, $\mu$ and $\beta$ together (Table 2), so not even $\eta$ is
+   swept cleanly. No kernel error, forecast error, value, reward or regret is reported as a
+   function of the number of factors anywhere. The only statement about factor count is a
+   dimension count (p. 8, quote below).
+2. **No error or convergence theory**: no rates, exponents or constants (pp. 14, 22, quotes below).
+   The only conditions stated are stability, «the spectral radius of the matrix of $L^1$ kernel
+   masses to be less than one» (p. 6), and, for the impact-tail result (53)–(54) only, $r(\mathcal
+   B)<1$, a power-law tail with exponent $\chi>1$, an integrable Riccati sensitivity kernel and a
+   long continuation horizon (p. 18). These concern the decay of quote impact, not approximation
+   error.
+3. **No exact or near-exact reference for long memory; the comparator is Poisson only.** «we do not
+   solve a lifted HJB in the exponential factors» (p. 19); «In the present power-law case, an exact
+   lifted benchmark is not available at comparable complexity» (p. 21). §6.2 reports no objective,
+   no regret, no SE — only Figs. 5–7.
+4. **$K_{ij}$ is a covariance-correction kernel, not a regret kernel.** It is defined in (36) as the
+   second functional derivative of the *optimal* deterministic-intensity value map $\mathcal V_0$
+   and is used only in (37)–(38), contracted with the conditional covariance $\Sigma_t$ of
+   intensity *noise* around a *correct* forecast (p. 11). The source states no formula for the loss
+   of a policy fed a *mis-specified* forecast. *Inference (project, for plan Task 6):* by the
+   envelope argument the second-order loss of using $\hat m$ when $m$ is true has kernel
+   $K-\partial^2_mJ\vert_{\pi\,\text{fixed}}$ (value Hessian minus the fixed-policy curvature in
+   $m$), which equals $K$ only if a fixed policy's value is linear in $m$.
+5. **The §6.2 "power law" is $u^{-0.35}$-like over an intermediate range and exponential beyond.**
+   The heuristic exponent is $1-\nu_{\rm mix}=0.35<1$ (p. 19, Fig. 5); the asymptotic tail is
+   $e^{-2u}$ (slowest $\beta_n=2$). So the kernel lies neither in the regime of (53) ($\chi>1$) nor
+   in the plan's grid ($b\in\{1.15,\dots,1.8\}$). *Inference; the numbers in section E below are
+   project computations from the stated recipe.*
+
+### A. Notation map for this focus (source → project / plan)
+
+| Source | Meaning | Project / plan |
+|---|---|---|
+| $\lambda^{s,k}_t$, $\mu^{s,k}(t)$ | request intensity, deterministic baseline (constant in numerics, p. 6) | $\lambda_t$, $\mu$ |
+| $\Phi(u)$ | matrix kernel over (side, size); §5: $\alpha e^{-\beta u}$; §6.2: $g_N(u)\mathcal B$ | kernel $g$ (plan) |
+| $\eta=\alpha/\beta$ (§5); $r(\mathcal B)$ (§6.2) | scalar branching ratio; spectral radius of kernel masses | $\rho=\lVert g\rVert_1$ (plan) |
+| $\rho_i(u)$ | resolvent response to one type-$i$ request (eq. 22) | ⚠ **not** the plan's $\rho$; write $R(u)e_i$ |
+| $N$ (§6.2), $d$ (p. 8) | number of exponential factors | $p$ |
+| $\beta_n$, $w_n$, $\nu_{\rm mix}$ | factor decays, weights, weight exponent | $\beta_j$, lift weights; $b\approx1-\nu_{\rm mix}$ over the intermediate range only |
+| $m_t(u)$, $m^{i,+}_t(u)$ | forecast curve, post-request forecast | $m_t(u)$ |
+| $\mathcal V_0(t,q;m)$, $D_i$, $K_{ij}$ | value map of the frozen-forecast Riccati system, its first and second functional derivatives (eq. 36) | $K(u,v)$ in plan H1; ⚠ source also uses $K$ for the number of size buckets |
+| $\kappa=\tfrac12\gamma\sigma^2$, $\kappa_T$ | running and terminal quadratic penalty | $\gamma$, $\sigma$ (never given separately) |
+
+### B. The forecast curve $m_t(u)$ (§4.1, eqs. 19–22, pp. 8–9; §4.4, eqs. 40–41, p. 11)
+
+$$m^{s,k}_t(u)=\mathbb E\big[\lambda^{s,k}_{t+u}\mid\mathcal F_t\big],\qquad u\ge0 \tag{19}$$
+
+$$m_t(u)=\zeta_t(u)+\int_0^u\Phi(u-v)\,m_t(v)\,dv \tag{20}$$
+
+$$\zeta_t(u)=\mu(t+u)+\int_0^t\Phi(t+u-r)\,dM_r \tag{21}$$
+
+$$\rho_i(u)=\Phi(u)e_i+\int_0^u\Phi(u-v)\,\rho_i(v)\,dv \tag{22}$$
+
+$$m^{i,+}_t(u)=\mathbb E\big[\lambda_{t+u}\mid\mathcal F^{i,+}_t\big],\qquad m^{i,+}_t(u)=m_t(u)+\rho_i(u) \tag{40–41}$$
+
+- **Conditioning:** on $\mathcal F_t$ (eq. 19); $\mathcal F^{i,+}_t$ = information immediately after a
+  type-$i$ RFQ at $t$ (p. 11). $m_t$ is a vector over side-size types (p. 9).
+- **Integration variables:** in (20) the future lag $v\in[0,u]$; in (21) past request times
+  $r\in[0,t]$ against the counting vector $M$ (history starts at $0$).
+- **Kernel:** the full matrix kernel $\Phi$ (all side-size cross-excitations).
+- **Baseline:** included — $m_t$ is the full conditional intensity, baseline $\mu(t+u)$ enters via
+  $\zeta_t$ (21). Not the excess intensity.
+- **Quote independence:** «This forecast is independent of the dealer's future quotes because
+  quotes thin requests into executions but do not create requests» (p. 9).
+- **Resolvent:** the source does not name a resolvent matrix; (22) says $\rho_i=Re_i$ with
+  $R=\Phi+\Phi*R$, hence $m_t=\zeta_t+R*\zeta_t$ (project rewriting, not in the source).
+- **Discretisation in the numerics.** §5: none — «Since the Hawkes memory is one-dimensional in
+  this validation experiment, the conditional forecast curve is represented by the current memory
+  state $X_t$» (p. 15). §6.2: «discretised with $N_f=12$ future-lag grid points» (p. 20) on the
+  solver horizon $T_{\rm eval}+T_{\rm cont}=0.2$; **not stated:** the placement of the 12 points,
+  the quadrature for (20), and whether $\zeta_t$ is computed from the 8×2 exponential factor
+  states or by direct summation over the history.
+- **Closed forms for testing a Volterra solver** (project, derived from (45), (48)): one-sided
+  exponential $\Phi(u)=\alpha e^{-\beta u}$ gives $\rho(u)=\alpha e^{-(\beta-\alpha)u}$ and
+  $m_t(u)=\frac{\mu}{1-\eta}+\big(X_t-\frac{\eta\mu}{1-\eta}\big)e^{-\beta(1-\eta)u}$. Note that §5
+  starts from $X_0=120$, an initial memory that an empty history in (21) cannot produce; a Volterra
+  reproduction must add $X_0e^{-\beta(t+u)}$ to $\zeta_t$ (inference).
+
+### C. Riccati layer, levels 1–3 (eqs. 16, 23–44, pp. 7–12)
+
+Hamiltonian $h_k(p)=\sup_{\delta}f_k(\delta)(\delta-p)$ (16), optimizer $\delta^*_k(p)$; on a
+compact quote set the sup is over $A=[\underline\delta,\bar\delta]$ (p. 8). $\kappa:=\tfrac12\gamma\sigma^2$.
+
+**Level 1 — mean VR** (p. 9), for $\tau\in[t,T]$:
+
+$$0=\partial_\tau v_0(\tau,q)-\kappa q^2+\sum_{s,k}m^{s,k}_t(\tau-t)\,z_k\,h_k\big(\Delta^s_kv_0(\tau,q)\big),\qquad v_0(T,q;m_t)=-\ell(q) \tag{23}$$
+
+$$\Delta^s_kv(\tau,q)=\frac{v(\tau,q)-v(\tau,q+\epsilon_sz_k)}{z_k} \tag{24}$$
+
+$$h_k(p)\approx h_{k,0}+h_{k,1}p+\tfrac12h_{k,2}p^2 \tag{25}$$
+
+$$v_0(\tau,q;m_t)\approx-\tfrac12A_0(\tau)q^2+B_0(\tau)q+C_0(\tau) \tag{26}$$
+
+$$\Delta^s_kv_0(\tau,q)=\epsilon_sA_0(\tau)q-\epsilon_sB_0(\tau)+\tfrac12A_0(\tau)z_k \tag{27}$$
+
+$$d_{s,k}(\tau)=-\epsilon_sB_0(\tau)+\tfrac12A_0(\tau)z_k \tag{28}$$
+
+$$\dot A_0(\tau)=-2\kappa+A_0(\tau)^2\sum_{s,k}m^{s,k}_t(\tau-t)\,z_k\,h_{k,2} \tag{29}$$
+
+$$\dot B_0(\tau)=-A_0(\tau)\sum_{s,k}\epsilon_s\,m^{s,k}_t(\tau-t)\,z_k\big(h_{k,1}+h_{k,2}d_{s,k}(\tau)\big) \tag{30}$$
+
+$$\dot C_0(\tau)=-\sum_{s,k}m^{s,k}_t(\tau-t)\,z_k\Big(h_{k,0}+h_{k,1}d_{s,k}(\tau)+\tfrac12h_{k,2}d_{s,k}(\tau)^2\Big) \tag{31}$$
+
+Terminal values for $\ell(q)=\kappa_Tq^2$: $A_0(T)=2\kappa_T$, $B_0(T)=C_0(T)=0$ (fn. 3, p. 10).
+Quote map:
+
+$$\delta^{s,k}_t=\delta^*_k\big(\Delta^s_kv_0(t,q_t;m_t)\big) \tag{32}$$
+
+The author calls (29)–(31) «the representative form» (p. 10); substituting (25)–(27) into (23) and
+matching $q^2$, $q$, $1$ (with $\epsilon_s^2=1$) reproduces them exactly (project check). The form of
+(25) implies expansion at $p=0$; the numerical values of $h_{k,0},h_{k,1},h_{k,2}$ are not reported.
+Re-solve rule: «the forecast curve and backward Riccati system are recomputed as new information
+arrives, yielding a receding-horizon feedback policy» (p. 9); the re-solve frequency used in the
+numerics (per event or per $\Delta t$) is **not stated**.
+
+**Level 2 — noise-aware** (pp. 10–11):
+
+$$\xi_t(u)=\lambda_{t+u}-m_t(u) \tag{33}$$
+$$\Sigma_t(u,v)=\mathrm{Cov}_t(\lambda_{t+u},\lambda_{t+v}),\qquad \Sigma_{t,ij}(u,v)=\mathbb E_t[\xi_{t,i}(u)\xi_{t,j}(v)] \tag{34–35}$$
+
+$$D_i(t,q;u)=\frac{\delta\mathcal V_0(t,q;m)}{\delta m_i(u)}\Big|_{m=m_t},\qquad K_{ij}(t,q;u,v)=\frac{\delta^2\mathcal V_0(t,q;m)}{\delta m_i(u)\,\delta m_j(v)}\Big|_{m=m_t} \tag{36}$$
+
+$$\mathcal V_0(t,q;m_t+\xi_t)\approx v_0(t,q;m_t)+\sum_i\int_0^{T-t}D_i(t,q;u)\xi_{t,i}(u)\,du+\frac12\sum_{i,j}\int_0^{T-t}\!\!\int_0^{T-t}K_{ij}(t,q;u,v)\xi_{t,i}(u)\xi_{t,j}(v)\,du\,dv \tag{37}$$
+
+$$\bar V(t,q)\approx v_0(t,q;m_t)+\frac12\sum_{i,j}\int_0^{T-t}\!\!\int_0^{T-t}K_{ij}(t,q;u,v)\,\Sigma_{t,ij}(u,v)\,du\,dv \tag{38}$$
+
+$$\bar p_i(t,q)=\frac{\bar V(t,q)-\bar V(t,q+\epsilon_iz_i)}{z_i},\qquad \delta_i(t,q)=\delta^*_i(\bar p_i(t,q)) \tag{39}$$
+
+$\mathcal V_0(t,q;m)$ is «the value obtained by solving the mean Volterra–Riccati system on $[t,T]$
+with forecast curve $m$» (p. 10), assumed twice functionally differentiable near $m_t$. How $D,K$
+are computed: «by differentiating the Riccati system with respect to a finite-dimensional
+parametrization of the forecast curve. In an exponential Markovian benchmark, the same quantities
+can equivalently be obtained by differentiating the lifted Riccati coefficients with respect to
+the Hawkes memory state» (p. 11). **Not stated:** the parametrisation used, and how the two-time
+covariance $\Sigma_t(u,v)$ is computed (only the one-time variance ODE (49) is given).
+
+**Level 3 — state feedback** (p. 12):
+
+$$p^{SF,0}_i(t,q)\approx\frac{v_0(t,q;m^{i,+}_t)-v_0(t,q+\epsilon_iz_i;m^{i,+}_t)}{z_i} \tag{42}$$
+
+$$p^{SF,0}_i(t,q)\approx\Delta_iv_0(t,q;m_t)+\frac1{z_i}\sum_j\int_0^{T-t}\big[D_j(t,q;u)-D_j(t,q+\epsilon_iz_i;u)\big]\rho_{i,j}(u)\,du \tag{43}$$
+
+$$p^{SF}_i(t,q)\approx\frac{\bar V(t,q;m^{i,+}_t,\Sigma^{i,+}_t)-\bar V(t,q+\epsilon_iz_i;m^{i,+}_t,\Sigma^{i,+}_t)}{z_i} \tag{44}$$
+
+Quote $\delta_i=\delta^*_i(p^{SF}_i)$, or $\delta^*_i(p^{SF,0}_i)$ in the mean version (p. 12).
+**Not stated:** whether the "State-feedback VR" row of Table 3 is (42) or (44), and whether
+$\Sigma^{i,+}_t\approx\Sigma_t$ was used.
+
+### D. Exact lifted HJB (§5, eqs. 45–47, p. 13) and Poisson HJB (eq. 50, p. 15)
+
+$$dX_t=-\beta X_t\,dt+\sum_{s\in\{b,a\}}\alpha_s\,dM^s_t,\qquad \lambda^s_t=\lambda^s(X_t) \tag{45}$$
+
+$$0=\partial_tV(t,q,x)-\beta x\,\partial_xV(t,q,x)-\kappa q^2+\sum_s\lambda^s(x)\Big[V(t,q,x+\alpha_s)-V(t,q,x)+h_1\big(V(t,q,x+\alpha_s)-V(t,q+\epsilon_s,x+\alpha_s)\big)\Big] \tag{46}$$
+
+$$V(T,q,x)=-\ell(q) \tag{47}$$
+
+$$0=\partial_tV^P(t,q)-\kappa q^2+\sum_s\bar\lambda^s(t)\,h_1\big(V^P(t,q)-V^P(t,q+\epsilon_s)\big),\qquad V^P(T,q)=-\ell(q) \tag{50}$$
+
+- **State:** $(t,q,x)$, unit size; memory jumps $x\to x+\alpha_s$ on every request, inventory only
+  on a win (p. 13). Directional: $\alpha_b=\alpha$, $\alpha_a=0$, $\lambda^b(x)=\mu^b+x$,
+  $\lambda^a(x)=\mu^a$ (p. 13). Common-mode: $\alpha_b=\alpha_a=\alpha$ (p. 13); **$\lambda^s(x)$ is
+  not stated.** With $\lambda^s(x)=\mu^s+x$ on both sides the memory would mean-revert at
+  $\beta-2\alpha<0$ (8 − 10.4; 10 − 18.4), i.e. explode, contradicting $\eta=\alpha/\beta<1$; a reading
+  consistent with Table 2 is $\lambda^s(x)=\mu^s+x/2$ (inference, to be confirmed against Table 3's
+  exact objectives 42.46 and 48.80).
+- **Moment ODEs** (one-sided, $\lambda_t=\mu+X_t$): $\dot x_t=\alpha\mu-(\beta-\alpha)x_t$ (48),
+  $\dot y_t=-2(\beta-\alpha)y_t+\alpha^2(\mu+x_t)$ (49), $x_t=\mathbb E[X_t\mid X_0]$,
+  $y_t=\mathrm{Var}(X_t\mid X_0)$ (p. 14).
+- **Grids (p. 15):** $T=1$ day, $\Delta t=10^{-4}$; integer inventory grid, $q_{\max}=50$; 1000-point
+  memory grid, $X_{\max}=800$; quote grid $\delta\in[-5,20]$ bp, 5000 points; shadow-price grid
+  $p\in[-10,14]$, 2400 points (optimizer «precomputed on a shadow-price grid», p. 14). After
+  truncation the lifted HJB «reduces to a finite system of backward ordinary differential
+  equations» (p. 14).
+- **Not stated:** lower inventory bound (presumably $-50$), memory grid spacing and lower bound,
+  boundary conditions at $\pm q_{\max}$ and $X_{\max}$, treatment of $x+\alpha_s$ off-grid and of
+  the transport term $-\beta x\partial_x$, time-stepping scheme.
+- **Poisson comparator in §5:** $\bar\lambda^s$ = «the baseline intensity of the corresponding
+  side» (p. 15), solved exactly on the inventory grid, not by Riccati.
+
+### E. Reproduction parameters
+
+**§5 exponential benchmark** (Table 2, p. 14; §5.1 text, p. 15):
+
+| Parameter | Benign | Near-critical | Directional | Source |
+|---|---|---|---|---|
+| Excitation | common-mode, $\alpha_b=\alpha_a$ | common-mode, $\alpha_b=\alpha_a$ | bid only, $\alpha_a=0$ | p. 13–14 |
+| $q_0$ | 10 | 10 | 0 | Table 2 |
+| $X_0$ | 120 | 120 | 120 | Table 2 |
+| $\mu^b$ | 10 | 1.5 | 5 | Table 2 |
+| $\mu^a$ | 10 | 1.5 | 20 | Table 2 |
+| $\beta$ | 8 | 10 | 10 | Table 2 |
+| $\alpha$ | 5.2 | 9.2 | 9.2 | Table 2 |
+| $\eta=\alpha/\beta$ | 0.65 | 0.92 | 0.92 | Table 2 |
+| Clock, units | 1 day; size 1m notional; price in bp | same | same | p. 15 |
+| $T$, $\Delta t$ | 1 day, $10^{-4}$ | same | same | p. 15 |
+| Win probability | $f(\delta)=\{1+\exp(\delta-1.2)\}^{-1}$ | same | same | p. 15 |
+| $\kappa$, $\kappa_T$, $\ell$ | 0.2, 0.2, $\kappa_Tq^2$ | same | same | p. 15 |
+| Grids | $q$ integer, $q_{\max}=50$; $X$ 1000 pts to 800; $\delta\in[-5,20]$ (5000); $p\in[-10,14]$ (2400) | same | same | p. 15 |
+| MC paths | $2\cdot10^4$, common random numbers, paired regret | same | same | p. 15 |
+| Not given | $\sigma$, $\gamma$ separately; seeds; common-mode $\lambda^s(x)$; boundary conditions | | | — |
+
+*Project computations:* myopic quote for this sigmoid $\delta^*(0)\approx1.64$ bp, $f\approx0.39$.
+Table 3's 95 % half-widths imply paired SEs of ≈ 0.012–0.061, i.e. 0.03–0.13 % of $\lvert J\rvert$.
+
+**§6.2 power-law-like experiment** (pp. 18–20):
+
+| Parameter | Value | Source |
+|---|---|---|
+| Sizes, probabilities | $\{1,2,5\}$, $(0.65,0.25,0.10)$; $\mathbb E[z]=1.65$, $\mathbb E[z^2]=4.15$ (1m notional) | p. 18 |
+| Win probability | $f(\delta)=\{1+\exp(3(\delta-1))\}^{-1}$; $\delta^*(0)=0.85$ bp, $f(\delta^*(0))=0.61$ | p. 18 |
+| Kernel | $\Phi(u)=g_N(u)\mathcal B$, $g_N(u)=\sum_{n=1}^Nw_n\beta_ne^{-\beta_nu}$, $\sum w_n=1$ | p. 18 |
+| Factors | $N=8$; $\beta_n$ log-spaced on $[2,2500]$; $w_n=\beta_n^{-\nu_{\rm mix}}/\sum_\ell\beta_\ell^{-\nu_{\rm mix}}$, $\nu_{\rm mix}=0.65$ | p. 19 |
+| Kernel masses | $\mathcal B=\begin{pmatrix}0.55&0.05\\0.05&0.55\end{pmatrix}$, $r(\mathcal B)=0.60$; side-level (no size dependence) | pp. 18–19 |
+| Baseline, stationary level | $\mu^b=\mu^a=155$; $\bar\lambda^b=\bar\lambda^a=388$/day; executed notional ≈ 780m/day | p. 19 |
+| Penalties | $\kappa=2.0$; $\ell(q)=\kappa_Tq^2$, $\kappa_T=0.01$ | p. 19 |
+| Horizons, step | $T_{\rm eval}=0.1$ day, $\Delta t=5\cdot10^{-5}$ (2000 steps); burn-in $T_{\rm burn}=0.1$ (discarded); continuation $T_{\rm cont}=0.1$ (Riccati solved on $T_{\rm eval}+T_{\rm cont}$) | pp. 19–20 |
+| Forecast grid | $N_f=12$ future-lag points | p. 20 |
+| Optimizer tables | $\delta\in[-1,12]$ bp, 30001 pts; $p\in[-15,25]$, 5201 pts | p. 20 |
+| Shock | one-sided bid burst at time 0 after burn-in, default 50 RFQs; Fig. 7 uses 0, 5, 10, 25, 50, 75, 100 (read off) | pp. 20–21 |
+| MC | $10^5$ paths, common random numbers, Poisson vs state-feedback VR | p. 20 |
+| Comparator | Poisson HJB, same sizes, win probability and penalty, calibrated to $\bar\lambda^b=\bar\lambda^a$ | p. 19 |
+| $q_0$ | 0 (read off Fig. 6) | p. 20 |
+| Not given | seeds; $\sigma,\gamma$ separately; $N_f$ placement; how $m_t$ is evaluated; whether the 50 burst RFQs are simultaneous and fillable; state-feedback variant (42) vs (44) | — |
+
+*Project computations from the stated recipe (not printed in the source):*
+$\beta_n=$ 2.000, 5.539, 15.341, 42.489, 117.677, 325.918, 902.660, 2500.000;
+$w_n=$ 0.4867, 0.2510, 0.1295, 0.0668, 0.0344, 0.0178, 0.0092, 0.0047. Mean lag
+$\sum w_n/\beta_n=0.30$ day; kernel mass beyond lag 0.1 = 0.57, beyond 0.2 = 0.42. Local log-log
+slope of $g_N$: −0.24 ($10^{-4}$–$10^{-3}$), −0.42 ($10^{-3}$–$10^{-2}$), −0.55
+($10^{-2}$–$10^{-1}$), −1.18 ($10^{-1}$–$1$) — the −0.35 of Fig. 5 is the continuum heuristic,
+fitted there to the conditional imbalance, not to $g_N$. Checks: $155/(1-0.6)=387.5$;
+$2\cdot387.5\cdot0.61\cdot1.65\approx780$; $\delta^*(0)=0.852$, $f=0.609$.
+
+### F. Table 3 (p. 16), complete
+
+Objectives ± standard error; absolute regrets ± 95 % confidence; relative regret = absolute paired
+regret / exact objective (p. 15).
+
+| Scenario | Policy | Objective | Absolute regret | Relative regret (%) |
+|---|---|---|---|---|
+| Benign | Exact lifted HJB | 42.46 ± 0.12 | 0.000 ± 0.000 | 0.000 |
+| Benign | Poisson HJB | 39.86 ± 0.11 | 2.606 ± 0.059 | 6.138 |
+| Benign | Mean VR | 42.38 ± 0.12 | 0.077 ± 0.027 | 0.182 |
+| Benign | Noise-aware VR | 42.40 ± 0.12 | 0.064 ± 0.026 | 0.151 |
+| Benign | State-feedback VR | 42.43 ± 0.12 | 0.034 ± 0.024 | 0.080 |
+| Near-critical | Exact lifted HJB | 48.80 ± 0.24 | 0.000 ± 0.000 | 0.000 |
+| Near-critical | Poisson HJB | 42.58 ± 0.22 | 6.218 ± 0.085 | 12.742 |
+| Near-critical | Mean VR | 48.37 ± 0.25 | 0.432 ± 0.042 | 0.884 |
+| Near-critical | Noise-aware VR | 48.55 ± 0.24 | 0.250 ± 0.036 | 0.513 |
+| Near-critical | State-feedback VR | 48.76 ± 0.24 | 0.041 ± 0.025 | 0.083 |
+| Directional | Exact lifted HJB | 46.20 ± 0.10 | 0.000 ± 0.000 | 0.000 |
+| Directional | Poisson HJB | 33.58 ± 0.08 | 12.617 ± 0.119 | 27.312 |
+| Directional | Mean VR | 45.04 ± 0.10 | 1.154 ± 0.054 | 2.498 |
+| Directional | Noise-aware VR | 45.20 ± 0.10 | 0.997 ± 0.049 | 2.159 |
+| Directional | State-feedback VR | 46.12 ± 0.10 | 0.079 ± 0.020 | 0.170 |
+
+Fig. 3 (p. 15) plots the same relative regrets on a log scale. In Table 3 the memory error (VR vs
+exact) and the Riccati/quadratic approximation error are not separated: every VR row carries both.
+
+### G. Error / convergence theory offered
+
+None. §5.1 opens: «We do not pursue a general well-posedness theorem for the full path-dependent
+Hawkes control problem» and closes the paragraph «The focus of the paper is therefore not a general
+convergence theorem, but a controlled numerical validation of the approximation hierarchy» (p. 14).
+The level-2 correction «is not an exact value function and is not claimed to restore a
+dynamic-programming or time-consistency property. Its sign is governed by the curvature of the
+deterministic-intensity value map with respect to the forecast curve; it is not assumed to be
+positive in general» (p. 11). Near criticality: «As η approaches one, intensity uncertainty becomes
+persistent and the mean forecast alone can become insufficient» (p. 14) — qualitative, no rate.
+Conclusion: see the first quote below (p. 22). Route suggested, not pursued: pseudo-chaotic
+expansions of point-process functionals (Hillairet & Réveillac 2024, p. 22). For an exact-problem
+convergence result the source points to [[jusselin-2021-persistent-order-flow]] (viscosity
+solution, consistent numerics, p. 2).
+
+### H. Which functional of the history the quote depends on
+
+- **Exact problem:** the whole marked history $H$, via $V(t,q,H)$ (eq. 18, p. 8).
+- **Source's reduced state:** the forecast curve $u\mapsto m_t(u)$ on $[0,T-t]$ — «we treat the
+  conditional forecast curve as the economically relevant reduced state» (p. 3); «In a
+  general-kernel Hawkes model, the state variable is the updated forecast curve. In an exponential
+  benchmark, the same update is represented by the finite-dimensional Hawkes memory state» (p. 12).
+- **Level 1:** history enters only through $m_t$; via (27) and (32) the quote depends on the curve
+  only through the two scalars $A_0(t)$ and $B_0(t)$ ($C_0$ drops out of $\Delta v_0$). $A_0$ is
+  driven by the size- and $h_{k,2}$-weighted **total** forecast $\sum_{s,k}m^{s,k}_tz_kh_{k,2}$ (29);
+  $B_0$ by the **signed** forecast $\sum_{s,k}\epsilon_sm^{s,k}_tz_k(\dots)$ (30) — «For symmetric side
+  intensities and penalties the skew coefficient $B_0$ is zero; for directional bursts it becomes
+  the dominant quote-skew term» (p. 10). *(Reading of (29)–(30), project.)*
+- **Level 2:** additionally the two-time covariance $\Sigma_t(u,v)$, weighted by $K_{ij}$ (38).
+- **Level 3:** additionally the post-request curve $m_t+\rho_i$; to first order the lag weighting is
+  the Riccati sensitivity difference $D_j(t,q;u)-D_j(t,q+\epsilon_iz_i;u)$ applied to $\rho_{i,j}(u)$
+  (43) — the «Riccati sensitivity kernel» that (51) uses as a «Volterra filter» (pp. 17–18).
+- No explicit lag weights, integrated forecast or finite set of statistics is derived beyond this.
+
+### Direct quotes (for the draft)
+
+> "A frozen conditional forecast does not satisfy an intertemporal dynamic-programming principle; the implemented policy obtains feedback by reconditioning and resolving as the history evolves. The exponential benchmark provides numerical evidence that this receding horizon construction is accurate in the regimes studied, but a general error or convergence theory remains open." (p. 22)
+
+> "Thus a d-factor approximation of a two-sided, K-size Hawkes model already introduces 2Kd flow-memory variables in addition to inventory. A power-law kernel requires either a large exponential mixture or a genuinely infinite-dimensional Volterra state." (p. 8)
+
+> "In the present power-law case, an exact lifted benchmark is not available at comparable complexity. The role of the experiment is therefore to apply the validated approximation to the genuinely non-Markovian setting." (p. 21)
+
+> "Since the mixture is finite, the power-law behaviour should be read as an intermediate-range approximation: the fastest exponential creates a short-time cut-off and the slowest exponential eventually dominates at very long lags." (p. 19)
+
+> "In a general-kernel Hawkes model, the state variable is the updated forecast curve. In an exponential benchmark, the same update is represented by the finite-dimensional Hawkes memory state." (p. 12)
+
+### Examples & illustrations (for later drafting)
+
+- Table 3 (p. 16): the regret ladder Poisson → mean VR → noise-aware → state feedback in three
+  regimes, the only exact-anchored regret numbers in the paper (one exponential).
+- Fig. 5 (p. 19): conditional imbalance after a 50-RFQ bid burst on a log-log axis against a guide
+  slope −0.35, and the quote skew $\delta^a_t(0)-\delta^b_t(0)$ decaying from ≈ 0.33 to ≈ 0.07 over
+  0.1 day (read off).
+- Fig. 7 (p. 21): relative P&L-std reduction vs burst size, ≈ 0.034, 0.030, 0.033, 0.044, 0.084,
+  0.141, 0.192 at bursts 0, 5, 10, 25, 50, 75, 100 (read off the plot).
+
+### Boundary of this focus
+
+The source cannot supply a regret-vs-$p$ curve, a kernel- or forecast-error measure, an error
+bound, a power-law kernel with tail exponent above one, or any long-memory reference other than
+Poisson. Its exact-anchored numbers (Table 3) are for one exponential and mix forecast and
+Riccati error. Reproduction gaps (common-mode $\lambda^s(x)$, boundary conditions, seeds, $N_f$
+placement, SF variant) are listed in D and E.
+
+### Bearing on the memory-regret gap (plan Task 2 stop rule)
+
+**No — this source does not close the gap.** The stop rule needs regret/reward vs $p$ on a
+power-law kernel with an exact or near-exact reference **and** a second-order regret law. (i) $p$ is
+never swept: one exponential in §5, $N=8$ fixed in §6.2, only the burst size varied (pp. 13,
+18–21). (ii) No exact or near-exact long-memory reference: «we do not solve a lifted HJB in the
+exponential factors» (p. 19), «an exact lifted benchmark is not available» (p. 21); the comparator is
+Poisson, and §6.2 reports risk reduction, not regret. (iii) No regret law: the second-order kernel
+$K_{ij}$ (36) enters only the covariance correction (38), never a loss formula for a mis-specified
+forecast, and «a general error or convergence theory remains open» (p. 22). In addition, the §6.2
+kernel is $u^{-0.35}$-like over an intermediate range, i.e. outside the plan's $b>1$ grid (inference,
+item 5 above).
+
 ## Mentioned entities
 
 - Models: [[begv-2021-model]], [[glft-2013-model]], [[avellaneda-stoikov-model]], [[cartea-jaimungal-ricci-model]] (the 2018 SIAM Review paper by the same authors is what is cited)
@@ -529,3 +924,5 @@ experiment reports risk reduction against Poisson, not regret against an optimum
 - Supplements: [[martin-2026-market-making-hawkes]] (cited, p. 2: Mercer-expansion lift + PINN — the "large lifted state" route this paper avoids); [[bergault-2024-price-aware-automated]] (cited, p. 2: joint jumps of flow state and inventory make exact DP high-dimensional).
 - Compare (not cited by the source): [[acero-2026-hawkes-structured-networks]] for multi-asset Hawkes structure that this paper lacks.
 - Closest exact-treatment reference (no page yet): `jusselin-2021-persistent-order-flow`.
+- Cites (2026-11-01, p-sweep focus): [[jusselin-2021-persistent-order-flow]] — «The closest market-making reference» (p. 2), and the only pointer the source gives to a convergence result (viscosity solution and consistent numerics of the exact problem); that page now exists, so the line above is superseded. [[martin-2026-market-making-hawkes]] — Mercer-expansion Markov approximation solved by PINN (p. 2).
+- Compare (not cited by the source): [[acero-2026-hawkes-structured-networks]] (regret bound via kernel $L^2$ error in the number of factors) and [[khabou-2025-markov-approximation-hawkes]] (value convergence under kernel $L^1$ error) — the factor-count error results this source lacks.

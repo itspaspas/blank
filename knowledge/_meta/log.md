@@ -169,3 +169,26 @@ Append-only. See CLAUDE.md § Meta files.
 - Control problem confirmed: flow-driven, single-asset GLFT/BEGV-type problem (risk-adjusted objective, exponential fills), not Lai's discrete-time option problem.
 - Plan `input/ideas/lai2023-gaps-and-memory-plan.md` → `status: pre-registered`, `pre_registered: 2026-11-01`. Tasks 3–9 are pre-registered from this date; deviations go to this log with slug `lai2023-gaps-and-memory`.
 - Acquisition decision (user): paywalled sources stay on the manual worklist; Tasks 2–3 continue with what is on disk.
+
+## [2026-11-01] acquire | lai2023-gaps-and-memory Task 2 (run 3): 9 plan keys + 2 novelty follow-ups
+- Downloaded 0, already present 0, manual 11 (of 11). Cause: the cloud container's network policy refuses CONNECT to arxiv.org, export.arxiv.org, api.openalex.org, api.crossref.org, api.unpaywall.org and projecteuclid.org (curl HTTP 000, `connect_rejected`), so every OA copy is unreachable from here. The user decided (2026-11-01) to continue past unfetchable sources.
+- Metadata resolved via WebSearch: `input/bibliography/memory-acquisition-metadata.json`.
+  - Renamed: `lai-2021-data-driven-approach-option` → `lai-2021-data-driven-approach` (the short title had 4 words; the rule allows 1–3).
+  - Corrected: Hillairet 2024 is Hillairet & Réveillac only.
+  - arXiv copies exist for 7 of the 9 and are acceptable originals under the preprint policy (non-core works).
+- Manual worklist: `input/bibliography/acquisition-todo.md`, section "Priority 3b" (25 items open in total). Audit: `input/bibliography/acquisition-log-2026-11-01.json`.
+- optimize-pdf scan: not applicable (no new PDF). bib-search re-indexed (94 documents, unchanged).
+
+## [2026-11-01] ingest | re-ingest of 2 B1 core sources, focus «p-sweep / error theory» (plan lai2023-gaps-and-memory Task 2)
+- 2026-11-01 · re-ingest · [[barzykin-2026-hawkes-driven-otc]] · new focus block (forecast-curve eqs. 19–22, levels 1–3, lifted HJB eq. 46, all §5/§6.2 parameters from page images, Table 3), Kernthese 31, Model card added
+- 2026-11-01 · re-ingest · [[acero-2026-hawkes-structured-networks]] · new focus block (eq. 3 is an equal-width rectangle rule in the decay rate, not Gauss; Prop. 1 and Thm 1 verbatim; Fig. 2 sweeps kernel and intensity error, never reward, over p ∈ {1,2,3,4,6,8}); erratum note on setting-(1) decay rates (0.3, not 0.4)
+- Main-session spot checks against the PDFs, all confirmed: Barzykin p. 19 «do not solve a lifted HJB», p. 21 «not available at comparable complexity», p. 22 «convergence theory remains open»; Acero p. 6–7 p-grid {1,2,3,4,6,8}, eq. (3) and Thm 1 on the page image (p. 3).
+- BibTeX keywords unioned into library/references.bib (Barzykin: exponential-mixture kernel approximation; receding-horizon certainty equivalent. Acero: kernel truncation; regret bound; Bernstein representation). bib-subset → output bib 56 entries.
+
+## [2026-11-01] literature | lai2023-gaps-and-memory Task 2: fixed search protocol A–D + novelty verdict
+- Log: `input/bibliography/memory-search-log.md`. Queries: A 21 · B 4 · C 4 · D 9; cut-off 2026-10-29.
+- **Deviation (protocol, not a pre-registration deviation — Task 2 is `pre-registered: false`):** the six named databases could not be queried directly (network policy); each was emulated with domain-restricted WebSearch. OpenAlex and Crossref were in effect not searched; classifications rest on snippets. Verdict marked provisional until a re-run against the real APIs.
+- Re-read of Jusselin (preprint), Martin–Tse, Khabou–Talbi, Jain et al. for value/regret vs number of factors: only Jusselin Fig. 4 (p. 14; value of the lifted model U^{K_n} vs n ≤ ≈1100 on a power-law-type kernel) comes close — model value, not policy regret.
+- New hits: R1 Abi Jaber et al. 2025 (arXiv 2503.04323; optimal P&L vs number of exponentials for a power-law propagator, execution) narrows gap part (2); R5 (TechRxiv, kernel-misspecification robustness, execution) not conclusive. Both on the manual worklist; must be read in full before the novelty claim.
+- Synthesis created: [[memory-regret-gap-verification]] (draft). Verdict: (1) OPEN, (2) NARROWED (execution) / OPEN for Hawkes market making, (3) OPEN. **Stop rule not triggered** → Task 3 proceeds.
+- Noted for later tasks, no change to the pre-registered hypotheses: whether H1's K or "K minus the fixed-policy curvature" is the regret kernel (Task 6); Barzykin's common-mode convention (Task 4); Barzykin §6.2's mixture decays like u^{-0.35} (b < 1, outside the grid).

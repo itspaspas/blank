@@ -1,0 +1,183 @@
+{
+  "generated": "2026-11-01",
+  "method": "WebSearch only (WebFetch, curl and the reference-lookup MCP were blocked by the network policy: arxiv.org/techrxiv.org DNS failure; api.openalex.org, export.arxiv.org, api.crossref.org, api.semanticscholar.org connect_rejected). Canonical keys computed with scripts/library.py (propose_shorttitle / make_bibkey) and checked against library/references.bib for collisions (none). Fields that never appeared in a search result are null. Landing and OA URLs are URLs seen in search results; none was opened.",
+  "plan": "input/ideas/lai2023-gaps-and-memory-plan.md (Task 2)",
+  "summary": {
+    "resolved_unchanged": 8,
+    "renamed": [
+      "lai-2021-data-driven-approach-option -> lai-2021-data-driven-approach"
+    ],
+    "corrected_authors": [
+      "hillairet-2024-chaotic-expansion-counting (no Rosenbaum)",
+      "lai-2021 (Qianhui, not Qing-Hai)"
+    ],
+    "unresolved_fields": {
+      "bayer-2023-markovian-approximations-stochastic": [
+        "doi"
+      ],
+      "hardiman-2013-critical-reflexivity": [
+        "article number / pages"
+      ],
+      "lai-2021-data-driven-approach": [
+        "doi",
+        "url",
+        "oa_pdf_url",
+        "supervisor"
+      ]
+    }
+  },
+  "entries": [
+    {
+      "proposed_key": "lai-2021-data-driven-approach-option",
+      "canonical_key": "lai-2021-data-driven-approach",
+      "authors": [
+        "Qianhui Lai"
+      ],
+      "year": 2021,
+      "title": "A data-driven approach for option market making",
+      "venue": "Ph.D. thesis, The Chinese University of Hong Kong",
+      "doi": null,
+      "arxiv": null,
+      "oa_pdf_url": null,
+      "landing_url": null,
+      "confidence": "medium",
+      "notes": "RENAMED: the proposed kurztitel has four slug words ('data-driven-approach-option'); CLAUDE.md allows one to three, and scripts/library.py propose_shorttitle gives 'data-driven-approach'. Author is Qianhui Lai, not 'Qing-Hai'. Title, degree, institution and year were verified against the reference list of the Lai-Gao-Li 2023 PDF in the library (pdftotext: 'Lai, Q., A data-driven approach for option market making. Ph.D. Thesis, The Chinese University of Hong Kong, 2021.'), and the same line appears in a WebSearch snippet. No repository record, URL or full text was found (WebSearch restricted to repository.lib.cuhk.edu.hk / cuhk.edu.hk, Google Scholar, Semantic Scholar, OpenAlex and ProQuest returned nothing). The supervisor (presumably X. Gao and/or L. Li) is not confirmed. Manual acquisition: CUHK Library / CUHK Digital Repository, ProQuest, or ask the authors."
+    },
+    {
+      "proposed_key": "alfonsi-2024-approximation-stochastic-volterra",
+      "canonical_key": "alfonsi-2024-approximation-stochastic-volterra",
+      "authors": [
+        "Aurélien Alfonsi",
+        "Ahmed Kebaier"
+      ],
+      "year": 2024,
+      "title": "Approximation of Stochastic Volterra Equations with kernels of completely monotone type",
+      "venue": "Mathematics of Computation 93(346), 643-677",
+      "doi": "10.1090/mcom/3911",
+      "arxiv": "2102.13505",
+      "oa_pdf_url": "https://arxiv.org/pdf/2102.13505",
+      "landing_url": "https://www.ams.org/journals/mcom/2024-93-346/S0025-5718-2023-03911-4",
+      "confidence": "high",
+      "notes": "Key confirmed. The DOI, volume, pages and year come from a WebSearch summary of the AMS page; the issue number 346 is read from the AMS URL. arXiv v1 is dated 26 Feb 2021 and v2 29 Mar 2022; the preprint is also on HAL as hal-03526905 (https://hal-enpc.archives-ouvertes.fr/hal-03526905v1). The oa_pdf_url is the arXiv preprint, not the journal version; since this is not a B1 core work, the project's preprint policy accepts it."
+    },
+    {
+      "proposed_key": "bayer-2023-markovian-approximations-stochastic",
+      "canonical_key": "bayer-2023-markovian-approximations-stochastic",
+      "authors": [
+        "Christian Bayer",
+        "Simon Breneis"
+      ],
+      "year": 2023,
+      "title": "Markovian approximations of stochastic Volterra equations with the fractional kernel",
+      "venue": "Quantitative Finance 23(1), 53-70",
+      "doi": null,
+      "arxiv": "2108.05048",
+      "oa_pdf_url": "https://arxiv.org/pdf/2108.05048",
+      "landing_url": "https://ideas.repec.org/a/taf/quantf/v23y2023i1p53-70.html",
+      "confidence": "high",
+      "notes": "Key confirmed. Volume, issue, pages and the online-first date (24 Nov 2022) come from the T&F table of contents and the IDEAS/RePEc listing as summarised by WebSearch. The journal DOI never appeared in any result, so it is null here rather than guessed. arXiv v1 is dated 11 Aug 2021 and v2 18 Jul 2022 (WIAS Preprint 2868). An OA copy is also at TIB: https://oa.tib.eu/renate/items/09dafa89-c654-4081-9279-93ffaee23fde/full."
+    },
+    {
+      "proposed_key": "abijaber-2019-multifactor-approximation-rough",
+      "canonical_key": "abijaber-2019-multifactor-approximation-rough",
+      "authors": [
+        "Eduardo Abi Jaber",
+        "Omar El Euch"
+      ],
+      "year": 2019,
+      "title": "Multifactor approximation of rough volatility models",
+      "venue": "SIAM Journal on Financial Mathematics 10(2), 309-349",
+      "doi": "10.1137/18M1170236",
+      "arxiv": "1801.10359",
+      "oa_pdf_url": "https://arxiv.org/pdf/1801.10359",
+      "landing_url": "https://epubs.siam.org/doi/10.1137/18M1170236",
+      "confidence": "high",
+      "notes": "Key confirmed. The DOI comes from an epubs.siam.org result URL; volume, issue, pages and year from the IP Paris research-portal snippet. The arXiv title is spelled 'Multi-factor approximation of rough volatility models'; the key follows the published spelling 'Multifactor'. HAL: hal-01697117."
+    },
+    {
+      "proposed_key": "hardiman-2013-critical-reflexivity",
+      "canonical_key": "hardiman-2013-critical-reflexivity",
+      "authors": [
+        "Stephen J. Hardiman",
+        "Nicolas Bercot",
+        "Jean-Philippe Bouchaud"
+      ],
+      "year": 2013,
+      "title": "Critical reflexivity in financial markets: a Hawkes process analysis",
+      "venue": "The European Physical Journal B 86 (2013)",
+      "doi": "10.1140/epjb/e2013-40107-3",
+      "arxiv": "1302.1405",
+      "oa_pdf_url": "https://arxiv.org/pdf/1302.1405",
+      "landing_url": "https://epjb.epj.org/articles/epjb/abs/2013/10/b130107/b130107.html",
+      "confidence": "high",
+      "notes": "Key valid as proposed: a two-word kurztitel is within the 1-3 word rule (the mechanical 3-word proposer would give 'hardiman-2013-critical-reflexivity-financial'; either is canonical-shaped, but keep one choice across projects). The DOI was seen in WebSearch results; the paper was published online 28 Oct 2013. The article number was NOT confirmed: one citing reference gives '86:1-9', so pages are left out of venue. An Altmetric page wrongly names 'Journal de Physique I'; the DOI prefix and the EPJ B page confirm EPJ B. arXiv v1 Feb 2013, revised Jun 2013."
+    },
+    {
+      "proposed_key": "filimonov-2015-apparent-criticality",
+      "canonical_key": "filimonov-2015-apparent-criticality",
+      "authors": [
+        "Vladimir Filimonov",
+        "Didier Sornette"
+      ],
+      "year": 2015,
+      "title": "Apparent criticality and calibration issues in the Hawkes self-excited point process model: application to high-frequency financial data",
+      "venue": "Quantitative Finance 15(8), 1293-1314",
+      "doi": "10.1080/14697688.2015.1032544",
+      "arxiv": "1308.6756",
+      "oa_pdf_url": "https://arxiv.org/pdf/1308.6756",
+      "landing_url": "https://www.tandfonline.com/doi/abs/10.1080/14697688.2015.1032544",
+      "confidence": "high",
+      "notes": "Key valid as proposed (two-word kurztitel; the mechanical proposer gives 'apparent-criticality-calibration'). The DOI was confirmed through the IDEAS/RePEc handle RePEc:taf:quantf:v:15:y:2015:i:8:p:1293-1314 and the T&F result URL. The paper appeared in the Vol. 15 Issue 8 special issue on high-frequency data modelling. arXiv first version Aug 2013, revised Jul 2014."
+    },
+    {
+      "proposed_key": "lallouache-2016-limits-statistical-significance",
+      "canonical_key": "lallouache-2016-limits-statistical-significance",
+      "authors": [
+        "Mehdi Lallouache",
+        "Damien Challet"
+      ],
+      "year": 2016,
+      "title": "The limits of statistical significance of Hawkes processes fitted to financial data",
+      "venue": "Quantitative Finance 16(1), 1-11",
+      "doi": "10.1080/14697688.2015.1068442",
+      "arxiv": "1406.3967",
+      "oa_pdf_url": "https://arxiv.org/pdf/1406.3967",
+      "landing_url": "https://hal.archives-ouvertes.fr/hal-01134105",
+      "confidence": "high",
+      "notes": "Key confirmed. The DOI appears in an institutlouisbachelier.org result URL; vol. 16(1), pp. 1-11 come from the HAL record as summarised by WebSearch. The arXiv v1 (2014) was titled 'Statistically significant fits of Hawkes processes to financial data' and took its current title in v2 (2015). If the preprint is used, record which arXiv version was read."
+    },
+    {
+      "proposed_key": "hillairet-2024-chaotic-expansion-counting",
+      "canonical_key": "hillairet-2024-chaotic-expansion-counting",
+      "authors": [
+        "Caroline Hillairet",
+        "Anthony Réveillac"
+      ],
+      "year": 2024,
+      "title": "On the chaotic expansion for counting processes",
+      "venue": "Electronic Journal of Probability 29 (2024), 1-33",
+      "doi": "10.1214/24-EJP1193",
+      "arxiv": "2209.01972",
+      "oa_pdf_url": "https://projecteuclid.org/journals/electronic-journal-of-probability/volume-29/issue-none/On-the-chaotic-expansion-for-counting-processes/10.1214/24-EJP1193.full",
+      "landing_url": "https://projecteuclid.org/journals/electronic-journal-of-probability/volume-29/issue-none/On-the-chaotic-expansion-for-counting-processes/10.1214/24-EJP1193.full",
+      "confidence": "high",
+      "notes": "Key confirmed. AUTHORS CORRECTED: Hillairet and Réveillac only, not Rosenbaum. Received 26 Oct 2022, accepted 26 Aug 2024; pages 1-33 per the Project Euclid snippet; the EJP article number was not shown. EJP is open access, but oa_pdf_url is the Project Euclid article page, not a verified direct PDF link (fallback: https://arxiv.org/pdf/2209.01972). Do not confuse it with Hillairet, Réveillac & Rosenbaum, 'An expansion formula for Hawkes processes and application to cyber-insurance derivatives' (arXiv 2104.01579; Stoch. Proc. Appl. 2023 per a search summary). That is the paper with Rosenbaum, and it would need its own key if wanted."
+    },
+    {
+      "proposed_key": "leblanc-2024-exponential-moments-hawkes",
+      "canonical_key": "leblanc-2024-exponential-moments-hawkes",
+      "authors": [
+        "Théo Leblanc"
+      ],
+      "year": 2024,
+      "title": "Exponential moments for Hawkes processes under minimal assumptions",
+      "venue": "Electronic Communications in Probability 29 (2024), 1-11",
+      "doi": "10.1214/24-ECP625",
+      "arxiv": "2505.15253",
+      "oa_pdf_url": "https://projecteuclid.org/journals/electronic-communications-in-probability/volume-29/issue-none/Exponential-moments-for-Hawkes-processes-under-minimal-assumptions/10.1214/24-ECP625.full",
+      "landing_url": "https://projecteuclid.org/journals/electronic-communications-in-probability/volume-29/issue-none/Exponential-moments-for-Hawkes-processes-under-minimal-assumptions/10.1214/24-ECP625.full",
+      "confidence": "high",
+      "notes": "Key confirmed; the first name is Théo. The journal version (ECP 29, 2024, DOI 10.1214/24-ECP625) predates the arXiv posting (21 May 2025), so year = 2024 under the journal-year rule. A 2026 paper (arXiv 2606.22730) cites it as 'Leblanc [2024]'. The oa_pdf_url is the Project Euclid article page (ECP is open access), not a verified direct PDF link (fallback: https://arxiv.org/pdf/2505.15253)."
+    }
+  ]
+}

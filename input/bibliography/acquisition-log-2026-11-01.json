@@ -1,0 +1,152 @@
+{
+  "skill": "acquire-sources",
+  "date": "2026-11-01",
+  "run": 3,
+  "plan": "lai2023-gaps-and-memory Task 2",
+  "worklist_source": "plan Data Sources (9 proposed keys) + 2 novelty follow-ups from input/bibliography/memory-search-log.md",
+  "grade_scope": [
+    "A",
+    "B"
+  ],
+  "environment": "Claude Code cloud container; egress proxy refuses CONNECT to arxiv.org, export.arxiv.org, api.openalex.org, api.crossref.org, api.unpaywall.org (checked 2026-11-01 with curl: HTTP 000, connect_rejected). WebFetch to arxiv.org fails with ENOTFOUND. No download attempt could succeed.",
+  "user_decision": "2026-11-01: paywalled/unfetchable sources stay on the manual worklist; continue with what is on disk",
+  "totals": {
+    "worklist": 11,
+    "downloaded": 0,
+    "already_present": 0,
+    "manual": 11,
+    "skipped": 0
+  },
+  "items": [
+    {
+      "bibkey": "lai-2021-data-driven-approach",
+      "proposed_key": "lai-2021-data-driven-approach-option",
+      "grade": "B",
+      "doi": null,
+      "resolved_url": null,
+      "url_source": "websearch (scholarly APIs blocked)",
+      "outcome": "manual",
+      "reason": "no_oa_url",
+      "saved_as": null,
+      "validated": null
+    },
+    {
+      "bibkey": "alfonsi-2024-approximation-stochastic-volterra",
+      "proposed_key": "alfonsi-2024-approximation-stochastic-volterra",
+      "grade": "B",
+      "doi": "10.1090/mcom/3911",
+      "resolved_url": "https://arxiv.org/pdf/2102.13505",
+      "url_source": "websearch (scholarly APIs blocked)",
+      "outcome": "manual",
+      "reason": "curl_error: connect_rejected by egress proxy (network policy)",
+      "saved_as": null,
+      "validated": null
+    },
+    {
+      "bibkey": "bayer-2023-markovian-approximations-stochastic",
+      "proposed_key": "bayer-2023-markovian-approximations-stochastic",
+      "grade": "B",
+      "doi": null,
+      "resolved_url": "https://arxiv.org/pdf/2108.05048",
+      "url_source": "websearch (scholarly APIs blocked)",
+      "outcome": "manual",
+      "reason": "curl_error: connect_rejected by egress proxy (network policy)",
+      "saved_as": null,
+      "validated": null
+    },
+    {
+      "bibkey": "abijaber-2019-multifactor-approximation-rough",
+      "proposed_key": "abijaber-2019-multifactor-approximation-rough",
+      "grade": "B",
+      "doi": "10.1137/18M1170236",
+      "resolved_url": "https://arxiv.org/pdf/1801.10359",
+      "url_source": "websearch (scholarly APIs blocked)",
+      "outcome": "manual",
+      "reason": "curl_error: connect_rejected by egress proxy (network policy)",
+      "saved_as": null,
+      "validated": null
+    },
+    {
+      "bibkey": "hardiman-2013-critical-reflexivity",
+      "proposed_key": "hardiman-2013-critical-reflexivity",
+      "grade": "B",
+      "doi": "10.1140/epjb/e2013-40107-3",
+      "resolved_url": "https://arxiv.org/pdf/1302.1405",
+      "url_source": "websearch (scholarly APIs blocked)",
+      "outcome": "manual",
+      "reason": "curl_error: connect_rejected by egress proxy (network policy)",
+      "saved_as": null,
+      "validated": null
+    },
+    {
+      "bibkey": "filimonov-2015-apparent-criticality",
+      "proposed_key": "filimonov-2015-apparent-criticality",
+      "grade": "B",
+      "doi": "10.1080/14697688.2015.1032544",
+      "resolved_url": "https://arxiv.org/pdf/1308.6756",
+      "url_source": "websearch (scholarly APIs blocked)",
+      "outcome": "manual",
+      "reason": "curl_error: connect_rejected by egress proxy (network policy)",
+      "saved_as": null,
+      "validated": null
+    },
+    {
+      "bibkey": "lallouache-2016-limits-statistical-significance",
+      "proposed_key": "lallouache-2016-limits-statistical-significance",
+      "grade": "B",
+      "doi": "10.1080/14697688.2015.1068442",
+      "resolved_url": "https://arxiv.org/pdf/1406.3967",
+      "url_source": "websearch (scholarly APIs blocked)",
+      "outcome": "manual",
+      "reason": "curl_error: connect_rejected by egress proxy (network policy)",
+      "saved_as": null,
+      "validated": null
+    },
+    {
+      "bibkey": "hillairet-2024-chaotic-expansion-counting",
+      "proposed_key": "hillairet-2024-chaotic-expansion-counting",
+      "grade": "B",
+      "doi": "10.1214/24-EJP1193",
+      "resolved_url": "https://arxiv.org/pdf/2209.01972",
+      "url_source": "websearch (scholarly APIs blocked)",
+      "outcome": "manual",
+      "reason": "curl_error: connect_rejected by egress proxy (network policy)",
+      "saved_as": null,
+      "validated": null
+    },
+    {
+      "bibkey": "leblanc-2024-exponential-moments-hawkes",
+      "proposed_key": "leblanc-2024-exponential-moments-hawkes",
+      "grade": "B",
+      "doi": "10.1214/24-ECP625",
+      "resolved_url": "https://arxiv.org/pdf/2505.15253",
+      "url_source": "websearch (scholarly APIs blocked)",
+      "outcome": "manual",
+      "reason": "curl_error: connect_rejected by egress proxy (network policy)",
+      "saved_as": null,
+      "validated": null
+    },
+    {
+      "bibkey": "abijaber-2025-fredholm-approach-nonlinear",
+      "grade": "A",
+      "resolved_url": "https://arxiv.org/pdf/2503.04323",
+      "url_source": "websearch",
+      "outcome": "manual",
+      "reason": "curl_error: connect_rejected by egress proxy (network policy)",
+      "saved_as": null,
+      "validated": null,
+      "note": "novelty-check follow-up from memory-search-log.md"
+    },
+    {
+      "bibkey": "techrxiv-176412729 (key TBD)",
+      "grade": "B",
+      "resolved_url": "https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.176412729.90497182/v1",
+      "url_source": "websearch",
+      "outcome": "manual",
+      "reason": "curl_error: connect_rejected by egress proxy (network policy)",
+      "saved_as": null,
+      "validated": null,
+      "note": "novelty-check follow-up from memory-search-log.md"
+    }
+  ]
+}
