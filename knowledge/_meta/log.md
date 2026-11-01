@@ -162,3 +162,10 @@ Append-only. See CLAUDE.md § Meta files.
 ## [2026-10-26] literature | Stage 2a Task 1, search protocol run 1 (provisional)
 - Protocol: input/bibliography/stage2a-search-protocol.md (cut-off 2026-11-30). New A: 0; new B: 7; known A re-confirmed: Barzykin 2026b (d=1), Acero et al. 2026 (RL).
 - F-novelty: not triggered. Open before the run counts as conclusive: Semantic Scholar keyword queries (HTTP 429) and Park & Malinova 2026 (SSRN abstract unreadable).
+
+## [2026-11-01] meta | lai2023-gaps-and-memory: design approved, plan pre-registered (plan Task 1)
+- Framing chosen by the user: the reframed favourite (decision-relevant memory + second-order regret law, synthetic, no data cost). The cross-contract option-flow gap is not taken up. Design `input/ideas/lai2023-gaps-and-memory-design.md` → `status: approved`.
+- Sign-off (user, 2026-11-01): H1, H2, F1–F3 and the fixed constants (ε_eq = 0.25 % of |J(π_ref)|; p ∈ {0, 1, 2, 3, 4, 6, 8}; 24 cells b ∈ {1.15, 1.25, 1.4, 1.8} × ρ ∈ {0.5, 0.8, 0.95} × {common-mode, directional}) frozen **as written, no amendments**.
+- Control problem confirmed: flow-driven, single-asset GLFT/BEGV-type problem (risk-adjusted objective, exponential fills), not Lai's discrete-time option problem.
+- Plan `input/ideas/lai2023-gaps-and-memory-plan.md` → `status: pre-registered`, `pre_registered: 2026-11-01`. Tasks 3–9 are pre-registered from this date; deviations go to this log with slug `lai2023-gaps-and-memory`.
+- Acquisition decision (user): paywalled sources stay on the manual worklist; Tasks 2–3 continue with what is on disk.

@@ -2,9 +2,9 @@
 title: "How much of a power-law order-flow memory does the optimal market maker actually need? Decision-relevant memory under Lai–Gao–Li (2023)-calibrated Hawkes flow"
 type: design
 created: 2026-10-29
-updated: 2026-10-29
+updated: 2026-11-01
 tags: [market-making, hawkes-processes, power-law-kernel, markov-lift, options, critique]
-status: draft   # iteration 1 of the ralph loop; cross-examined by 3 agents (see log), awaiting user choice of framing
+status: approved   # 2026-11-01: user committed to the reframed favourite (memory value + regret law) by signing off the plan and ordering Tasks 1–3; cross-contract option-flow gap not taken up
 author: mixed
 methodology: mixed   # critique = hermeneutic; the experiment (Part B) needs a pre-registered plan before any code
 ---

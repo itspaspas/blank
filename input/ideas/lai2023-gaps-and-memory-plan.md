@@ -2,8 +2,9 @@
 title: "Decision-relevant memory under power-law Hawkes flow — Research Plan"
 type: plan
 created: 2026-10-29
-updated: 2026-10-29
-status: draft   # becomes `pre-registered` only after the user confirms H1–H2 and the thresholds below (mixed methodology: Tasks 3–9 are pre-registered, the rest are not)
+updated: 2026-11-01
+status: pre-registered   # user sign-off 2026-11-01: H1, H2, F1–F3 and constants frozen as written; control problem = flow-driven GLFT/BEGV, d = 1 (mixed methodology: Tasks 3–9 are pre-registered, the rest are not)
+pre_registered: 2026-11-01
 author: mixed
 methodology: mixed
 design: "[[lai2023-gaps-and-memory-design]]"
@@ -58,9 +59,9 @@ No market data in the pre-registered core (synthetic flow; Lai Table 2 used only
 **Files:** `input/ideas/lai2023-gaps-and-memory-plan.md`, `knowledge/_meta/log.md`
 `pre-registered: false`
 
-- [ ] User confirms H1, H2, F1–F3, ε_eq = 0.25%, p-grid, 24 cells (or amends; amendments are logged)
-- [ ] User confirms the control problem (flow-driven GLFT/BEGV-type, d = 1) instead of Lai's discrete-time option problem
-- [ ] Set `status: pre-registered` and write the sign-off date into the log
+- [x] User confirms H1, H2, F1–F3, ε_eq = 0.25%, p-grid, 24 cells (or amends; amendments are logged) — confirmed as written, no amendments (2026-11-01)
+- [x] User confirms the control problem (flow-driven GLFT/BEGV-type, d = 1) instead of Lai's discrete-time option problem — confirmed (2026-11-01)
+- [x] Set `status: pre-registered` and write the sign-off date into the log — 2026-11-01
 
 ### Task 2: Acquire sources, close the novelty check
 **Files:** `<library>/pdf/*.pdf`, `input/bibliography/acquisition-todo.md`, `input/bibliography/memory-search-log.md`, `knowledge/sources/{barzykin-2026-hawkes-driven-otc,acero-2026-hawkes-structured-networks,jusselin-2021-persistent-order-flow,martin-2026-market-making-hawkes,khabou-2025-markov-approximation-hawkes,jain-2025-impulse-control-hawkes}.md`, `knowledge/synthesis/memory-regret-gap-verification.md`
