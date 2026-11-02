@@ -46,7 +46,7 @@ design: "[[lai2023-gaps-and-memory-design]]"
 
 No market data in the pre-registered core (synthetic flow; Lai Table 2 used only as anchor points).
 
-- [[lai-2023-data-driven-deep]] — on disk, ingested; Table 2 anchors (AAPL (1.01,1.02] 0–5 buy: b ≈ 1.12, ρ ≈ 0.59 → cell b = 1.15, ρ = 0.5; BAC b ≈ 1.67–2.22 → cell b = 1.8)
+- [[lai-2023-data-driven-deep]] — on disk, ingested; Table 2 anchors (AAPL (1.01,1.02] 0–5 buy: b ≈ 1.12, ρ ≈ 0.59 → cell b = 1.15, ρ = 0.5; BAC b ≈ 1.67–2.22 → cell b = 1.8) — *erratum 2026-11-01 (Tier 0, `results/screen.json` → `lai_table2.claim_b`): the averaged parameters give ρ = 0.746 for the AAPL row, so its nearest cell is ρ = 0.8, not 0.5. The anchors are labels only; no cell, constant or hypothesis changes. Logged as a deviation note.*
 - [[barzykin-2026-hawkes-driven-otc]] — on disk, ingested; re-ingest with focus "p-sweep, error theory, parameters of Tables 2–3" (Task 2)
 - [[acero-2026-hawkes-structured-networks]] — on disk, ingested; re-ingest with the same focus
 - [[jusselin-2021-persistent-order-flow]], [[martin-2026-market-making-hawkes]], [[khabou-2025-markov-approximation-hawkes]], [[jain-2025-impulse-control-hawkes]] — on disk, ingested; re-read for a regret-vs-p table (Task 2, novelty risk)
@@ -77,11 +77,11 @@ No market data in the pre-registered core (synthetic flow; Lai Table 2 used only
 **Files:** `output/data-analysis/memory-regret/screen.py`, `output/data-analysis/memory-regret/results/screen.json`, `output/data-analysis/memory-regret/tests/test_screen.py`
 `pre-registered: true`
 
-- [ ] Implement the shifted power-law kernel and its exact forecast curve m_t(u) via the discretised Volterra resolvent (Barzykin eqs. 20–22)
-- [ ] Implement three p-factor lifts: (i) Gauss-type quadrature in the decay rate (Alfonsi–Kebaier/Acero), (ii) NNLS L²[0,T] fit, (iii) mass-preserving (Σ wⱼ = ρ) log-spaced fit
-- [ ] Compute for each cell and lift: kernel L² error, mean ‖Δm‖_{L²}, kernel mass beyond one decision interval (δ/(Δ+δ))^{b−1}
-- [ ] Test: reproduce the L¹ norms and tail masses of Lai Table 2 rows (e.g. AAPL (1.01,1.02] 6–10 buy: 1.0002, 0.119)
-- [ ] Write `results/screen.json`; check that p\* predicted by ‖Δm‖ ordering is consistent with H2's direction (informational, does not change the hypotheses)
+- [x] Implement the shifted power-law kernel and its exact forecast curve m_t(u) via the discretised Volterra resolvent (Barzykin eqs. 20–22) — trapezoid + Richardson (h, h/2), h = t₀/10; independent re-solve agrees to 5e-8 (2026-11-01)
+- [x] Implement three p-factor lifts: (i) Gauss-type quadrature in the decay rate (Alfonsi–Kebaier/Acero), (ii) NNLS L²[0,T] fit, (iii) mass-preserving (Σ wⱼ = ρ) log-spaced fit — (i) generalized Gauss–Laguerre on ϑ; supplementary (i-b) composite 1-point Gauss on a geometric partition and Acero eq. (3); plus mean-matched variants (all labelled)
+- [x] Compute for each cell and lift: kernel L² error, mean ‖Δm‖_{L²}, kernel mass beyond one decision interval (δ/(Δ+δ))^{b−1} — 24 cells × lifts × p, 1000 paths/cell, CRN; burn-in B ∈ {0, 1, 10}
+- [x] Test: reproduce the L¹ norms and tail masses of Lai Table 2 rows (e.g. AAPL (1.01,1.02] 6–10 buy: 1.0002, 0.119) — reproduced (1.0002, 0.1194; 7.665; 8 of 16 > 1); design claim on tail masses and the anchor ρ ≈ 0.59 found false (errata above and in the design)
+- [x] Write `results/screen.json`; check that p\* predicted by ‖Δm‖ ordering is consistent with H2's direction (informational, does not change the hypotheses) — **not decidable at Tier 0**: the direction depends on the history convention and normalisation (fresh start: against H2 under every normalisation; with pre-day history and bias removed: weakly consistent for NNLS). Hypotheses unchanged.
 
 ### Task 4: Riccati engine and reproduction of Barzykin's exponential benchmark
 **Files:** `output/data-analysis/memory-regret/vr_engine.py`, `output/data-analysis/memory-regret/lifted_hjb.py`, `output/data-analysis/memory-regret/results/repro_barzykin.json`, `output/data-analysis/memory-regret/tests/test_engine.py`

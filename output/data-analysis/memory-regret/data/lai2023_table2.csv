@@ -1,0 +1,19 @@
+# Lai, Gao & Li 2023, Quant. Finance 23(5), Table 2, p. 782 (PDF physical page 7); averages of daily estimates (all trading days 2019).
+# Power-law kernel g(t) = alpha/(t+delta)^beta (Lai eq. 3). Transcribed 2026-11-01; all 16 rows verified against pdftotext -layout of p. 782.
+underlying,K_S,TTM_days,type,alpha,beta,delta
+AAPL,"(0.99,1]",0-5,Buy,0.0389,1.1969,0.0033
+AAPL,"(0.99,1]",0-5,Sell,0.0303,1.1934,0.0520
+AAPL,"(0.99,1]",6-10,Buy,0.0199,1.4683,0.0006
+AAPL,"(0.99,1]",6-10,Sell,0.0174,1.4833,0.0005
+AAPL,"(1,1.01]",0-5,Buy,0.0451,1.0749,0.0003
+AAPL,"(1,1.01]",0-5,Sell,0.0366,1.1628,0.0003
+AAPL,"(1,1.01]",6-10,Buy,0.0302,1.2405,0.0036
+AAPL,"(1,1.01]",6-10,Sell,0.0256,1.4436,0.0004
+AAPL,"(1.01,1.02]",0-5,Buy,0.0404,1.1207,0.0013
+AAPL,"(1.01,1.02]",0-5,Sell,0.0320,1.2260,0.0004
+AAPL,"(1.01,1.02]",6-10,Buy,0.0540,1.4503,0.0090
+AAPL,"(1.01,1.02]",6-10,Sell,0.0211,1.7351,0.0005
+BAC,"(0.98,1]",0-5,Buy,0.0467,1.6872,0.0274
+BAC,"(0.98,1]",0-5,Sell,0.0662,2.2228,0.0605
+BAC,"(1,1.02]",0-5,Buy,0.1023,1.6694,0.0859
+BAC,"(1,1.02]",0-5,Sell,0.0876,2.1879,0.0772

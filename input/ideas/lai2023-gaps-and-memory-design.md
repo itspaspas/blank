@@ -90,6 +90,7 @@ V\*(p) plateaus) as a function of the kernel exponent β, the kernel mass beyond
   (δ/(Δ+δ))^{β−1} (Δ = 1 in Table 2's inferred unit). From Table 2 this is 0.4–3% for β ≥ 1.45 and
   12–55% for β ≈ 1.07–1.2 (checked for five rows) — so the interesting regime is β ≲ 1.25 and the
   experiment should be centred there.
+  *Erratum 2026-11-01 (Tier 0 recomputed all 16 rows; `output/data-analysis/memory-regret/results/screen.json` → `lai_table2.claim_a`): the β ≥ 1.45 rows span 0.37–18.3 % (7 of 8 outside 0.4–3 %; e.g. AAPL (1.01,1.02] 6–10 buy 11.9 %, BAC 3.0–18.3 %, because BAC's δ is 10–100× larger), and the β ≈ 1.07–1.2 rows span 26.7–55.9 %. The qualitative point (long memory beyond one interval only for small β) holds for AAPL, not for BAC.*
 
 Falsifiable both ways: V\*(p) plateaus at p ≤ 2 within Monte-Carlo error by a pre-set threshold and
 p_max (then the HJB/closed-form programme is not forfeited by non-Markov flow and Lai's rejection of

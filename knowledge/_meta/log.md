@@ -192,3 +192,28 @@ Append-only. See CLAUDE.md § Meta files.
 - New hits: R1 Abi Jaber et al. 2025 (arXiv 2503.04323; optimal P&L vs number of exponentials for a power-law propagator, execution) narrows gap part (2); R5 (TechRxiv, kernel-misspecification robustness, execution) not conclusive. Both on the manual worklist; must be read in full before the novelty claim.
 - Synthesis created: [[memory-regret-gap-verification]] (draft). Verdict: (1) OPEN, (2) NARROWED (execution) / OPEN for Hawkes market making, (3) OPEN. **Stop rule not triggered** → Task 3 proceeds.
 - Noted for later tasks, no change to the pre-registered hypotheses: whether H1's K or "K minus the fixed-policy curvature" is the regret kernel (Task 6); Barzykin's common-mode convention (Task 4); Barzykin §6.2's mixture decays like u^{-0.35} (b < 1, outside the grid).
+
+## [2026-11-01] analysis | lai2023-gaps-and-memory Task 3: Tier 0 analytic screen (pre-registered)
+- Code and results: `output/data-analysis/memory-regret/` (`screen.py`, `tests/test_screen.py` with 96 tests passing, `results/screen.json`, `README.md`, `data/lai2023_table2.csv`). Revision 2; code sha256 is recorded in screen.json. Runtime ≈ 17 min. 1000 paths per cell at B = 0, with common random numbers across lifts.
+- Implemented to spec:
+  - shifted power-law kernel;
+  - exact forecast m_t(u) by Volterra resolvent (Barzykin eqs. 20–22), trapezoid + Richardson;
+  - lifts (i) generalized Gauss–Laguerre on ϑ, (ii) NNLS L²[0,T] with free rates, (iii) mass-preserving log-spaced;
+  - all metrics for 24 cells × p ∈ {1,2,3,4,6,8}, plus the p = 0 NHPP forecast.
+  Supplementary, labelled: (i-b) composite 1-point Gauss on a geometric partition; Acero eq. (3); mean-matched variants of every lift; burn-in B ∈ {1, 10} (same μ and recalibrated μ); count-error proxy; per-cell numerical floors.
+- Results (informational; nothing here tests H1 or H2):
+  - **Lai Table 2 reproduced:** ‖g‖₁ = 1.0002 and tail mass 0.1194 for AAPL (1.01,1.02] 6–10 buy; the 7.665 row; 8 of 16 rows > 1.
+  - **Kernel fit:** NNLS reaches 0.5 % relative L²[0,T] error at p = 4 and 1e-5 at p = 8 in every cell. The single Gauss–Laguerre rule captures only 13–32 % of ρ at b = 1.15. Acero eq. (3) with the K₂ that minimises its Prop. 1 bound is degenerate (relative error ≈ 1). Lift (iii) plateaus at p ≥ 4 (p_effective ≤ 5).
+  - **Forecast error as specified** (true μ): dominated by bias whenever the lift's kernel mass on [0,T] is wrong; it can exceed the memory-free NHPP forecast's error. Mean-matching the lift's baseline cuts it 1.1–5×.
+  - **NNLS p = 4 at B = 0:** forecast error ≤ 0.3 % in all cells. It degrades with pre-day history (hard cell 5e-4 → 0.015 at B = 1 → 0.145 at B = 10, same μ), because lifts fitted on L²[0,T] are wrong at lags > T.
+  - **H2 direction (screen proxy): not decidable at Tier 0.** At B = 0 nothing supports H2's direction: the proxy is flat or reversed by one grid step. With pre-day history and bias removed (N3) it is weakly consistent for NNLS. Only Tier 2 regret can settle H2.
+- Two-stage review:
+  - Spec reviewer: PASS WITH NOTES; 7 minor items, all fixed or declared.
+  - Quality reviewer: SOUND WITH REVISIONS. Truth forecast independently re-solved to 5e-8, simulator checked against Ogata thinning, μ, NNLS and (i-b) reproduced. Q1–Q8 resolved in revision 2; the last two wording fixes were made in the main session.
+- 2026-11-01 · deviation · plan=lai2023-gaps-and-memory · Data Sources anchor corrected as an erratum: AAPL (1.01,1.02] 0–5 buy has ρ = 0.746 (not ≈ 0.59), so its nearest cell is ρ = 0.8. Design claim "tail mass 0.4–3 % for β ≥ 1.45" is false (0.37–18.3 %). Anchors are labels only; no cell, constant or hypothesis changed.
+- 2026-11-01 · deviation · plan=lai2023-gaps-and-memory · Task 3 numerics: the plain trapezoid failed the dispatch's 2 % h-convergence check, so the truth forecast is Richardson-extrapolated. Lifted forecasts use the exact exponential-filter route (agrees to 7.7e-7). Implementation detail only, no change to the pre-registered quantities.
+- **Open decisions before Tasks 5–7 (for the user; no change made):**
+  - (D1) History convention for Tier 2: intraday fresh start vs stationary pre-day history (burn-in), and the lift fitting window (L²[0,T] as frozen, or longer). This choice flips the screen's direction.
+  - (D2) Whether Tier 2 lifts keep the true μ (as frozen) or are mean-matched. As frozen, regret vs p would largely measure kernel-mass calibration, not memory.
+  - (D3) Which construction counts as plan lift (i): the global Gauss–Laguerre (as specified) or composite geometric Gauss (i-b), pending Alfonsi–Kebaier 2024 (manual worklist).
+  - Each would be a logged deviation from the pre-registered plan if adopted.
